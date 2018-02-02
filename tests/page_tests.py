@@ -1,11 +1,14 @@
+import string
 import unittest
 import os
 from enchant.checker import SpellChecker
 from enchant import DictWithPWL
-from enchant.tokenize import get_tokenizer, URLFilter, EmailFilter, WikiWordFilter
+from enchant.tokenize import get_tokenizer, URLFilter, EmailFilter, WikiWordFilter, MentionFilter
 
 
 class PageTests(unittest.TestCase):
+
+    FAILED_WORDS = set()
 
     def __init__(self, methodName, page=None):
         # Boilerplate so that unittest knows how to run these tests.
@@ -20,25 +23,24 @@ class PageTests(unittest.TestCase):
 
     def test_GIVEN_a_page_THEN_its_spelling_conforms_to_UK_English(self):
 
-        print("Checking the spelling in file: {}".format(self.page))
+        def filter_upper_case(text):
+            return " ".join(set((w for w in text.split() if w.upper() != w)))
+
+        def filter_non_ascii(text):
+            printable = set(string.printable)
+            return "".join(filter(lambda x: x in printable, text))
+
         with open(self.page, "r") as wiki_file:
-            text = wiki_file.read()
+            text = filter_non_ascii(filter_upper_case(wiki_file.read()))
 
-        ibex_dict = DictWithPWL("en_UK")
+        ibex_dict = DictWithPWL("en_UK", "words.txt")
+        tokenizer = get_tokenizer("en_UK", [EmailFilter, URLFilter, WikiWordFilter, MentionFilter])
+        checker = SpellChecker(ibex_dict, tokenize=tokenizer, text=text)
 
-        ibex_terminonoly = ("ioc", "opi", "css")
-        github_terminology = ("wiki", "git", "github")
-
-        for word in ibex_terminonoly + github_terminology:
-            ibex_dict.add(word)
-
-        tokenizer = get_tokenizer("en_UK", [EmailFilter, URLFilter, WikiWordFilter])
-        checker = SpellChecker(ibex_dict, tokenize=tokenizer)
-        checker.set_text(text)
         failed_words = {err.word for err in checker}
+        for word in failed_words:
+            PageTests.FAILED_WORDS.add(word)
         if len(failed_words) > 0:
             self.fail("The following words were spelled incorrectly in file {}: \n    {}".format(
                 self.page, "\n    ".join(failed_words)
             ))
-
-
