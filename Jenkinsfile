@@ -24,12 +24,6 @@ pipeline {
       steps {
         
         bat """
-            call build/update_genie_python.bat
-            if %errorlevel% neq 0 (
-                    @echo ERROR: Cannot install clean genie_python
-                    goto ERROR
-            )
-
             call run_tests.bat || echo "running tests failed."
             """
       }
