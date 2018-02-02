@@ -43,8 +43,17 @@ class PageTests(unittest.TestCase):
             expression = r"(?:(?<!\\)((?:\\{2})+)(?=`+)|(?<!\\)(`+)(.+?)(?<!`)\2(?!`))"
             return re.sub(expression, "", text)
 
+        def remove_bold(text):
+            return text.replace("**", "")
+
         with open(self.page, "r", encoding="utf-8") as wiki_file:
-            text = strip_code_blocks(replace_selected_specials_with_whitespace(wiki_file.read()))
+            text = remove_bold(
+                strip_code_blocks(
+                    replace_selected_specials_with_whitespace(
+                        wiki_file.read()
+                    )
+                )
+            )
 
         filters = [URLFilter, EmailFilter, MentionFilter, WikiWordFilter]
         checker = SpellChecker("en_UK", filters=filters, text=text)
