@@ -16,4 +16,4 @@ class PageTests(unittest.TestCase):
         self.assertTrue(os.path.exists(self.page))
 
     def test_GIVEN_a_page_THEN_its_spelling_conforms_to_UK_English(self):
-        pass
+        print("Testing spelling in {}".format(self.page))
