@@ -1,9 +1,8 @@
 import string
 import unittest
 import os
-import re
 from enchant.checker import SpellChecker
-from enchant.tokenize import get_tokenizer, URLFilter, EmailFilter, WikiWordFilter, MentionFilter
+from enchant.tokenize import URLFilter, EmailFilter, WikiWordFilter, MentionFilter
 
 
 def get_ignored_words():
@@ -42,8 +41,9 @@ class PageTests(unittest.TestCase):
 
         checker = SpellChecker("en_UK", filters=[URLFilter, EmailFilter, MentionFilter, WikiWordFilter], text=text)
 
-        failed_words = {err.word for err in checker if err.word.lower() not in PageTests.IGNORED_WORDS}
-        failed_words = filter_upper_case(filter_non_ascii(failed_words))
+        failed_words = filter_upper_case(filter_non_ascii(
+            {err.word for err in checker if err.word.lower() not in PageTests.IGNORED_WORDS}
+        ))
 
         if len(failed_words) > 0:
             self.fail("The following words were spelled incorrectly in file {}: \n    {}".format(
