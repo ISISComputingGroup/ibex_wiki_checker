@@ -30,20 +30,16 @@ class PageTests(unittest.TestCase):
     def test_GIVEN_a_page_THEN_its_spelling_conforms_to_UK_English(self):
 
         def filter_upper_case(words):
-            return set((w for w in words if w.upper() != w))
-
-        def filter_non_ascii(words):
-            printable = set(string.printable)
-            return set((w for w in filter(lambda x: x in printable, words)))
+            return set(w for w in words if w.upper() != w)
 
         with open(self.page, "r", encoding="utf-8") as wiki_file:
             text = wiki_file.read()
 
+        print(text)
         checker = SpellChecker("en_UK", filters=[URLFilter, EmailFilter, MentionFilter, WikiWordFilter], text=text)
 
-        failed_words = filter_upper_case(filter_non_ascii(
-            {err.word for err in checker if err.word.lower() not in PageTests.IGNORED_WORDS}
-        ))
+        failed_words = filter_upper_case(
+            {err.word for err in checker if err.word.lower() not in PageTests.IGNORED_WORDS})
 
         if len(failed_words) > 0:
             self.fail("The following words were spelled incorrectly in file {}: \n    {}".format(
