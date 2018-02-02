@@ -26,7 +26,7 @@ def run_spell_checker(reports_path, pages):
     # unittest's test loader is unable to take arguments to test classes by default so have
     # to use the getTestCaseNames() syntax and explicitly add the argument ourselves.
     for page in pages:
-        suite.addTests([PageTests(test, page) for test in loader.getTestCaseNames(PageTests)])
+        suite.addTests([PageTests(test, page, pages) for test in loader.getTestCaseNames(PageTests)])
 
     runner = XMLTestRunner(output=str(reports_path), stream=sys.stdout)
     return runner.run(suite).wasSuccessful()
