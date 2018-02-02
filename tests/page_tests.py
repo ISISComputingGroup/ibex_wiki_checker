@@ -2,13 +2,19 @@ import string
 import unittest
 import os
 from enchant.checker import SpellChecker
-from enchant import DictWithPWL
 from enchant.tokenize import get_tokenizer, URLFilter, EmailFilter, WikiWordFilter, MentionFilter
+
+
+def get_ignored_words():
+    # We're finding it easier to work with ignored words ourselves rather than using Enchant's in-built
+    with open("words.txt", "r") as f:
+        words = f.read().split()
+    return words
 
 
 class PageTests(unittest.TestCase):
 
-    FAILED_WORDS = set()
+    IGNORED_WORDS = get_ignored_words()
 
     def __init__(self, methodName, page=None):
         # Boilerplate so that unittest knows how to run these tests.
@@ -33,13 +39,10 @@ class PageTests(unittest.TestCase):
         with open(self.page, "r") as wiki_file:
             text = filter_non_ascii(filter_upper_case(wiki_file.read()))
 
-        ibex_dict = DictWithPWL("en_UK", "words.txt")
         tokenizer = get_tokenizer("en_UK", [EmailFilter, URLFilter, WikiWordFilter, MentionFilter])
-        checker = SpellChecker(ibex_dict, tokenize=tokenizer, text=text)
+        checker = SpellChecker("en_UK", tokenize=tokenizer, text=text)
 
-        failed_words = {err.word for err in checker}
-        for word in failed_words:
-            PageTests.FAILED_WORDS.add(word)
+        failed_words = {err.word for err in checker if err.word.lower() not in PageTests.IGNORED_WORDS}
         if len(failed_words) > 0:
             self.fail("The following words were spelled incorrectly in file {}: \n    {}".format(
                 self.page, "\n    ".join(failed_words)

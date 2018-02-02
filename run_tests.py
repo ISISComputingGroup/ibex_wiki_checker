@@ -63,16 +63,13 @@ def run_all_tests(single_file, remote):
     else:
         return_values.append(
             run_spell_checker(os.path.join(reports_path, os.path.basename(single_file)), [single_file]))
-
-    with open("new_words.txt", "w") as f:
-        f.writelines(sorted(PageTests.FAILED_WORDS))
     return all(value for value in return_values)
 
 
 def main():
 
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter,
-                            description="""Runs tests against the IBEX wikis""")
+                                     description="""Runs tests against the IBEX wikis""")
     parser.add_argument("--file", required=False, type=str, default=None,
                         help="The file to scan")
     parser.add_argument("--remote", required=False, action='store_true', default=False,
@@ -83,7 +80,6 @@ def main():
         raise(RuntimeError("No arguments specified"))
     elif args.file and args.remote:
         raise(RuntimeError("Cannot specify both a single file and remote run"))
-
 
     sys.exit(0 if run_all_tests(args.file, args.remote) else 1)
 
