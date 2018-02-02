@@ -1,6 +1,7 @@
 import string
 import unittest
 import os
+import re
 from enchant.checker import SpellChecker
 from enchant.tokenize import get_tokenizer, URLFilter, EmailFilter, WikiWordFilter, MentionFilter
 
@@ -29,20 +30,21 @@ class PageTests(unittest.TestCase):
 
     def test_GIVEN_a_page_THEN_its_spelling_conforms_to_UK_English(self):
 
-        def filter_upper_case(text):
-            return " ".join(set((w for w in text.split() if w.upper() != w)))
+        def filter_upper_case(words):
+            return set((w for w in words if w.upper() != w))
 
-        def filter_non_ascii(text):
+        def filter_non_ascii(words):
             printable = set(string.printable)
-            return "".join(filter(lambda x: x in printable, text))
+            return set((w for w in filter(lambda x: x in printable, words)))
 
         with open(self.page, "r") as wiki_file:
-            text = filter_non_ascii(filter_upper_case(wiki_file.read()))
+            text = wiki_file.read()
 
-        tokenizer = get_tokenizer("en_UK", [EmailFilter, URLFilter, WikiWordFilter, MentionFilter])
-        checker = SpellChecker("en_UK", tokenize=tokenizer, text=text)
+        checker = SpellChecker("en_UK", filters=[URLFilter, EmailFilter, MentionFilter, WikiWordFilter], text=text)
 
         failed_words = {err.word for err in checker if err.word.lower() not in PageTests.IGNORED_WORDS}
+        failed_words = filter_upper_case(filter_non_ascii(failed_words))
+
         if len(failed_words) > 0:
             self.fail("The following words were spelled incorrectly in file {}: \n    {}".format(
                 self.page, "\n    ".join(failed_words)
