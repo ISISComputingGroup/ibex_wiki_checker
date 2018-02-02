@@ -32,9 +32,16 @@ class PageTests(unittest.TestCase):
         def filter_upper_case(words):
             return set(w for w in words if w.upper() != w)
 
+        def replace_selected_specials_with_whitespace(text):
+            # This gets around certain issues recognising Github links as URLs
+            altered_text = text
+            for character in ["[", "]", "(", ")"]:
+                altered_text = altered_text.replace(character, " ")
+            return altered_text
+
         with open(self.page, "r", encoding="utf-8") as wiki_file:
-            text = wiki_file.read()
-            
+            text = replace_selected_specials_with_whitespace(wiki_file.read())
+
         checker = SpellChecker("en_UK", filters=[URLFilter, EmailFilter, MentionFilter, WikiWordFilter], text=text)
 
         failed_words = filter_upper_case(
