@@ -1,8 +1,8 @@
-import string
 import unittest
 import os
+import re
 from enchant.checker import SpellChecker
-from enchant.tokenize import URLFilter, EmailFilter, WikiWordFilter, MentionFilter
+from enchant.tokenize import URLFilter, EmailFilter, WikiWordFilter, MentionFilter, Filter
 
 
 def get_ignored_words():
@@ -39,10 +39,16 @@ class PageTests(unittest.TestCase):
                 altered_text = altered_text.replace(character, " ")
             return altered_text
 
-        with open(self.page, "r", encoding="utf-8") as wiki_file:
-            text = replace_selected_specials_with_whitespace(wiki_file.read())
+        def strip_code_blocks(text):
+            expression = r"(?:(?<!\\)((?:\\{2})+)(?=`+)|(?<!\\)(`+)(.+?)(?<!`)\2(?!`))"
+            return re.sub(expression, "", text)
 
-        checker = SpellChecker("en_UK", filters=[URLFilter, EmailFilter, MentionFilter, WikiWordFilter], text=text)
+        with open(self.page, "r", encoding="utf-8") as wiki_file:
+            text = strip_code_blocks(replace_selected_specials_with_whitespace(wiki_file.read()))
+
+        print(text)
+        filters = [URLFilter, EmailFilter, MentionFilter, WikiWordFilter]
+        checker = SpellChecker("en_UK", filters=filters, text=text)
 
         failed_words = filter_upper_case(
             {err.word for err in checker if err.word.lower() not in PageTests.IGNORED_WORDS})
