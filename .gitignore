@@ -1,3 +1,6 @@
+# Don't exlude the source Python directory. We need to include the distribution with the repo
+!Python/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
