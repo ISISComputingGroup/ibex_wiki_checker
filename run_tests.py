@@ -52,9 +52,9 @@ def run_all_tests(single_file, remote):
     if remote:
         wikis = [
             Wiki("ibex_wiki_checker", MARKDOWN),
-            #Wiki("ibex_developers_manual", MARKDOWN),
-            #Wiki("IBEX", MARKDOWN),
-            #Wiki("ibex_user_manual", RST),
+            Wiki("ibex_developers_manual", MARKDOWN),
+            Wiki("IBEX", MARKDOWN),
+            Wiki("ibex_user_manual", RST),
         ]
 
         for wiki in wikis:
