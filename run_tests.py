@@ -49,9 +49,10 @@ def run_all_tests():
 
     return_values = []
     wikis = [
-        Wiki("ibex_developers_manual", MARKDOWN),
-        Wiki("IBEX", MARKDOWN),
-        Wiki("ibex_user_manual", RST),
+        #Wiki("ibex_developers_manual", MARKDOWN),
+        #Wiki("IBEX", MARKDOWN),
+        #Wiki("ibex_user_manual", RST),
+        Wiki("ibex_wiki_checker", MARKDOWN)
     ]
 
     for wiki in wikis:

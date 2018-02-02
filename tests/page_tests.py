@@ -1,5 +1,8 @@
 import unittest
 import os
+from enchant.checker import SpellChecker
+from enchant import DictWithPWL
+from enchant.tokenize import get_tokenizer, URLFilter, EmailFilter, WikiWordFilter
 
 
 class PageTests(unittest.TestCase):
@@ -16,4 +19,26 @@ class PageTests(unittest.TestCase):
         self.assertTrue(os.path.exists(self.page))
 
     def test_GIVEN_a_page_THEN_its_spelling_conforms_to_UK_English(self):
-        print("Testing spelling in {}".format(self.page))
+
+        print("Checking the spelling in file: {}".format(self.page))
+        with open(self.page, "r") as wiki_file:
+            text = wiki_file.read()
+
+        ibex_dict = DictWithPWL("en_UK")
+
+        ibex_terminonoly = ("ioc", "opi", "css")
+        github_terminology = ("wiki", "git", "github")
+
+        for word in ibex_terminonoly + github_terminology:
+            ibex_dict.add(word)
+
+        tokenizer = get_tokenizer("en_UK", [EmailFilter, URLFilter, WikiWordFilter])
+        checker = SpellChecker(ibex_dict, tokenize=tokenizer)
+        checker.set_text(text)
+        failed_words = {err.word for err in checker}
+        if len(failed_words) > 0:
+            self.fail("The following words were spelled incorrectly in file {}: \n    {}".format(
+                self.page, "\n    ".join(failed_words)
+            ))
+
+
