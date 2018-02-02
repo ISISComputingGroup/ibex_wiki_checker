@@ -37,7 +37,7 @@ class PageTests(unittest.TestCase):
             printable = set(string.printable)
             return set((w for w in filter(lambda x: x in printable, words)))
 
-        with open(self.page, "r") as wiki_file:
+        with open(self.page, "r", encoding="utf-8") as wiki_file:
             text = wiki_file.read()
 
         checker = SpellChecker("en_UK", filters=[URLFilter, EmailFilter, MentionFilter, WikiWordFilter], text=text)
