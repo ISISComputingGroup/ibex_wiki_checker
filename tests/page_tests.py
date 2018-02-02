@@ -43,11 +43,11 @@ class PageTests(unittest.TestCase):
             expression = r"(?:(?<!\\)((?:\\{2})+)(?=`+)|(?<!\\)(`+)(.+?)(?<!`)\2(?!`))"
             return re.sub(expression, "", text)
 
-        def remove_bold(text):
-            return text.replace("**", "")
+        def remove_bold_and_italics(text):
+            return text.replace("*", "")
 
         with open(self.page, "r", encoding="utf-8") as wiki_file:
-            text = remove_bold(
+            text = remove_bold_and_italics(
                 strip_code_blocks(
                     replace_selected_specials_with_whitespace(
                         wiki_file.read()
