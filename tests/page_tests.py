@@ -1,8 +1,12 @@
+import codecs
 import string
 import unittest
 import os
+
+import re
 from enchant.checker import SpellChecker
 from enchant.tokenize import URLFilter, EmailFilter, WikiWordFilter, MentionFilter
+import requests
 
 
 def get_ignored_words():
@@ -16,10 +20,11 @@ class PageTests(unittest.TestCase):
 
     IGNORED_WORDS = get_ignored_words()
 
-    def __init__(self, methodName, page=None):
+    def __init__(self, methodName, page=None, all_pages=None):
         # Boilerplate so that unittest knows how to run these tests.
         super(PageTests, self).__init__(methodName)
         self.page = page
+        self.all_pages = all_pages
 
     def setUp(self):
         # Class has to have an __init__ that accepts one argument for unittest's test loader to work properly.
@@ -52,56 +57,40 @@ class PageTests(unittest.TestCase):
                 self.page, "\n    ".join(failed_words)
             ))
 
-
     def test_GIVEN_a_page_IF_it_contains_urls_WHEN_url_loaded_THEN_response_is_http_ok(self):
         if len(self.all_pages) == 1:
-            raise unittest.SkipTest()
+            unittest.skip("...")
 
-        def filter_non_ascii(text):
-            printable = set(string.printable)
-            return "".join(filter(lambda x: x in printable, text))
-
-
-
-        print("Checking {}".format(self.page))
+        # Have to open as UTF-8. Opening as ascii causes some encoding errors.
         try:
             with codecs.open(self.page, encoding="utf-8") as wiki_file:
                 text = wiki_file.read()
-        except:
-            print("FAILED TO OPEN {}".format(self.page))
+        except Exception:
+            self.fail("FAILED TO OPEN {}".format(self.page))
 
-        with open(self.page, "r") as wiki_file:
-            text = filter_non_ascii(filter_upper_case(wiki_file.read()))
-        urls = re.findall(r'\[\S+\]\(([\S^#]+)\)', text)
+        # Find markdown URLS of the form [Link text](link location)
+        urls = re.findall(r'\[.+\]\(([\S^#]+)\)', text)
 
-
-        ibex_dict = DictWithPWL("en_UK", "words.txt")
-        tokenizer = get_tokenizer("en_UK", [EmailFilter, URLFilter, WikiWordFilter, MentionFilter])
-        checker = SpellChecker(ibex_dict, tokenize=tokenizer, text=text)
+        # Get first part of filename. Split off the extension (e.g. .MD)
         filenames = [os.path.basename(f).split(".")[0].lower() for f in self.all_pages]
 
-        failed_words = {err.word for err in checker}
-        for word in failed_words:
-            PageTests.FAILED_WORDS.add(word)
-        if len(failed_words) > 0:
-            self.fail("The following words were spelled incorrectly in file {}: \n    {}".format(
-                self.page, "\n    ".join(failed_words)
-            ))
         allowed_urls = [
-            "facilities.rl.ac.uk",
-            "control-svcs.isis.cclrc.ac.uk",
-            "github.com/ISISComputingGroup/EPICS"
+            "facilities.rl.ac.uk",  # Errors if not signed in
+            "control-svcs.isis.cclrc.ac.uk",  # requests module doesn't like the self-signed SSL certificate???
+            "github.com/ISISComputingGroup/EPICS",  # Private repo. 404's for non-signed-in users.
         ]
 
+        # If any of these conditions are true, don't attempt to check the URL (treat it as valid)
         skip_conditions = [
             lambda url: any(url.lower().endswith(ext) for ext in ["png", "jpeg", "jpg", "gif"]),
             lambda url: url == "",
             lambda url: url.startswith("ftp"),
             lambda url: any(allowed_url in url for allowed_url in allowed_urls),
-            lambda url: url in filenames,
+            lambda url: url.lower() in filenames,
         ]
 
         for url in urls:
+            # If the URL contains a #, only keep the part before the hash sign.
             url = url.split("#")[0].strip()
 
             if not any(condition(url) for condition in skip_conditions):
