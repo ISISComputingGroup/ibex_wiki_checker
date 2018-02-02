@@ -3,10 +3,8 @@
 pipeline {
 
   // agent defines where the pipeline will run.
-  agent {  
-    label {
-      label "IBEX_wiki_checker"
-    }
+  agent {
+    label "!linux"
   }
   
   triggers {
