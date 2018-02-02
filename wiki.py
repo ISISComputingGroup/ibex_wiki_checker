@@ -9,6 +9,11 @@ WIKI_TYPES = [RST, MARKDOWN]
 
 class Wiki(object):
     def __init__(self, name, doc_format):
+        """
+        Args:
+            name: The name of the wiki
+            doc_format: The format of the wiki, Markdown or RST
+        """
         if doc_format not in WIKI_TYPES:
             raise(TypeError("Wiki {} initialised with invalid type {}".format(name, doc_format)))
         self.name = name
