@@ -34,8 +34,7 @@ class PageTests(unittest.TestCase):
 
         with open(self.page, "r", encoding="utf-8") as wiki_file:
             text = wiki_file.read()
-
-        print(text)
+            
         checker = SpellChecker("en_UK", filters=[URLFilter, EmailFilter, MentionFilter, WikiWordFilter], text=text)
 
         failed_words = filter_upper_case(
