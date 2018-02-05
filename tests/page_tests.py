@@ -62,9 +62,6 @@ class PageTests(unittest.TestCase):
             ))
 
     def test_GIVEN_a_page_IF_it_contains_urls_WHEN_url_loaded_THEN_response_is_http_ok(self):
-        if len(self.all_pages) == 1:
-            unittest.skip("...")
-
         # Have to open as UTF-8. Opening as ascii causes some encoding errors.
         try:
             with codecs.open(self.page, encoding="utf-8") as wiki_file:
