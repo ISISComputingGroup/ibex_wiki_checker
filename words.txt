@@ -877,7 +877,6 @@ instrumentinforeceiver
 instrumentutils
 int
 internalerror
-intrument
 invocationonmock
 io
 iobservablevalue
@@ -1501,6 +1500,7 @@ pini
 pixelman
 pl
 placeholder
+platinums
 plc
 plcip
 plt
