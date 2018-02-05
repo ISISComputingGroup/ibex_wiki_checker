@@ -894,6 +894,7 @@ ioceurothrm
 iocexit
 iocgalil
 iochameg
+iochfmagpsu
 iocinit
 ioclog
 ioclogarchitecture
