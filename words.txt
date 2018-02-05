@@ -1537,6 +1537,7 @@ presentability
 presetinstrument
 presetinstruments
 preshutdown
+prev
 printf
 println
 printstacktrace
@@ -2058,6 +2059,7 @@ uc
 udp
 udunits
 ui
+uis
 uk
 ulong
 uml
