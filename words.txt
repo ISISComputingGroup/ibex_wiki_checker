@@ -10,6 +10,7 @@ abstractuiplugin
 ac
 accesssecurity
 acf
+acqiris
 acro
 actionlist
 activeline
