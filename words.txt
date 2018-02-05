@@ -979,6 +979,7 @@ jspx
 jubula
 jul
 julabo
+jülich
 jumpcell
 jun
 junit
@@ -1379,6 +1380,7 @@ notestanfordrs
 notestressrig
 notesumitomo
 notesyringepumps
+notet
 notetanktranslate
 notetdkgenesys
 notetektronix
