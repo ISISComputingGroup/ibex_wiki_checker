@@ -39,7 +39,22 @@ class PageTests(unittest.TestCase):
                 altered_text = altered_text.replace(character, " ")
             return altered_text
 
-        def strip_code_blocks(text):
+        def strip_triple_dash_code_blocks(text):
+            expression = r"```"
+            triple_quote_positions = [m.start() for m in re.finditer(expression, text)]
+            if len(triple_quote_positions) == 0:
+                new_text = text
+            elif len(triple_quote_positions) % 2 != 0:
+                print("Uneven number of triple quotes detected. Doing nothing to be safe")
+                new_text = text
+            else:
+                new_text = text[0:triple_quote_positions[0]]
+                for i in range(1, len(triple_quote_positions)-1, 2):
+                    new_text += text[triple_quote_positions[i] + 3, triple_quote_positions[i+1]]
+                new_text += text[triple_quote_positions[-1] + 3 : len(text)]
+            return new_text
+
+        def strip_inline_code_blocks(text):
             expression = r"(?:(?<!\\)((?:\\{2})+)(?=`+)|(?<!\\)(`+)(.+?)(?<!`)\2(?!`))"
             return re.sub(expression, "", text)
 
@@ -48,9 +63,11 @@ class PageTests(unittest.TestCase):
 
         with open(self.page, "r", encoding="utf-8") as wiki_file:
             text = remove_bold_and_italics(
-                strip_code_blocks(
-                    replace_selected_specials_with_whitespace(
-                        wiki_file.read()
+                replace_selected_specials_with_whitespace(
+                    strip_inline_code_blocks(
+                        strip_triple_dash_code_blocks(
+                            wiki_file.read()
+                        )
                     )
                 )
             )
