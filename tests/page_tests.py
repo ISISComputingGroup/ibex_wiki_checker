@@ -50,8 +50,8 @@ class PageTests(unittest.TestCase):
             else:
                 new_text = text[0:triple_quote_positions[0]]
                 for i in range(1, len(triple_quote_positions)-1, 2):
-                    new_text += text[triple_quote_positions[i] + 3, triple_quote_positions[i+1]]
-                new_text += text[triple_quote_positions[-1] + 3 : len(text)]
+                    new_text += text[triple_quote_positions[i] + 3: triple_quote_positions[i+1]]
+                new_text += text[triple_quote_positions[-1] + 3: len(text)]
             return new_text
 
         def strip_inline_code_blocks(text):
