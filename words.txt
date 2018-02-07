@@ -173,6 +173,7 @@ bc
 bcda
 bd
 beamline
+beamlines
 beamscraper
 beamstop
 beanproperties
@@ -2059,6 +2060,7 @@ txtnewtitle
 txtreadname
 tycho
 tychodemo
+ua
 uag
 uamph
 uamps
