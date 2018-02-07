@@ -159,6 +159,7 @@ backtraces
 bannercomposite
 baratron
 baritron
+barndoor
 barndoors
 basedir
 basename
