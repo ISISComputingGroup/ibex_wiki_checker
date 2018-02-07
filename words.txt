@@ -209,6 +209,7 @@ cachingobservable
 caget
 cainfo
 caj
+calab
 calc
 calcexample
 calcout
@@ -379,6 +380,7 @@ danfysiks
 daq
 daqmxbase
 dat
+databaseserver
 databasewrapper
 databinding
 databindingcontext
@@ -1065,6 +1067,7 @@ logpreferences
 logserver
 logviewer
 lohnert
+löhnert
 lolo
 longin
 longout
@@ -1112,6 +1115,7 @@ mantracourt
 marginheight
 marginwidth
 mari
+mars
 martinfowler
 masse
 matplotlib
