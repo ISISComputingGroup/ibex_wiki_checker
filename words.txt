@@ -1659,6 +1659,8 @@ refactor
 refactored
 refactoring
 reflectometer
+reflectometers
+reflectometry
 refs
 regedit
 regex
@@ -1936,6 +1938,8 @@ sudo
 sumitomo
 superclasses
 superlogics
+supermirror
+supermirrors
 superseeded
 surefire
 svcs
