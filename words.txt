@@ -653,6 +653,7 @@ galilcontroller
 galilmc
 galilnn
 galils
+galil's
 galilsup
 galilxx
 gallil
@@ -971,6 +972,8 @@ jenkins
 jenkinsfile
 jface
 jit
+jittering
+jitter
 jj
 jjxray
 jlich
@@ -1606,6 +1609,7 @@ py
 pyc
 pycharm
 pyctl
+pydev
 pyepics
 pygame
 pyguide
