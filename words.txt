@@ -142,6 +142,7 @@ autconsoleprefix
 autocrlf
 autocrop
 autofocussing
+autofocus
 autorun
 autosave
 autosaves
