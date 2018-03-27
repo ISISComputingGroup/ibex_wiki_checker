@@ -143,6 +143,7 @@ autocrlf
 autocrop
 autofocussing
 autofocus
+autologon
 autorun
 autosave
 autosaves
@@ -659,6 +660,7 @@ galil's
 galilsup
 galilxx
 gallil
+gamry
 gateresources
 gaussmeter
 gazcell
