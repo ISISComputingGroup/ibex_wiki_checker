@@ -1541,6 +1541,7 @@ positioner
 postgres
 postiocinit
 postsetinstrument
+potentiostat
 powercycling
 powerpoint
 ppt
