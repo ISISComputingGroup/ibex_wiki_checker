@@ -2060,6 +2060,7 @@ touppercase
 tpg
 tr
 trac
+traceback
 traceio
 trainingcoursedata
 trapwrite
