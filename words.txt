@@ -307,6 +307,7 @@ columnindex
 com
 commandid
 commitid
+committer
 commnet
 comms
 compactpci
@@ -1684,6 +1685,7 @@ regserver
 rehome
 relativepath
 releasenotes
+remoting
 removechildbyname
 removehandlerlistener
 removepropertychangelistener
