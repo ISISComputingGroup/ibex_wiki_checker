@@ -1715,6 +1715,7 @@ reversestring
 revsciinstrum
 rf
 rheometer
+rheometers
 rhs
 rhythmbox
 riken
