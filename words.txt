@@ -997,6 +997,7 @@ jubula
 jul
 julabo
 jülich
+julich
 jumpcell
 jun
 junit
