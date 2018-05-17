@@ -748,6 +748,7 @@ gmc
 gnumake
 gnuregex
 gnuwin
+gollum
 gonio
 goniometers
 gonios
