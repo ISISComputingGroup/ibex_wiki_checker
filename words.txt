@@ -352,8 +352,10 @@ creatfieldeditors
 cribsheets
 cryo
 cryogen
+cryogens
 cryomag
 cryomagnet
+cryomagnets
 cryomech
 cryoprotectant
 cryostats
