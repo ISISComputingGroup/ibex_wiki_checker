@@ -547,7 +547,7 @@ enum
 env
 envpaths
 envs
-ePac
+epac
 epicsautomation
 epicsdb
 epicsdocumentation
