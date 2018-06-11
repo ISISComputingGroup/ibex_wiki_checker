@@ -1255,6 +1255,7 @@ namespace
 nano
 nanodac
 nav
+nbsp
 ncap
 nd
 ndemuonfe
@@ -1275,7 +1276,7 @@ ndxxx
 ndxxxx
 ndxxxxxx
 ndxxxxxxx
-nelm
+nelm1
 neocera
 netsh
 netshrvar
