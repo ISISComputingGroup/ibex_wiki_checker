@@ -399,6 +399,7 @@ dataholder
 datasheet
 datasources
 dataweb
+datavolumns
 datedbackupfiles
 db
 dbaccess
@@ -546,6 +547,7 @@ enum
 env
 envpaths
 envs
+ePac
 epicsautomation
 epicsdb
 epicsdocumentation
@@ -1192,6 +1194,7 @@ modbus
 modeled
 modelobject
 modelversion
+modicon
 modulline
 mojo
 moorby
@@ -1212,6 +1215,7 @@ mq
 mres
 msc
 msg
+msglog
 mslits
 mso
 msxml
@@ -1971,6 +1975,7 @@ swt
 sykora
 synapps
 synoptics
+sys
 sysinternels
 tagname
 targetid
@@ -2018,6 +2023,7 @@ tightvnc
 tighvnc
 timeout
 timeouts
+timescale
 timescales
 timesheets
 timestamp
