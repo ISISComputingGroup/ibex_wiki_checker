@@ -801,6 +801,7 @@ highlimit
 hightech
 hightfurnace
 hihi
+hirst
 histogrammed
 hitachi
 hm
@@ -1291,6 +1292,7 @@ nicos
 nicoslivewidget
 nid
 nim
+nima
 nl
 nmake
 noa
@@ -1343,6 +1345,7 @@ notehameg
 notehe
 notehelevelgauge
 notehelm
+notehirst
 notehitachi
 notehsastriumchopper
 notehsskfchopper
@@ -1357,6 +1360,7 @@ notejjxray
 notejulabo
 notekeithley
 notekepco
+noteknauerhplc
 noteknauer
 notelakeshore
 notelaser
@@ -1378,11 +1382,13 @@ noteneocera
 notenewportmotor
 noteni
 notenidigitiser
+notenimatrough
 noteoi
 noteomron
 noteomronplc
 noteorangecryostat
 noteorc
+noteoerlikon
 noteorcollimator
 noteortec
 noteoxfordinstruments
@@ -1421,6 +1427,7 @@ notethar
 notetheodolite
 notethermocouplebox
 notethurlby
+notethurlyby
 notetjumpcell
 notetransmissionmonitor
 notevacuum
@@ -1442,6 +1449,7 @@ observablefactory
 observabletitlemodel
 obsfactory
 oct
+oerlikon
 officepc
 offline
 offspec
