@@ -29,6 +29,7 @@ adel
 adjected
 admin
 adminstrator
+aeroflex
 advfirewall
 aebc
 af
@@ -89,6 +90,7 @@ archiveraccess
 archivers
 archvive
 areadetector
+arduino
 arg
 args
 arinst
@@ -685,6 +687,7 @@ gdtext
 gedit
 geiger
 genesys
+genuino
 geombox
 geosystems
 getactionslist
@@ -739,6 +742,7 @@ gif
 gigabit
 gige
 gir
+gimbal
 gitattributes
 github
 github's
@@ -1165,6 +1169,7 @@ mdel
 mecury
 menucontribution
 mercuryitc
+merlin
 messsage
 metadata
 methodname
@@ -1529,6 +1534,7 @@ perspectiveextension
 perspectiveextensions
 perspectiveid
 perspectiveswitcher
+piezo
 pf
 pfeiffer
 pg
@@ -2128,6 +2134,7 @@ unicast
 uninstall
 unittest
 unix
+uno
 unpolarised
 unstage
 unstaged
@@ -2201,6 +2208,7 @@ weblinks
 webpage
 webpages
 webserver
+weeder
 wf
 widgetcontroller
 widgetproperties
