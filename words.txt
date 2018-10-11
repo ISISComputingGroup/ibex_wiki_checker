@@ -17,7 +17,6 @@ activeline
 activemq
 addchild
 addes
-addfield
 addhandlerlistener
 addobserver
 addpropertychangelistener
@@ -30,6 +29,7 @@ adel
 adjected
 admin
 adminstrator
+aeroflex
 advfirewall
 aebc
 af
@@ -90,6 +90,7 @@ archiveraccess
 archivers
 archvive
 areadetector
+arduino
 arg
 args
 arinst
@@ -142,6 +143,8 @@ autconsoleprefix
 autocrlf
 autocrop
 autofocussing
+autofocus
+autologon
 autorun
 autosave
 autosaves
@@ -208,6 +211,7 @@ ca
 cacbe
 cachefatal
 cachingobservable
+caen
 caget
 cainfo
 caj
@@ -230,6 +234,7 @@ caputrecorder
 careconnect
 carepeater
 cartoonified
+caruana 
 cas
 casnooper
 catalog
@@ -304,6 +309,7 @@ columnindex
 com
 commandid
 commitid
+committer
 commnet
 comms
 compactpci
@@ -348,8 +354,10 @@ creatfieldeditors
 cribsheets
 cryo
 cryogen
+cryogens
 cryomag
 cryomagnet
+cryomagnets
 cryomech
 cryoprotectant
 cryostats
@@ -393,6 +401,7 @@ dataholder
 datasheet
 datasources
 dataweb
+datavolumns
 datedbackupfiles
 db
 dbaccess
@@ -420,6 +429,7 @@ dd
 dda
 ddcaccd
 deadband
+deadbands
 def
 defaultdatasource
 defaulthandler
@@ -539,6 +549,7 @@ enum
 env
 envpaths
 envs
+epac
 epicsautomation
 epicsdb
 epicsdocumentation
@@ -596,6 +607,7 @@ fieldassist
 fileadmin
 filelist
 filename
+filepath
 fileserver
 filesystem
 filewatcher
@@ -653,9 +665,11 @@ galilcontroller
 galilmc
 galilnn
 galils
+galil's
 galilsup
 galilxx
 gallil
+gamry
 gateresources
 gaussmeter
 gazcell
@@ -673,6 +687,7 @@ gdtext
 gedit
 geiger
 genesys
+genuino
 geombox
 geosystems
 getactionslist
@@ -727,6 +742,7 @@ gif
 gigabit
 gige
 gir
+gimbal
 gitattributes
 github
 github's
@@ -741,6 +757,7 @@ gmc
 gnumake
 gnuregex
 gnuwin
+gollum
 gonio
 goniometers
 gonios
@@ -752,6 +769,7 @@ goudsmit
 gov
 gowrishankarnath
 gpib
+grafana
 grep
 griddata
 gridlayout
@@ -788,6 +806,7 @@ highlimit
 hightech
 hightfurnace
 hihi
+hirst
 histogrammed
 hitachi
 hm
@@ -970,10 +989,13 @@ jenkins
 jenkinsfile
 jface
 jit
+jittering
+jitter
 jj
 jjxray
 jlich
 jms
+joda
 journalparser
 journalparserapp
 journalparsersup
@@ -987,7 +1009,9 @@ jspx
 jubula
 jul
 julabo
+julabos
 jülich
+julich
 jumpcell
 jun
 junit
@@ -1136,6 +1160,7 @@ mca
 mcag
 mclen
 mclennan
+mclennan's
 mcp
 mcwhan
 md
@@ -1144,6 +1169,7 @@ mdel
 mecury
 menucontribution
 mercuryitc
+merlin
 messsage
 metadata
 methodname
@@ -1177,6 +1203,7 @@ modbus
 modeled
 modelobject
 modelversion
+modicon
 modulline
 mojo
 moorby
@@ -1197,6 +1224,7 @@ mq
 mres
 msc
 msg
+msglog
 mslits
 mso
 msxml
@@ -1236,6 +1264,7 @@ namespace
 nano
 nanodac
 nav
+nbsp
 ncap
 nd
 ndemuonfe
@@ -1256,7 +1285,7 @@ ndxxx
 ndxxxx
 ndxxxxxx
 ndxxxxxxx
-nelm
+nelm1
 neocera
 netsh
 netshrvar
@@ -1271,6 +1300,7 @@ nicos
 nicoslivewidget
 nid
 nim
+nima
 nl
 nmake
 noa
@@ -1323,6 +1353,7 @@ notehameg
 notehe
 notehelevelgauge
 notehelm
+notehirst
 notehitachi
 notehsastriumchopper
 notehsskfchopper
@@ -1337,6 +1368,7 @@ notejjxray
 notejulabo
 notekeithley
 notekepco
+noteknauerhplc
 noteknauer
 notelakeshore
 notelaser
@@ -1358,11 +1390,13 @@ noteneocera
 notenewportmotor
 noteni
 notenidigitiser
+notenimatrough
 noteoi
 noteomron
 noteomronplc
 noteorangecryostat
 noteorc
+noteoerlikon
 noteorcollimator
 noteortec
 noteoxfordinstruments
@@ -1401,6 +1435,7 @@ notethar
 notetheodolite
 notethermocouplebox
 notethurlby
+notethurlyby
 notetjumpcell
 notetransmissionmonitor
 notevacuum
@@ -1422,6 +1457,7 @@ observablefactory
 observabletitlemodel
 obsfactory
 oct
+oerlikon
 officepc
 offline
 offspec
@@ -1498,6 +1534,7 @@ perspectiveextension
 perspectiveextensions
 perspectiveid
 perspectiveswitcher
+piezo
 pf
 pfeiffer
 pg
@@ -1526,12 +1563,14 @@ poe
 polaris
 polariscalculations
 polarizer
+polref
 pom
 portconfigure
 positioner
 postgres
 postiocinit
 postsetinstrument
+potentiostat
 powercycling
 powerpoint
 ppt
@@ -1543,6 +1582,7 @@ preferencecustomization
 preferencepages
 prefs
 preiocinit
+prepend
 prepends
 presentability
 presetinstrument
@@ -1604,6 +1644,7 @@ py
 pyc
 pycharm
 pyctl
+pydev
 pyepics
 pygame
 pyguide
@@ -1659,6 +1700,8 @@ refactor
 refactored
 refactoring
 reflectometer
+reflectometers
+reflectometry
 refs
 regedit
 regex
@@ -1670,6 +1713,7 @@ regserver
 rehome
 relativepath
 releasenotes
+remoting
 removechildbyname
 removehandlerlistener
 removepropertychangelistener
@@ -1699,6 +1743,7 @@ reversestring
 revsciinstrum
 rf
 rheometer
+rheometers
 rhs
 rhythmbox
 riken
@@ -1936,6 +1981,8 @@ sudo
 sumitomo
 superclasses
 superlogics
+supermirror
+supermirrors
 superseeded
 surefire
 svcs
@@ -1946,6 +1993,7 @@ swt
 sykora
 synapps
 synoptics
+sys
 sysinternels
 tagname
 targetid
@@ -1993,6 +2041,7 @@ tightvnc
 tighvnc
 timeout
 timeouts
+timescale
 timescales
 timesheets
 timestamp
@@ -2044,6 +2093,7 @@ touppercase
 tpg
 tr
 trac
+traceback
 traceio
 trainingcoursedata
 trapwrite
@@ -2084,6 +2134,8 @@ unicast
 uninstall
 unittest
 unix
+uno
+unpolarised
 unstage
 unstaged
 unsubscriber
@@ -2156,6 +2208,7 @@ weblinks
 webpage
 webpages
 webserver
+weeder
 wf
 widgetcontroller
 widgetproperties
@@ -2223,3 +2276,8 @@ zhi
 zlib
 zlo
 znam
+ibthx
+noteweeder
+noteisisenvironmentmonitor
+noteomega
+metrolab
