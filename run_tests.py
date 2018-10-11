@@ -6,19 +6,15 @@ import argparse
 from wiki import Wiki, MARKDOWN, RST
 
 from tests.page_tests import PageTests
+from tests.shadow_mirroring_tests import ShadowReplicationTests
 
 
-def run_spell_checker(reports_path, pages):
-    """
-    Check the spelling in a given wiki
+DEV_MANUAL = Wiki("ibex_developers_manual", MARKDOWN)
+IBEX_MANUAL = Wiki("IBEX", MARKDOWN)
+USER_MANUAL = Wiki("ibex_user_manual", RST)
 
-    Args
-        wiki: The wiki to check
-        reports_path: The path to put the test report
 
-    Returns
-        True if spelling ok, else False
-    """
+def run_tests_on_pages(reports_path, pages, test_class):
     suite = unittest.TestSuite()
     loader = unittest.TestLoader()
 
@@ -26,7 +22,7 @@ def run_spell_checker(reports_path, pages):
     # unittest's test loader is unable to take arguments to test classes by default so have
     # to use the getTestCaseNames() syntax and explicitly add the argument ourselves.
     for page in pages:
-        suite.addTests([PageTests(test, page) for test in loader.getTestCaseNames(PageTests)])
+        suite.addTests([test_class(test, page) for test in loader.getTestCaseNames(test_class)])
 
     runner = XMLTestRunner(output=str(reports_path), stream=sys.stdout)
     return runner.run(suite).wasSuccessful()
@@ -50,19 +46,20 @@ def run_all_tests(single_file, remote):
     return_values = []
 
     if remote:
-        wikis = [
-            Wiki("ibex_wiki_checker", MARKDOWN),
-            Wiki("ibex_developers_manual", MARKDOWN),
-            Wiki("IBEX", MARKDOWN),
-            Wiki("ibex_user_manual", RST),
-        ]
-
-        for wiki in wikis:
+        for wiki in [DEV_MANUAL, IBEX_MANUAL, USER_MANUAL]:
             with wiki:
-                return_values.append(run_spell_checker(os.path.join(reports_path, wiki.name), wiki.get_pages()))
+                return_values.append(run_tests_on_pages(
+                    os.path.join(reports_path, wiki.name), wiki.get_pages(), test_class=PageTests))
+
+        for wiki in [DEV_MANUAL, USER_MANUAL]:
+            with wiki:
+                # Only do shadow replication tests in "remote" mode.
+                return_values.append(run_tests_on_pages(
+                    os.path.join(reports_path, wiki.name), wiki.get_pages(), test_class=ShadowReplicationTests))
     else:
-        return_values.append(
-            run_spell_checker(os.path.join(reports_path, os.path.basename(single_file)), [single_file]))
+        return_values.append(run_tests_on_pages(
+                os.path.join(reports_path, os.path.basename(single_file)), [single_file], test_class=PageTests))
+
     return all(value for value in return_values)
 
 
