@@ -48,12 +48,14 @@ def run_all_tests(single_file, remote):
     if remote:
         for wiki in [DEV_MANUAL, IBEX_MANUAL, USER_MANUAL]:
             with wiki:
+                print("Running spelling tests")
                 return_values.append(run_tests_on_pages(
                     os.path.join(reports_path, wiki.name), wiki.get_pages(), test_class=PageTests))
 
         for wiki in [DEV_MANUAL, USER_MANUAL]:
             with wiki:
                 # Only do shadow replication tests in "remote" mode.
+                print("Running shadow replication tests")
                 return_values.append(run_tests_on_pages(
                     os.path.join(reports_path, wiki.name), wiki.get_pages(), test_class=ShadowReplicationTests))
     else:
