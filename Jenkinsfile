@@ -22,7 +22,7 @@ pipeline {
       steps {
         
         bat """
-            call run_tests.bat || echo "running tests failed."
+            call run_tests.bat
             """
       }
     }
