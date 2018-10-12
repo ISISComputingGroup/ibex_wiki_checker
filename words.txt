@@ -227,6 +227,7 @@ calcsupport
 calculatemeanspeed
 calib
 camonitor
+capelli
 capitialised
 caproto
 caput
@@ -250,6 +251,7 @@ ccr
 ccrs
 cd
 cdaqs
+cdaq
 cdc
 cdn
 cdrecorder
@@ -1119,6 +1121,7 @@ ls
 lsrch
 lsv
 ltc
+lua
 lv
 lvcom
 lvdcom
@@ -1249,6 +1252,7 @@ muonscript
 musr
 mv
 mvn
+mx
 myapp
 mybutton
 myexample
@@ -2112,6 +2116,7 @@ traceio
 trainingcoursedata
 trapwrite
 triton
+tritons
 ts
 tti
 ttiex
