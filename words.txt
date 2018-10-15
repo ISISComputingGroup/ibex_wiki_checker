@@ -1462,6 +1462,7 @@ nov
 np
 npcap
 nport
+nr
 nset
 nt
 nullhttpd
@@ -2300,3 +2301,4 @@ noteweeder
 noteisisenvironmentmonitor
 noteomega
 metrolab
+vsdx
