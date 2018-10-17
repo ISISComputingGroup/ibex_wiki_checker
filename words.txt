@@ -1,3 +1,4 @@
+µsr
 aa
 aaaf
 aarhus
@@ -12,6 +13,7 @@ ac
 accesssecurity
 acf
 acqiris
+﻿acquisition
 acro
 actionlist
 activeline
@@ -29,10 +31,11 @@ ade
 adel
 adjected
 admin
+admins
 adminstrator
-aeroflex
 advfirewall
 aebc
+aeroflex
 af
 afg
 agentlib
@@ -91,8 +94,8 @@ archiver
 archiveraccess
 archivers
 archvive
-areadetector
 arduino
+areadetector
 arg
 args
 arinst
@@ -144,15 +147,15 @@ aut
 autconsoleprefix
 autocrlf
 autocrop
-autofocussing
 autofocus
+autofocussing
 autologon
 autorun
 autosave
-autosaves
 autosaved
 autosavefields
 autosavereq
+autosaves
 autoselected
 autostart
 autotune
@@ -250,8 +253,8 @@ cclrc
 ccr
 ccrs
 cd
-cdaqs
 cdaq
+cdaqs
 cdc
 cdn
 cdrecorder
@@ -259,6 +262,7 @@ ce
 cea
 cecee
 center
+cf
 cfc
 cget
 cgi
@@ -343,6 +347,7 @@ convertxy
 coord
 copt
 correlationid
+correlator
 couette
 cp
 cport
@@ -361,6 +366,7 @@ cryogen
 cryogens
 cryomag
 cryomagnet
+cryomagnetics
 cryomagnets
 cryomech
 cryoprotectant
@@ -385,7 +391,6 @@ cybaman
 cybamantech
 cygdrive
 cygwin
-d's
 da
 dae
 danfysik
@@ -404,8 +409,8 @@ datacollection
 dataholder
 datasheet
 datasources
-dataweb
 datavolumns
+dataweb
 datedbackupfiles
 db
 dbaccess
@@ -507,6 +512,7 @@ drvasynipport
 drvasynipportconfigure
 drvasynserialport
 drvasynserialportconfigure
+d's
 dset
 dstport
 dtyp
@@ -589,7 +595,6 @@ exsd
 extensionsmanuals
 extint
 extweb
-f's
 fa
 fae
 failover
@@ -656,6 +661,7 @@ frm
 fromobject
 frontend
 frontpanel
+f's
 fslash
 fsm
 fsmregistrar
@@ -673,6 +679,7 @@ galil's
 galilsup
 galilxx
 gallil
+gamekeeper
 gamry
 gateresources
 gaussmeter
@@ -746,8 +753,8 @@ gibbins
 gif
 gigabit
 gige
-gir
 gimbal
+gir
 gitattributes
 github
 github's
@@ -791,6 +798,7 @@ haake
 hackathon
 hameg
 handlerlistener
+handovers
 hardcoded
 hardlimits
 hardwired
@@ -838,6 +846,7 @@ hyperterminal
 i
 ibexdataweb
 ibexutils
+ibthx
 ic
 icap
 iconsole
@@ -867,7 +876,6 @@ ilm
 ils
 imagej
 imat
-in's
 inam
 incl
 incompletesetsok
@@ -896,6 +904,7 @@ inpc
 inpd
 inpe
 inputted
+in's
 instlist
 instmachine
 instname
@@ -913,7 +922,6 @@ invocationonmock
 io
 iobservablevalue
 ioc
-ioc's
 iocadminsoft
 iocamint
 iocboot
@@ -937,6 +945,7 @@ iocrand
 iocrt
 iocrun
 iocs
+ioc's
 iocseqex
 iocsimple
 iocstartup
@@ -997,8 +1006,8 @@ jenkins
 jenkinsfile
 jface
 jit
-jittering
 jitter
+jittering
 jj
 jjxray
 jlich
@@ -1019,8 +1028,8 @@ jubula
 jul
 julabo
 julabos
-jülich
 julich
+jülich
 jumpcell
 jun
 junit
@@ -1055,6 +1064,7 @@ lblname
 lbltitle
 lc
 leica
+leiden
 lemieux
 lewis
 leybold
@@ -1088,6 +1098,7 @@ linmot
 linmots
 linux
 listname
+liveview
 lksh
 lkup
 llb
@@ -1184,6 +1195,7 @@ merlin
 messsage
 metadata
 methodname
+metrolab
 mf
 mfe
 mhz
@@ -1194,6 +1206,7 @@ min
 minimumwidth
 minnumber
 minoccurs
+mins
 mirrortron
 mis
 misconfigured
@@ -1252,6 +1265,7 @@ muonscript
 musr
 mv
 mvn
+mw
 mx
 myapp
 mybutton
@@ -1377,14 +1391,15 @@ notehvcentrestick
 notehydrothermal
 noteimshutter
 noteisischopper
+noteisisenvironmentmonitor
 noteisisfurnaces
 notejaws
 notejjxray
 notejulabo
 notekeithley
 notekepco
-noteknauerhplc
 noteknauer
+noteknauerhplc
 notelakeshore
 notelaser
 noteleybold
@@ -1406,12 +1421,13 @@ notenewportmotor
 noteni
 notenidigitiser
 notenimatrough
+noteoerlikon
 noteoi
+noteomega
 noteomron
 noteomronplc
 noteorangecryostat
 noteorc
-noteoerlikon
 noteorcollimator
 noteortec
 noteoxfordinstruments
@@ -1456,6 +1472,7 @@ notetransmissionmonitor
 notevacuum
 notevacuumpump
 notewaterbath
+noteweeder
 notexyztable
 noteyztable
 nov
@@ -1498,6 +1515,7 @@ oopt
 opcoach
 openchrom
 openedresultsset
+opengenie
 opengl
 openssl
 openwire
@@ -1505,6 +1523,7 @@ opi
 opibuilder
 opis
 oram
+ordela
 ored
 org
 originaliocname
@@ -1531,9 +1550,9 @@ parallelisation
 param
 params
 paris   
-patrik
 passphrase
 pasynuser
+patrik
 patsubst
 patternlayout
 patton
@@ -1551,7 +1570,6 @@ perspectiveextension
 perspectiveextensions
 perspectiveid
 perspectiveswitcher
-piezo
 pf
 pfeiffer
 pg
@@ -1561,6 +1579,7 @@ php
 physik
 physikinstrumente
 pid
+piezo
 pinholeselector
 pini
 pixelman
@@ -1571,9 +1590,9 @@ plc
 plcip
 plt
 plugin
-plugin's
 plugincustomization
 plugins
+plugin's
 pmd
 pn
 png
@@ -1604,6 +1623,7 @@ preiocinit
 prepend
 prepends
 presentability
+preset
 presetinstrument
 presetinstruments
 preshutdown
@@ -1636,7 +1656,6 @@ pugixml
 purejava
 pushd
 pv
-pv's
 pvaccess
 pvaccesscpp
 pvaclient
@@ -1656,6 +1675,7 @@ pvmanager
 pvname
 pvprefix
 pvs
+pv's
 pvsets
 px
 pxi
@@ -1695,6 +1715,7 @@ readback
 readbacks
 readded
 readme
+readmes
 readonly
 readsetpointcurrent
 readthedocs
@@ -1808,6 +1829,8 @@ schemalocation
 schemeid
 schwarz
 scientificmagnetics
+scintillator
+scipy
 scm
 screenshot
 screenshots
@@ -1881,6 +1904,7 @@ sgi
 sh
 sha
 sharepoint
+shm
 shotwell
 showbanner
 showtitle
@@ -2039,6 +2063,7 @@ tempalooza
 temperatue
 templated
 terminolgy
+teslameter
 tessella
 testasub
 testblock
@@ -2151,6 +2176,7 @@ un
 uncalibrated
 unhandled
 unicast
+unilever
 uninstall
 unittest
 unix
@@ -2211,16 +2237,20 @@ vm
 vms
 vogella
 vs
+vsdx
 vt
 vti
 vx
 w
 waitfor
 waitfortype
+wal
+walkthrough
 waterbath
 wb
 wcrev
 webaccounts
+webcam
 webdashboard
 webget
 webkit
@@ -2256,6 +2286,7 @@ writables
 writeconnected
 writecurrent
 writefactory
+wtek
 www
 wwwroot
 xaaa
@@ -2291,14 +2322,9 @@ yyyy
 za
 zenity
 zeromq
+zeroth
 zhex
 zhi
 zlib
 zlo
 znam
-ibthx
-noteweeder
-noteisisenvironmentmonitor
-noteomega
-metrolab
-vsdx
