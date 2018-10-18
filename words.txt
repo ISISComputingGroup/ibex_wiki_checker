@@ -2144,6 +2144,7 @@ trapwrite
 triton
 tritons
 ts
+tst
 tti
 ttiex
 tunable
