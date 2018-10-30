@@ -490,6 +490,7 @@ dk
 dll
 dllhost
 dlls
+dls
 dmm
 dmov
 dobinding
@@ -849,6 +850,7 @@ htm
 htmlreport
 htmltidy
 https
+huber
 hvcaen
 hvcaenx
 hyperterminal
@@ -890,6 +892,7 @@ incl
 incompletesetsok
 ind
 indexoutofboundsexception
+ines
 inet
 inetpub
 inf
@@ -1460,6 +1463,7 @@ notenimatrough
 noteoerlikon
 noteoi
 noteomega
+noteomegapac
 noteomron
 noteomronplc
 noteorangecryostat
@@ -1590,6 +1594,7 @@ overspeed
 oxford
 oxfordinstruments
 paar
+pac
 packagename
 pao
 parallelisation
@@ -1835,6 +1840,7 @@ rheometers
 rhs
 rhythmbox
 riken
+rikenfe
 riverbankcomputing
 rl
 rlower
