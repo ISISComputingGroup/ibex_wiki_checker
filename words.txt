@@ -96,6 +96,8 @@ archiveraccess
 archivers
 archvive
 arduino
+Arduino
+Arduino's
 areadetector
 arg
 args
@@ -1806,6 +1808,7 @@ regserver
 rehome
 relativepath
 releasenotes
+reimplemented
 remoting
 removechildbyname
 removehandlerlistener
@@ -2133,6 +2136,7 @@ thermoelectriccell
 thermoscientific
 thermostating
 thinksrs
+tkinter
 thisthingisreallybig
 thn
 throwable
@@ -2388,3 +2392,6 @@ zhi
 zlib
 zlo
 znam
+Rikenfe
+Ines
+noteOmegaPAC
