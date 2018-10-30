@@ -844,6 +844,7 @@ hostname
 hotfix
 hotfixes
 hp
+hplc
 hprof
 href
 hsv
@@ -895,6 +896,7 @@ incompletesetsok
 ind
 indexoutofboundsexception
 ines
+Ines
 inet
 inetpub
 inf
@@ -1466,6 +1468,7 @@ noteoerlikon
 noteoi
 noteomega
 noteomegapac
+noteOmegaPAC
 noteomron
 noteomronplc
 noteorangecryostat
@@ -1806,9 +1809,9 @@ registerrecorddevicedriver
 registryfunction
 regserver
 rehome
+reimplemented
 relativepath
 releasenotes
-reimplemented
 remoting
 removechildbyname
 removehandlerlistener
@@ -1844,6 +1847,7 @@ rhs
 rhythmbox
 riken
 rikenfe
+Rikenfe
 riverbankcomputing
 rl
 rlower
@@ -2136,7 +2140,6 @@ thermoelectriccell
 thermoscientific
 thermostating
 thinksrs
-tkinter
 thisthingisreallybig
 thn
 throwable
@@ -2159,6 +2162,7 @@ titlevar
 tizrcell
 tk
 tkgenie
+tkinter
 tlccr
 tmagnet
 tmp
@@ -2392,6 +2396,3 @@ zhi
 zlib
 zlo
 znam
-Rikenfe
-Ines
-noteOmegaPAC
