@@ -16,6 +16,10 @@ def url_from_file_location(file_location):
     return "{}/{}".format(SHADOW_URL, relative_path_without_extension.replace("\\", "/"))
 
 
+def get_response_from_shadow(url):
+    return requests.get(url, timeout=20)  # 20s timeout as shadow can be quite slow to respond, 10s is not enough.
+
+
 class ShadowReplicationTests(unittest.TestCase):
 
     def __init__(self, methodName, page=None):
@@ -29,11 +33,8 @@ class ShadowReplicationTests(unittest.TestCase):
         self.assertIsNotNone(self.page, "Cannot test if no page provided")
 
     def test_GIVEN_page_then_its_content_is_accessible_on_shadow(self):
-
         url = url_from_file_location(self.page)
-
-        # 20s timeout as shadow can be quite slow to respond, 10s is not enough.
-        response = requests.get(url, timeout=20)
+        response = get_response_from_shadow(url)
 
         self.assertEqual(response.status_code, HTTP_OK,
                          "Page {} returned status code {}".format(url, response.status_code))
