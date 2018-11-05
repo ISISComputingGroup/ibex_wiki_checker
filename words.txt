@@ -1051,6 +1051,7 @@ jumpcell
 jun
 junit
 junitreport
+jusched
 jvisualvm
 kafka
 kammrath
@@ -1269,6 +1270,7 @@ mozilla
 mq
 mres
 msc
+msconfig
 msg
 msglog
 mslits
@@ -2188,6 +2190,7 @@ tocparallelbuild
 tocreleases
 tocspecificdevices
 tocsprintdemos
+tocSynoptics
 tocvision
 tocvs
 tol
