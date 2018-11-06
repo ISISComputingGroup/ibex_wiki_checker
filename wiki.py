@@ -39,4 +39,4 @@ class Wiki(object):
         git.Git(repo_path).clone("https://github.com/ISISComputingGroup/{}.wiki.git".format(self.name), repo_path)
 
     def get_pages(self):
-        return find_files_with_extension(self.get_path(), "md" if self.format is MARKDOWN else "rst")
+        return find_files_with_extension(self.get_path(), "md" if self.format is MARKDOWN else "rest")
