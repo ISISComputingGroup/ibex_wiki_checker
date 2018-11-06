@@ -170,6 +170,7 @@ ba
 backdoor
 backend
 backtraces
+baldor
 bannercomposite
 baratron
 baritron
