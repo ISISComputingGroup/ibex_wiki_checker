@@ -96,8 +96,8 @@ archiveraccess
 archivers
 archvive
 arduino
-Arduino
-Arduino's
+arduino
+arduino's
 areadetector
 arg
 args
@@ -898,7 +898,7 @@ incompletesetsok
 ind
 indexoutofboundsexception
 ines
-Ines
+ines
 inet
 inetpub
 inf
@@ -1472,7 +1472,7 @@ noteoerlikon
 noteoi
 noteomega
 noteomegapac
-noteOmegaPAC
+noteomegapac
 noteomron
 noteomronplc
 noteorangecryostat
@@ -1851,7 +1851,7 @@ rhs
 rhythmbox
 riken
 rikenfe
-Rikenfe
+rikenfe
 riverbankcomputing
 rl
 rlower
