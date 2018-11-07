@@ -686,6 +686,7 @@ fsmregistrar
 fta
 ftraining
 ftvl
+func
 fzj
 galil
 galiladdr
@@ -2075,6 +2076,7 @@ stats
 statusbar
 std
 stdlib
+stepsi
 stfc
 stoed
 stoo
