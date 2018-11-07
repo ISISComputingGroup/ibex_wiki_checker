@@ -150,6 +150,8 @@ atto
 attocube
 aut
 autconsoleprefix
+autocomplete
+autocompletewindowbasic
 autocrlf
 autocrop
 autofocus
@@ -369,6 +371,7 @@ createsimpleioc
 createtime
 creatfieldeditors
 cribsheets
+crtl
 cryo
 cryogen
 cryogens
@@ -415,6 +418,7 @@ databindingcontext
 databrowser
 databrowsers
 datacollection
+datafile
 dataholder
 datasheet
 datasources
@@ -996,6 +1000,7 @@ isissupport
 iso
 istartup
 istatus
+istep
 isvisible
 isvisibledefault
 iswritable
@@ -1220,10 +1225,13 @@ messsage
 metadata
 methodname
 metrolab
+mevents
 mf
 mfe
 mhz
 michal
+microamps
+microamps
 microsoft
 middleware
 min
@@ -1285,6 +1293,7 @@ mulitmeters
 multibyte
 multichannel
 multimeters
+multip
 muonfe
 muongui
 muonscript
@@ -1350,12 +1359,16 @@ newline
 newport
 newportsrc
 newvalue
+nframes
+nframes
 ni
 nicos
 nicoslivewidget
 nid
 nim
 nima
+nimages
+nimages
 nl
 nmake
 nneji
@@ -1541,6 +1554,7 @@ npcap
 nport
 nr
 nset
+nsteps
 nt
 nullhttpd
 num
@@ -1578,6 +1592,7 @@ openedresultsset
 opengenie
 opengl
 openssl
+openthescriptingperspective
 openwire
 opi
 opibuilder
@@ -1645,6 +1660,7 @@ pid
 piezo
 pinholeselector
 pini
+pis
 pixelman
 pl
 placeholder
@@ -1672,6 +1688,7 @@ postgres
 postiocinit
 postsetinstrument
 potentiostat
+pow
 powercycling
 powerpoint
 ppt
@@ -1817,6 +1834,8 @@ rehome
 reimplemented
 relativepath
 releasenotes
+remoteip
+remoteport
 remoting
 removechildbyname
 removehandlerlistener
@@ -2042,6 +2061,8 @@ sso
 sss
 st
 stackoverflow
+standardstartupoutputondemo
+standout
 standup
 startcard
 startdate
@@ -2082,6 +2103,7 @@ stt
 styleguide
 subclassing
 subdirs
+subdomain
 subfolder
 submodule
 submodules
@@ -2128,6 +2150,7 @@ tektronix
 tempalooza
 temperatue
 templated
+temptitle
 terminolgy
 teslameter
 teslatron
@@ -2195,6 +2218,7 @@ tocsprintdemos
 tocsynoptics
 tocvision
 tocvs
+tof
 tol
 tolowercase
 toolbar
@@ -2204,6 +2228,7 @@ tooltips
 toppinglist
 toseloc
 tostring
+totalcounts
 touppercase
 tpg
 tr
@@ -2240,6 +2265,7 @@ ubuntu
 uc
 udp
 udunits
+ueip
 ui
 uis
 uk
@@ -2316,6 +2342,7 @@ vti
 vx
 w
 waitfor
+waitformove
 waitfortype
 wal
 walkthrough
