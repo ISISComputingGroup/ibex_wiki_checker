@@ -591,6 +591,7 @@ epicsthreadgetidself
 epicsthreadgetnameself
 epicsthreadgetpriorityself
 errlog
+erroring
 errorx
 esc
 etc
@@ -1270,6 +1271,7 @@ motionsetpoints
 motionsetpointsconfigure
 motionssetpoint
 motorapp
+motorextension
 motorextensions
 motorrecord
 motorsrc
