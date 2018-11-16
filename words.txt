@@ -2069,6 +2069,7 @@ stackoverflow
 standardstartupoutputondemo
 standout
 standup
+stanford
 startcard
 startdate
 startinstdir
