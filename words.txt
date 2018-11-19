@@ -873,6 +873,8 @@ ibexutils
 ibthx
 ic
 icap
+icecube
+iceoxford
 iconsole
 icp
 icpbinarydir
