@@ -645,6 +645,7 @@ findbugs
 findclass
 finstron
 finsudpinit
+firefox
 firepropertychange
 firstmock
 fisis
