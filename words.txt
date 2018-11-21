@@ -193,6 +193,7 @@ beamline
 beamlines
 beamscraper
 beamstop
+beamoff
 beanproperties
 beb
 beckhoff
@@ -1568,6 +1569,7 @@ nullhttpd
 num
 numpy
 numseqfiles
+nutter
 observablefactory
 observabletitlemodel
 obsfactory
