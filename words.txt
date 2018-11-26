@@ -193,6 +193,7 @@ beamline
 beamlines
 beamscraper
 beamstop
+beamoff
 beanproperties
 beb
 beckhoff
@@ -646,6 +647,7 @@ findbugs
 findclass
 finstron
 finsudpinit
+firefox
 firepropertychange
 firstmock
 fisis
@@ -1568,6 +1570,7 @@ nullhttpd
 num
 numpy
 numseqfiles
+nutter
 observablefactory
 observabletitlemodel
 obsfactory
