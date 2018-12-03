@@ -11,7 +11,6 @@ abon
 abstractuiplugin
 ac
 accesssecurity
-enablement
 acf
 acqiris
 ﻿acquisition
@@ -221,6 +220,7 @@ btnset
 btnupdate
 bumpstrip
 bundleactivator
+bundleclass
 bundlecontext
 bytecode
 ca
@@ -569,6 +569,7 @@ electrometers
 elektronika
 emma's
 emptylist
+enablement
 endian
 endif
 eng
@@ -801,6 +802,7 @@ gonios
 goodway
 google
 googleable
+googletest
 goran
 gossen
 gotchas
@@ -1031,6 +1033,7 @@ javadocs
 javascript
 javase
 javaw
+javax
 jawset
 jca
 jcacontext
@@ -2423,6 +2426,7 @@ xsl
 xsltproc
 xslx
 xul
+xunit
 xx
 xxx
 xxxx
