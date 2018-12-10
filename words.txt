@@ -1292,6 +1292,7 @@ motorutils
 movingmonitor
 moxa
 mozilla
+MPa
 mq
 mres
 msc
