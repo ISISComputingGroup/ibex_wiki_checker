@@ -621,6 +621,7 @@ extweb
 fa
 fae
 failover
+fanout
 fastshutter
 fc
 fcaacdf
@@ -1293,6 +1294,7 @@ movingmonitor
 moxa
 mozilla
 MPa
+mpa
 mq
 mres
 msc
