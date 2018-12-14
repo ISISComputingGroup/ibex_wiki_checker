@@ -621,6 +621,7 @@ extweb
 fa
 fae
 failover
+fanout
 fastshutter
 fc
 fcaacdf
@@ -1221,8 +1222,10 @@ maxwaitsecs
 mb
 mbbi
 mbbo
+mc
 mca
 mcag
+mg
 mclen
 mclennan
 mclennan's
@@ -1292,6 +1295,8 @@ motorutils
 movingmonitor
 moxa
 mozilla
+MPa
+mpa
 mq
 mres
 msc
