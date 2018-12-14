@@ -2300,6 +2300,7 @@ unittest
 unix
 uno
 unpolarised
+unretrieved
 unstage
 unstaged
 unsubscriber
