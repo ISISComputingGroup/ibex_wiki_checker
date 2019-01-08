@@ -1280,6 +1280,7 @@ modelversion
 modicon
 modulline
 mojo
+monochromator
 moorby
 motionsetpoints
 motionsetpointsconfigure
