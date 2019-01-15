@@ -293,6 +293,7 @@ checkrelease
 checkstyle
 chell
 chopr
+chronus
 ci
 cip
 circulators
