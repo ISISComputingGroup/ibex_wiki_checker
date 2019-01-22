@@ -991,6 +991,7 @@ ioctestframework
 ioctesting
 iocxxxx
 ioint
+iologik
 ip
 ipac
 ipagelayout
@@ -1225,7 +1226,6 @@ mbbo
 mc
 mca
 mcag
-mg
 mclen
 mclennan
 mclennan's
@@ -1245,6 +1245,7 @@ metrolab
 mevents
 mf
 mfe
+mg
 mhz
 michal
 microamps
@@ -1295,7 +1296,7 @@ motorutils
 movingmonitor
 moxa
 mozilla
-MPa
+mpa
 mpa
 mq
 mres
@@ -2242,6 +2243,7 @@ tocsprintdemos
 tocsynoptics
 tocvision
 tocvs
+tocwebdashboard
 tof
 tol
 tolowercase
