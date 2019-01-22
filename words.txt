@@ -2244,6 +2244,7 @@ tocsprintdemos
 tocsynoptics
 tocvision
 tocvs
+tocwebdashboard
 tof
 tol
 tolowercase
