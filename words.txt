@@ -37,6 +37,7 @@ adroja
 advfirewall
 aebc
 aeroflex
+aeroflexifr
 af
 afg
 agentlib
