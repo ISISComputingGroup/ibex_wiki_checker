@@ -998,6 +998,7 @@ ip
 ipac
 ipagelayout
 iprogressmonitor
+ips
 ipython
 irisman
 iristest
