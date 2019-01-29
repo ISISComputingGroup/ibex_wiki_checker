@@ -339,6 +339,7 @@ compactpci
 compgroup
 complextype
 componenticons
+composited
 compositedatasource
 computername
 concatenatenames
@@ -664,6 +665,7 @@ flatbuffers
 flexi
 flexiral
 flnk
+flowrate
 folderctid
 fomr
 foo
@@ -1274,6 +1276,7 @@ mkdir
 mkl
 mks
 mkscript
+ml
 mockconverter
 mockedlist
 mockito
@@ -2445,6 +2448,8 @@ xmi
 xml
 xmlns
 xmlschema
+xoff
+xon
 xrail
 xray
 xsi
