@@ -667,6 +667,7 @@ flexi
 flexiral
 flnk
 flowrate
+fluxgate
 folderctid
 fomr
 foo
