@@ -504,6 +504,7 @@ dir
 dirhtml
 displayname
 dk
+dlink
 dll
 dllhost
 dlls
@@ -870,6 +871,7 @@ horizontalspacing
 hostname
 hotfix
 hotfixes
+howells
 hp
 hplc
 hprof
@@ -1253,6 +1255,7 @@ metadata
 methodname
 metrolab
 mevents
+mezei
 mf
 mfe
 mg
