@@ -11,22 +11,15 @@ abon
 abstractuiplugin
 ac
 accesssecurity
-Beckhoff's
 acf
 acqiris
 ﻿acquisition
 acro
 actionlist
 activeline
-Stil
 activemq
 addchild
-IPv
-Sorb
-hostnames
 addes
-tcIOC
-Beckhoffs
 addhandlerlistener
 addobserver
 addpropertychangelistener
@@ -205,6 +198,8 @@ beamstop
 beanproperties
 beb
 beckhoff
+beckhoffs
+beckhoff's
 behavior
 bessy
 bfb
@@ -880,6 +875,7 @@ homeval
 hopr
 horizontalspacing
 hostname
+hostnames
 hotfix
 hotfixed
 hotfixes
@@ -1020,6 +1016,7 @@ ipac
 ipagelayout
 iprogressmonitor
 ips
+ipv
 ipython
 irisman
 iristest
@@ -2086,6 +2083,7 @@ softlimit
 softlimts
 softmotor
 sonatype
+sorb
 sorption
 sortnr
 sourceencoding
@@ -2135,6 +2133,7 @@ std
 stdlib
 stepsi
 stfc
+stil
 stoed
 stoo
 stp
@@ -2194,6 +2193,7 @@ targettype
 taskbar
 tbc
 tcb
+tcioc
 tcp
 td
 tdk
