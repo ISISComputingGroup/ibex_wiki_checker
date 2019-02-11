@@ -1660,6 +1660,7 @@ outc
 outd
 outh
 outi
+overcount
 overriden
 overspeed
 oxford
@@ -1973,6 +1974,7 @@ scriptserver
 scriptutil
 scv
 sdis
+sdtest
 seci
 seciuserinterface
 secondmock
