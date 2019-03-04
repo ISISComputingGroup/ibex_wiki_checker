@@ -1261,6 +1261,7 @@ mecury
 menucontribution
 mercuryitc
 merlin
+merlin's
 messsage
 metadata
 methodname
