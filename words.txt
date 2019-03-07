@@ -367,6 +367,7 @@ coord
 copt
 correlationid
 correlator
+correlator's
 couette
 cp
 cport
@@ -1194,6 +1195,7 @@ lowercase
 lowlimit
 lowt
 ls
+lsi
 lsrch
 lsv
 ltc
@@ -1234,6 +1236,7 @@ mari
 mars
 martinfowler
 masse
+matlab
 matplotlib
 maven
 max
@@ -2425,6 +2428,8 @@ weblinks
 webpage
 webpages
 webserver
+websocket
+websockets
 weeder
 wf
 widgetcontroller
