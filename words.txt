@@ -561,6 +561,7 @@ ed
 edel
 edinburgh
 editbox
+edwards
 ee
 eed
 eeeb
@@ -695,6 +696,7 @@ forwardslash
 forwlimit
 fp
 fr
+fraser
 freeipport
 frm
 fromobject
@@ -1262,6 +1264,7 @@ mecury
 menucontribution
 mercuryitc
 merlin
+merlin's
 messsage
 metadata
 methodname
@@ -2371,6 +2374,7 @@ utf
 util
 utils
 uzhex
+vac
 val
 vala
 validationstatus
@@ -2503,3 +2507,5 @@ zhi
 zlib
 zlo
 znam
+inc
+cryogenic
