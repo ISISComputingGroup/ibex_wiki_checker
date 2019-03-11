@@ -385,6 +385,7 @@ crtl
 crtscts
 cryo
 cryogen
+cryogenic
 cryogens
 cryomag
 cryomagnet
@@ -933,6 +934,7 @@ ils
 imagej
 imat
 inam
+inc
 incl
 incompletesetsok
 ind
@@ -1345,6 +1347,7 @@ multibyte
 multichannel
 multimeters
 multip
+multithreaded
 muonfe
 muongui
 muonscript
@@ -2507,5 +2510,3 @@ zhi
 zlib
 zlo
 znam
-inc
-cryogenic
