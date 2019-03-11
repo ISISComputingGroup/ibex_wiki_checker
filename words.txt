@@ -1994,6 +1994,7 @@ sendall
 sendslackmessage
 sendtitlesp
 sendto
+sensirion
 sep
 sept
 seq
