@@ -1714,6 +1714,7 @@ physik
 physikinstrumente
 pid
 piezo
+pingable
 pinholeselector
 pini
 pis
