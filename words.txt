@@ -1677,6 +1677,7 @@ oxfordinstruments
 paar
 pac
 packagename
+panchuad
 pao
 parallelisation
 param
