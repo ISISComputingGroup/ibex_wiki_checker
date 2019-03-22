@@ -2513,3 +2513,9 @@ zhi
 zlib
 zlo
 znam
+vmon
+rup
+imon
+pdwn
+μA
+fmw
