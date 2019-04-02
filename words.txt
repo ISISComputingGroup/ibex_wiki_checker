@@ -1413,6 +1413,7 @@ newline
 newport
 newportsrc
 newvalue
+ngem
 nframes
 nframes
 ni
@@ -2514,3 +2515,9 @@ zhi
 zlib
 zlo
 znam
+vmon
+rup
+imon
+pdwn
+μA
+fmw
