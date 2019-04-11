@@ -1090,6 +1090,7 @@ js
 json
 jsp
 jspx
+jstack
 jubula
 jul
 julabo
@@ -1283,6 +1284,7 @@ microamps
 microsoft
 middleware
 min
+minidump
 minimumwidth
 minnumber
 minoccurs
@@ -2310,6 +2312,7 @@ tpg
 tr
 trac
 traceback
+tracebacks
 traceio
 trainingcoursedata
 trapwrite
