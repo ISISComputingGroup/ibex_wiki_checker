@@ -675,6 +675,7 @@ flexiral
 flnk
 flowrate
 fluxgate
+fmw
 folderctid
 fomr
 foo
@@ -933,6 +934,7 @@ ilm
 ils
 imagej
 imat
+imon
 inam
 inc
 incl
@@ -1063,6 +1065,7 @@ javase
 javaw
 javax
 jawset
+jawsets
 jca
 jcacontext
 jdbc
@@ -1413,9 +1416,9 @@ newline
 newport
 newportsrc
 newvalue
+nframes
+nframes
 ngem
-nframes
-nframes
 ni
 nicos
 nicoslivewidget
@@ -1697,6 +1700,7 @@ pdbbase
 pde
 pdf
 pdr
+pdwn
 pended
 performlongtask
 perl
@@ -1956,6 +1960,7 @@ runnima
 runscript
 runstate
 runtransmissions
+rup
 rupper
 rval
 sampleattenuator
@@ -2414,6 +2419,7 @@ visadrv
 viscotherm
 visio
 vm
+vmon
 vms
 vogella
 vs
@@ -2515,9 +2521,4 @@ zhi
 zlib
 zlo
 znam
-vmon
-rup
-imon
-pdwn
-μA
-fmw
+μa
