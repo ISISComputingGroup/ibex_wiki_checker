@@ -548,6 +548,7 @@ dstport
 dtyp
 dx
 earlystartup
+easter
 easysqlite
 eb
 eba
