@@ -903,6 +903,7 @@ huber
 hvcaen
 hvcaenx
 hyperterminal
+hypervisor
 i
 ibexdataweb
 ibexutils
@@ -1657,6 +1658,7 @@ openchrom
 openedresultsset
 opengenie
 opengl
+openjdk
 openssl
 openthescriptingperspective
 openwire
