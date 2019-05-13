@@ -1864,6 +1864,7 @@ rcuk
 rd
 rdb
 rdbl
+rdp
 rdparty
 readactualcurrent
 readascii
