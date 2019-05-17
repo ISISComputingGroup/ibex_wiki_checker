@@ -522,6 +522,7 @@ dmov
 dobinding
 docbook
 dockable
+docker
 docstring
 docstrings
 docu
