@@ -438,6 +438,7 @@ datafile
 dataholder
 datasheet
 datasources
+datastreaming
 datavolumns
 dataweb
 datedbackupfiles
@@ -523,6 +524,7 @@ dmov
 dobinding
 docbook
 dockable
+docker
 docstring
 docstrings
 docu
@@ -550,6 +552,7 @@ dstport
 dtyp
 dx
 earlystartup
+easter
 easysqlite
 eb
 eba
@@ -904,6 +907,7 @@ huber
 hvcaen
 hvcaenx
 hyperterminal
+hypervisor
 i
 ibexdataweb
 ibexutils
@@ -963,6 +967,7 @@ initialiseonsubscribeobservable
 initializedefaultpreferences
 initializer
 initobservable
+inkscape
 innodb
 inorder
 inp
@@ -1435,6 +1440,7 @@ nim
 nima
 nimages
 nimages
+nimrod
 nl
 nmake
 nneji
@@ -1658,6 +1664,7 @@ openchrom
 openedresultsset
 opengenie
 opengl
+openjdk
 openssl
 openthescriptingperspective
 openwire
@@ -1861,6 +1868,7 @@ rcuk
 rd
 rdb
 rdbl
+rdp
 rdparty
 readactualcurrent
 readascii
