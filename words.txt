@@ -14,7 +14,6 @@ ac
 accesssecurity
 acf
 acqiris
-Lightsource
 ﻿acquisition
 acro
 actionlist
@@ -27,7 +26,6 @@ addobserver
 addpropertychangelistener
 addr
 addselectionlistener
-ul
 addstrings
 addtopping
 ade
@@ -1173,6 +1171,7 @@ libxml
 libxslt
 libyelp
 lifecycle
+lightsource
 limtis
 linconv
 linex
@@ -2369,6 +2368,7 @@ ueip
 ui
 uis
 uk
+ul
 ulong
 uml
 un
