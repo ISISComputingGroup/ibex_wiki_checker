@@ -2490,6 +2490,7 @@ wontfix
 wordpress
 workflow
 workflows
+wpi
 writable
 writableobservableadapter
 writableobservingtextbox
