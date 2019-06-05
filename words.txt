@@ -1912,6 +1912,7 @@ registerrecorddevicedriver
 registryfunction
 regserver
 rehome
+rehoming
 reimplemented
 relativepath
 releasenotes
@@ -1942,6 +1943,7 @@ resultset
 resultsvar
 resultvar
 resync
+resynced
 retryblock
 reversestring
 revsciinstrum
@@ -2382,6 +2384,7 @@ uninstall
 unittest
 unix
 uno
+unpark
 unpolarised
 unrepresentable
 unretrieved
