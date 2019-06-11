@@ -834,6 +834,7 @@ gotchas
 goudsmit
 gov
 gowrishankarnath
+gphi
 gpib
 grafana
 grainger
