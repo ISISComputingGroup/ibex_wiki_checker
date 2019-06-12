@@ -12,14 +12,29 @@ def get_ignored_words():
     return words
 
 
+def strip_between_tags(expression, text):
+    if text is None:
+        return text
+    matches = list(re.finditer(expression, text))
+    if len(matches) == 0:
+        new_text = text
+    elif len(matches) % 2 != 0:
+        print("Uneven number of {} detected. Doing nothing to be safe".format(expression))
+        new_text = text
+    else:
+        new_text = text[0:matches[0].start()]
+        for i in range(1, len(matches) - 1, 2):
+            new_text += text[matches[i].end(): matches[i + 1].start()]
+        new_text += text[matches[-1].end(): len(text)]
+    return new_text
+
+
 class PageTests(unittest.TestCase):
-
-    IGNORED_WORDS = get_ignored_words()
-
-    def __init__(self, methodName, page=None):
+    def __init__(self, methodName, ignored_words, page=None):
         # Boilerplate so that unittest knows how to run these tests.
         super(PageTests, self).__init__(methodName)
         self.page = page
+        self.ignored_words = ignored_words
 
     def setUp(self):
         # Class has to have an __init__ that accepts one argument for unittest's test loader to work properly.
@@ -39,20 +54,14 @@ class PageTests(unittest.TestCase):
                 altered_text = altered_text.replace(character, " ")
             return altered_text
 
+        def strip_pre_tag_blocks(text):
+            return strip_between_tags(r"<pre>|</pre>", text)
+
+        def strip_code_tag_blocks(text):
+            return strip_between_tags(r"<code>|</code>", text)
+
         def strip_triple_dash_code_blocks(text):
-            expression = r"```"
-            triple_quote_positions = [m.start() for m in re.finditer(expression, text)]
-            if len(triple_quote_positions) == 0:
-                new_text = text
-            elif len(triple_quote_positions) % 2 != 0:
-                print("Uneven number of triple quotes detected. Doing nothing to be safe")
-                new_text = text
-            else:
-                new_text = text[0:triple_quote_positions[0]]
-                for i in range(1, len(triple_quote_positions)-1, 2):
-                    new_text += text[triple_quote_positions[i] + 3: triple_quote_positions[i+1]]
-                new_text += text[triple_quote_positions[-1] + 3: len(text)]
-            return new_text
+            return strip_between_tags(r"```", text)
 
         def strip_inline_code_blocks(text):
             expression = r"(?:(?<!\\)((?:\\{2})+)(?=`+)|(?<!\\)(`+)(.+?)(?<!`)\2(?!`))"
@@ -66,7 +75,11 @@ class PageTests(unittest.TestCase):
                 replace_selected_specials_with_whitespace(
                     strip_inline_code_blocks(
                         strip_triple_dash_code_blocks(
-                            wiki_file.read()
+                            strip_pre_tag_blocks(
+                                strip_code_tag_blocks(
+                                    wiki_file.read()
+                                )
+                            )
                         )
                     )
                 )
@@ -76,7 +89,7 @@ class PageTests(unittest.TestCase):
         checker = SpellChecker("en_UK", filters=filters, text=text)
 
         failed_words = filter_upper_case(
-            {err.word for err in checker if err.word.lower() not in PageTests.IGNORED_WORDS})
+            {err.word for err in checker if err.word.lower() not in self.ignored_words})
 
         if len(failed_words) > 0:
             self.fail("The following words were spelled incorrectly in file {}: \n    {}".format(

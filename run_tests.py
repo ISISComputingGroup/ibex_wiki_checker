@@ -7,7 +7,7 @@ from wiki import Wiki, MARKDOWN, RST
 
 from tests.page_tests import PageTests
 from tests.shadow_mirroring_tests import ShadowReplicationTests
-
+from utils.ignored_words import IGNORED_WORDS
 
 DEV_MANUAL = Wiki("ibex_developers_manual", MARKDOWN)
 IBEX_MANUAL = Wiki("IBEX", MARKDOWN)
@@ -22,7 +22,7 @@ def run_tests_on_pages(reports_path, pages, test_class):
     # unittest's test loader is unable to take arguments to test classes by default so have
     # to use the getTestCaseNames() syntax and explicitly add the argument ourselves.
     for page in pages:
-        suite.addTests([test_class(test, page) for test in loader.getTestCaseNames(test_class)])
+        suite.addTests([test_class(test, IGNORED_WORDS, page) for test in loader.getTestCaseNames(test_class)])
 
     runner = XMLTestRunner(output=str(reports_path), stream=sys.stdout)
     return runner.run(suite).wasSuccessful()
