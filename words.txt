@@ -1771,6 +1771,7 @@ potentiostat
 pow
 powercycling
 powerpoint
+powershell
 ppt
 pptx
 pr
