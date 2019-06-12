@@ -1,7 +1,4 @@
-﻿
-﻿µsr
 aa
-aaaf
 aarhus
 ab
 abc
@@ -14,12 +11,10 @@ ac
 accesssecurity
 acf
 acqiris
-﻿acquisition
 acro
 actionlist
 activeline
 activemq
-addchild
 addes
 addhandlerlistener
 addobserver
@@ -33,7 +28,6 @@ adel
 adjected
 admin
 admins
-adminstrator
 adroja
 advfirewall
 aebc
@@ -88,7 +82,6 @@ appenders
 appid
 applicationid
 apps
-april
 aps
 apturl
 arblock
@@ -97,7 +90,6 @@ archiver
 archiveraccess
 archivers
 archvive
-arduino
 arduino
 arduino's
 areadetector
@@ -169,7 +161,6 @@ autoselected
 autostart
 autotune
 autwsprefix
-aysn
 ba
 backdoor
 backend
@@ -199,8 +190,8 @@ beamstop
 beanproperties
 beb
 beckhoff
-beckhoffs
 beckhoff's
+beckhoffs
 behavior
 bessy
 bfb
@@ -268,8 +259,8 @@ ccdcamera
 ccess
 cclrc
 ccr
-ccrs
 ccr's
+ccrs
 cd
 cdaq
 cdaqs
@@ -382,6 +373,7 @@ createsimpleioc
 createtime
 creatfieldeditors
 cribsheets
+cron
 crtl
 crtscts
 cryo
@@ -417,6 +409,7 @@ cybaman
 cybamantech
 cygdrive
 cygwin
+d's
 da
 dae
 danfysik
@@ -463,8 +456,6 @@ dcalc
 dcc
 dcomcnfg
 dd
-dda
-ddcaccd
 deadband
 deadbands
 def
@@ -478,8 +469,6 @@ deprioritise
 dereferenced
 desc
 descr
-deskto
-desktoc
 detailpdoid
 dev
 devairand
@@ -528,7 +517,6 @@ docstrings
 docu
 docutils
 docx
-doesnt
 dosans
 dostrings
 dotrans
@@ -544,7 +532,6 @@ drvasynipport
 drvasynipportconfigure
 drvasynserialport
 drvasynserialportconfigure
-d's
 dset
 dstport
 dtyp
@@ -569,7 +556,6 @@ editbox
 edwards
 ee
 eed
-eeeb
 eemcu
 ef
 efa
@@ -627,7 +613,6 @@ everything's
 ewings
 exceptioncaptor
 exe
-exectuable
 executequery
 executionevent
 exes
@@ -635,18 +620,17 @@ exsd
 extensionsmanuals
 extint
 extweb
+f's
 fa
 fae
 failover
 fanout
 fastshutter
 fc
-fcaacdf
 fcff
 fd
 fdd
 fdx
-feautre
 fedid
 femi
 fermi
@@ -680,7 +664,6 @@ flnk
 flowrate
 fluxgate
 fmw
-fmw
 folderctid
 fomr
 foo
@@ -709,7 +692,6 @@ frm
 fromobject
 frontend
 frontpanel
-f's
 fslash
 fsm
 fsmregistrar
@@ -720,12 +702,12 @@ func
 fzj
 gaertner
 galil
+galil's
 galiladdr
 galilcontroller
 galilmc
 galilnn
 galils
-galil's
 galilsup
 galilxx
 gallil
@@ -813,7 +795,6 @@ githubusercontent
 gitignore
 gitmodules
 glassman
-gloabls
 globals
 glparent
 gmc
@@ -834,6 +815,7 @@ gotchas
 goudsmit
 gov
 gowrishankarnath
+gphi
 gpib
 grafana
 grainger
@@ -868,10 +850,6 @@ helloworld
 hfmagpsu
 hfmagpsusup
 hgv
-hh
-hhs
-hhsv
-hhttp
 hidewindow
 highlimit
 hightech
@@ -942,14 +920,13 @@ ils
 imagej
 imat
 imon
-imon
+in's
 inam
 inc
 incl
 incompletesetsok
 ind
 indexoutofboundsexception
-ines
 ines
 inet
 inetpub
@@ -975,7 +952,6 @@ inpc
 inpd
 inpe
 inputted
-in's
 instlist
 instmachine
 instname
@@ -993,6 +969,7 @@ invocationonmock
 io
 iobservablevalue
 ioc
+ioc's
 iocadminsoft
 iocamint
 iocboot
@@ -1016,7 +993,6 @@ iocrand
 iocrt
 iocrun
 iocs
-ioc's
 iocseqex
 iocsimple
 iocstartup
@@ -1108,13 +1084,13 @@ jul
 julabo
 julabos
 julich
-jülich
 jumpcell
 jun
 junit
 junitreport
 jusched
 jvisualvm
+jülich
 kafka
 kammrath
 kathryn
@@ -1199,7 +1175,6 @@ logpreferences
 logserver
 logviewer
 lohnert
-löhnert
 lolo
 longin
 longout
@@ -1229,6 +1204,7 @@ lvinput
 lvl
 lvstrings
 lxml
+löhnert
 m
 ma
 machinename
@@ -1293,7 +1269,6 @@ mg
 mhz
 michal
 microamps
-microamps
 microsoft
 middleware
 min
@@ -1344,7 +1319,6 @@ movingmonitor
 moxa
 mozilla
 mpa
-mpa
 mq
 mres
 msc
@@ -1367,7 +1341,6 @@ muonfe
 muongui
 muonscript
 musr
-mv
 mvn
 mw
 mx
@@ -1430,7 +1403,6 @@ newport
 newportsrc
 newvalue
 nframes
-nframes
 ngem
 ni
 nicos
@@ -1438,7 +1410,6 @@ nicoslivewidget
 nid
 nim
 nima
-nimages
 nimages
 nimrod
 nl
@@ -1480,7 +1451,6 @@ notecryomagnetics
 notecryovalve
 notecybaman
 notedae
-notedanfysik
 notedanfysik
 noteddchopper
 notedeltaelek
@@ -1557,7 +1527,6 @@ notenimatrough
 noteoerlikon
 noteoi
 noteomega
-noteomegapac
 noteomegapac
 noteomron
 noteomronplc
@@ -1716,7 +1685,6 @@ pde
 pdf
 pdr
 pdwn
-pdwn
 pended
 performlongtask
 perl
@@ -1748,9 +1716,9 @@ plc
 plcip
 plt
 plugin
+plugin's
 plugincustomization
 plugins
-plugin's
 pmd
 pn
 png
@@ -1817,6 +1785,7 @@ pugixml
 purejava
 pushd
 pv
+pv's
 pvaccess
 pvaccesscpp
 pvaclient
@@ -1836,7 +1805,6 @@ pvmanager
 pvname
 pvprefix
 pvs
-pv's
 pvsets
 px
 pxi
@@ -1955,11 +1923,9 @@ rhs
 rhythmbox
 riken
 rikenfe
-rikenfe
 riverbankcomputing
 rl
 rlower
-rm
 rmtree
 rohde
 rollingfileappender
@@ -1980,7 +1946,6 @@ runnima
 runscript
 runstate
 runtransmissions
-rup
 rup
 rupper
 rval
@@ -2446,7 +2411,6 @@ viscotherm
 visio
 vm
 vmon
-vmon
 vms
 vogella
 vs
@@ -2457,7 +2421,6 @@ vx
 w
 waitfor
 waitformove
-waitfortype
 wal
 walkthrough
 waterbath
@@ -2508,7 +2471,6 @@ wtek
 www
 wwwroot
 xaaa
-xbfff
 xhuber
 xi
 xinclude
@@ -2550,3 +2512,6 @@ zlib
 zlo
 znam
 μa
+﻿
+﻿acquisition
+﻿µsr
