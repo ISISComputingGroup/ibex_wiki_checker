@@ -2400,6 +2400,7 @@ verticalspacing
 vesuvio
 vetos
 vhds
+vhdx
 vi
 viewmodel
 viewpart
