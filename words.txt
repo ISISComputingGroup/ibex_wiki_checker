@@ -1,4 +1,6 @@
-aa
+﻿
+﻿µsr
+﻿aa
 aarhus
 ab
 abc
@@ -11,6 +13,7 @@ ac
 accesssecurity
 acf
 acqiris
+﻿acquisition
 acro
 actionlist
 activeline
@@ -190,8 +193,8 @@ beamstop
 beanproperties
 beb
 beckhoff
-beckhoff's
 beckhoffs
+beckhoff's
 behavior
 bessy
 bfb
@@ -259,8 +262,8 @@ ccdcamera
 ccess
 cclrc
 ccr
-ccr's
 ccrs
+ccr's
 cd
 cdaq
 cdaqs
@@ -409,7 +412,6 @@ cybaman
 cybamantech
 cygdrive
 cygwin
-d's
 da
 dae
 danfysik
@@ -532,6 +534,7 @@ drvasynipport
 drvasynipportconfigure
 drvasynserialport
 drvasynserialportconfigure
+d's
 dset
 dstport
 dtyp
@@ -620,7 +623,6 @@ exsd
 extensionsmanuals
 extint
 extweb
-f's
 fa
 fae
 failover
@@ -692,6 +694,7 @@ frm
 fromobject
 frontend
 frontpanel
+f's
 fslash
 fsm
 fsmregistrar
@@ -702,12 +705,12 @@ func
 fzj
 gaertner
 galil
-galil's
 galiladdr
 galilcontroller
 galilmc
 galilnn
 galils
+galil's
 galilsup
 galilxx
 gallil
@@ -920,7 +923,6 @@ ils
 imagej
 imat
 imon
-in's
 inam
 inc
 incl
@@ -952,6 +954,7 @@ inpc
 inpd
 inpe
 inputted
+in's
 instlist
 instmachine
 instname
@@ -969,7 +972,6 @@ invocationonmock
 io
 iobservablevalue
 ioc
-ioc's
 iocadminsoft
 iocamint
 iocboot
@@ -993,6 +995,7 @@ iocrand
 iocrt
 iocrun
 iocs
+ioc's
 iocseqex
 iocsimple
 iocstartup
@@ -1084,13 +1087,13 @@ jul
 julabo
 julabos
 julich
+jülich
 jumpcell
 jun
 junit
 junitreport
 jusched
 jvisualvm
-jülich
 kafka
 kammrath
 kathryn
@@ -1175,6 +1178,7 @@ logpreferences
 logserver
 logviewer
 lohnert
+löhnert
 lolo
 longin
 longout
@@ -1204,7 +1208,6 @@ lvinput
 lvl
 lvstrings
 lxml
-löhnert
 m
 ma
 machinename
@@ -1716,9 +1719,9 @@ plc
 plcip
 plt
 plugin
-plugin's
 plugincustomization
 plugins
+plugin's
 pmd
 pn
 png
@@ -1785,7 +1788,6 @@ pugixml
 purejava
 pushd
 pv
-pv's
 pvaccess
 pvaccesscpp
 pvaclient
@@ -1805,6 +1807,7 @@ pvmanager
 pvname
 pvprefix
 pvs
+pv's
 pvsets
 px
 pxi
@@ -1978,6 +1981,7 @@ scriptutil
 scv
 sdis
 sdtest
+seabreeze
 seci
 seciuserinterface
 secondmock
@@ -2513,6 +2517,3 @@ zlib
 zlo
 znam
 μa
-﻿
-﻿acquisition
-﻿µsr
