@@ -1109,6 +1109,7 @@ keyence
 keymer
 keysight
 khly
+kirkham
 kn
 knauer
 kq
