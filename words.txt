@@ -12,6 +12,7 @@ abstractuiplugin
 ac
 accesssecurity
 acf
+ack
 acqiris
 ﻿acquisition
 acro
@@ -1634,6 +1635,7 @@ ontrol
 onvalue
 oopt
 opcoach
+opcode
 openchrom
 openedresultsset
 opengenie
