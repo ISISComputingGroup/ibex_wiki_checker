@@ -191,6 +191,7 @@ beamlines
 beamoff
 beamscraper
 beamstop
+beamstops
 beanproperties
 beb
 beckhoff
@@ -2436,6 +2437,7 @@ wal
 walkthrough
 waterbath
 waveguide
+waveguides
 wb
 wcrev
 webaccounts
