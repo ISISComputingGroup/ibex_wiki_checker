@@ -1629,6 +1629,7 @@ openjdk
 openssl
 openthescriptingperspective
 openwire
+operator
 opi
 opibuilder
 opis
