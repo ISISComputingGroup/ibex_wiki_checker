@@ -454,6 +454,7 @@ dca
 dcace
 dcalc
 dcc
+dcom
 dcomcnfg
 dd
 deadband
@@ -1020,6 +1021,7 @@ isislog
 isisstat
 isissupport
 iso
+isobus
 istartup
 istatus
 istep
