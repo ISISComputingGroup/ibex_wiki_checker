@@ -1,6 +1,10 @@
 import unittest
 import os
 import re
+import codecs
+import requests
+import socket
+
 from enchant.checker import SpellChecker
 from enchant.tokenize import URLFilter, EmailFilter, WikiWordFilter, MentionFilter, Filter
 
@@ -30,11 +34,12 @@ def strip_between_tags(expression, text):
 
 
 class PageTests(unittest.TestCase):
-    def __init__(self, methodName, ignored_words, page=None):
+    def __init__(self, methodName, ignored_items, wiki_info=None):
         # Boilerplate so that unittest knows how to run these tests.
         super(PageTests, self).__init__(methodName)
-        self.page = page
-        self.ignored_words = ignored_words
+        self.page, self.all_pages, self.wiki_dir, self.wiki_url = wiki_info
+        self.ignored_words = ignored_items["WORDS"]
+        self.ignored_urls = ignored_items["URLS"]
 
     def setUp(self):
         # Class has to have an __init__ that accepts one argument for unittest's test loader to work properly.
@@ -95,3 +100,50 @@ class PageTests(unittest.TestCase):
             self.fail("The following words were spelled incorrectly in file {}: \n    {}".format(
                 self.page, "\n    ".join(failed_words)
             ))
+
+    def test_GIVEN_a_page_IF_it_contains_urls_WHEN_url_loaded_THEN_response_is_http_ok(self):
+        # Have to open as UTF-8. Opening as ascii causes some encoding errors.
+        try:
+            with codecs.open(self.page, encoding="utf-8") as wiki_file:
+                text = wiki_file.read()
+        except Exception:
+            self.fail("FAILED TO OPEN {}".format(self.page))
+
+        # Find markdown URLS of the form [Link text](link location)
+        urls = re.findall(r'\[.+?\]\(([\S^#]+)\)', text)
+        bracketed_urls = re.findall(r'\([^\)]*?\[.+?\]\(([\S^#]+)\)\)', text)
+        urls = [url for url in urls if url[:-1] not in bracketed_urls] + bracketed_urls
+        folders = next(os.walk(self.wiki_dir))[1]
+
+        filenames = [os.path.basename(f)[:-3].lower() for f in self.all_pages]
+
+        skip_conditions = [
+            lambda url: url == "",
+            lambda url: url.startswith("ftp"),
+            lambda url: any(allowed_url in url for allowed_url in self.ignored_urls),
+            lambda url: url.lower().split("/")[0] in filenames,
+            lambda url: url.split("/")[0] in folders
+        ]
+        with requests.Session() as sess:
+            for url in urls:
+                # If the URL contains a #, only keep the part before the hash sign.
+                url = url.split("#")[0].strip()
+                if url.lower().startswith("www."):
+                    url = "http://"+url
+                if not any(condition(url) for condition in skip_conditions):
+                    try:
+                        response = sess.head(url)
+                    except requests.exceptions.MissingSchema:
+                        self.fail("Invalid link on page '{}': {}".format(self.page, url))
+                    except requests.exceptions.SSLError:
+                        self.fail("invalid SSL certificate for {} on page {}".format(url, self.page))
+                    except requests.exceptions.ConnectionError:
+                        self.fail("Disconnected without response by {} on page {}".format(url, self.page))
+                    self.assertTrue(response,
+                                    "Could not open URL '{}' in '{}'. Response code = {}"
+                                    .format(url, self.page, response.status_code))
+                elif skip_conditions[4](url):
+                    self.assertTrue(os.path.join(self.wiki_dir, url),
+                                    "Could not follow page link {} on page {}"
+                                    .format(url, self.page))
+

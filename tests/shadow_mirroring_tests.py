@@ -22,10 +22,10 @@ def get_response_from_shadow(url):
 
 class ShadowReplicationTests(unittest.TestCase):
 
-    def __init__(self, methodName, ignored_words=None, page=None):
+    def __init__(self, methodName, ignored_words=None, wiki_info=None):
         # Boilerplate so that unittest knows how to run these tests.
         super(ShadowReplicationTests, self).__init__(methodName)
-        self.page = page
+        self.page = wiki_info[0]
 
     def setUp(self):
         # Class has to have an __init__ that accepts one argument for unittest's test loader to work properly.

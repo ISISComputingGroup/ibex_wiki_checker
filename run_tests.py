@@ -7,22 +7,25 @@ from wiki import Wiki, MARKDOWN, RST
 
 from tests.page_tests import PageTests
 from tests.shadow_mirroring_tests import ShadowReplicationTests
-from utils.ignored_words import IGNORED_WORDS
+from utils.ignored_words import IGNORED_ITEMS
 
 DEV_MANUAL = Wiki("ibex_developers_manual", MARKDOWN)
 IBEX_MANUAL = Wiki("IBEX", MARKDOWN)
 USER_MANUAL = Wiki("ibex_user_manual", RST)
 
-
-def run_tests_on_pages(reports_path, pages, test_class):
+def run_tests_on_pages(reports_path, current_wiki, test_class):
     suite = unittest.TestSuite()
     loader = unittest.TestLoader()
+    pages = current_wiki.get_pages()
+    wiki_dir = current_wiki.get_path()
+    wiki_url = "https://github.com/ISISComputingGroup/{}/wiki/".format(current_wiki.name)
 
     # Add spelling test suite a dynamic number of times with an argument of the page name.
     # unittest's test loader is unable to take arguments to test classes by default so have
     # to use the getTestCaseNames() syntax and explicitly add the argument ourselves.
     for page in pages:
-        suite.addTests([test_class(test, IGNORED_WORDS, page) for test in loader.getTestCaseNames(test_class)])
+        suite.addTests([test_class(test, IGNORED_ITEMS, (page, pages, wiki_dir, wiki_url))
+                        for test in loader.getTestCaseNames(test_class)])
 
     runner = XMLTestRunner(output=str(reports_path), stream=sys.stdout)
     return runner.run(suite).wasSuccessful()
@@ -50,14 +53,14 @@ def run_all_tests(single_file, remote):
             with wiki:
                 print("Running spelling tests")
                 return_values.append(run_tests_on_pages(
-                    os.path.join(reports_path, wiki.name), wiki.get_pages(), test_class=PageTests))
+                    os.path.join(reports_path, wiki.name), wiki, test_class=PageTests))
 
         for wiki in [DEV_MANUAL, USER_MANUAL]:
             with wiki:
                 # Only do shadow replication tests in "remote" mode.
                 print("Running shadow replication tests")
                 return_values.append(run_tests_on_pages(
-                    os.path.join(reports_path, wiki.name), wiki.get_pages(), test_class=ShadowReplicationTests))
+                    os.path.join(reports_path, wiki.name), wiki, test_class=ShadowReplicationTests))
     else:
         return_values.append(run_tests_on_pages(
                 os.path.join(reports_path, os.path.basename(single_file)), [single_file], test_class=PageTests))
@@ -73,7 +76,6 @@ def main():
                         help="The file to scan")
     parser.add_argument("--remote", required=False, action='store_true', default=False,
                         help="Scan all remote wikis (dev manual, user manual, IBEX")
-
     args = parser.parse_args()
     if not args.file and not args.remote:
         raise(RuntimeError("No arguments specified"))
