@@ -37,9 +37,10 @@ class PageTests(unittest.TestCase):
     def __init__(self, methodName, ignored_items, wiki_info=None):
         # Boilerplate so that unittest knows how to run these tests.
         super(PageTests, self).__init__(methodName)
-        self.page, self.all_pages, self.wiki_dir, self.wiki_url = wiki_info
+        self.page, self.all_pages, self.wiki_dir = wiki_info
         self.ignored_words = ignored_items["WORDS"]
         self.ignored_urls = ignored_items["URLS"]
+        self.isSinglePageTest = ([os.path.join(self.wiki_dir, self.page)] == self.all_pages)
 
     def setUp(self):
         # Class has to have an __init__ that accepts one argument for unittest's test loader to work properly.
@@ -121,10 +122,13 @@ class PageTests(unittest.TestCase):
             lambda url: url == "",
             lambda url: url.startswith("ftp"),
             lambda url: any(allowed_url in url for allowed_url in self.ignored_urls),
-            lambda url: url.lower().split("/")[0] in filenames,
+            lambda url: url.lower() in filenames,
             lambda url: url.split("/")[0] in folders
         ]
         with requests.Session() as sess:
+            sess.headers = {"User-Agent":
+                            "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:53.0) Gecko/20100101 Firefox/53.0"}
+            failed_urls = []
             for url in urls:
                 # If the URL contains a #, only keep the part before the hash sign.
                 url = url.split("#")[0].strip()
@@ -133,17 +137,23 @@ class PageTests(unittest.TestCase):
                 if not any(condition(url) for condition in skip_conditions):
                     try:
                         response = sess.head(url)
+                        if not response:
+                            failed_urls.append("Could not open URL, got response code {} for {}".format(
+                                               response.status_code, url))
                     except requests.exceptions.MissingSchema:
-                        self.fail("Invalid link on page '{}': {}".format(self.page, url))
+                        failed_urls.append("Invalid link : {}".format(url))
                     except requests.exceptions.SSLError:
-                        self.fail("invalid SSL certificate for {} on page {}".format(url, self.page))
+                        failed_urls.append("Invalid SSL certificate for: {}".format(url))
                     except requests.exceptions.ConnectionError:
-                        self.fail("Disconnected without response by {} on page {}".format(url, self.page))
-                    self.assertTrue(response,
-                                    "Could not open URL '{}' in '{}'. Response code = {}"
-                                    .format(url, self.page, response.status_code))
-                elif skip_conditions[4](url):
-                    self.assertTrue(os.path.join(self.wiki_dir, url),
-                                    "Could not follow page link {} on page {}"
-                                    .format(url, self.page))
+                        failed_urls.append("Disconnected without response by {}".format(url))
 
+                elif skip_conditions[4](url) and not (os.path.isfile(os.path.join(self.wiki_dir, url))
+                                                      or any(condition(url) for condition in skip_conditions[:4])):
+                    failed_urls.append("Could not follow page link {}".format(url))
+            if failed_urls and not self.isSinglePageTest:
+                self.fail("The page {} had the following errors in its links: \n    {}".format(
+                    self.page, "\n    ".join(failed_urls)))
+            elif failed_urls:
+                self.fail(("The page {} had the following errors in its links: \n    {} \n\n    "
+                           "Some of these may be due to this file being checked independent of its wiki").format(
+                    self.page, "\n    ".join(failed_urls)))
