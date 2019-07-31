@@ -845,6 +845,7 @@ hasn
 hdfgroup
 hdfview
 heliox
+heliox's
 helloworld
 hfmagpsu
 hfmagpsusup
@@ -1659,6 +1660,7 @@ overriden
 overspeed
 oxford
 oxfordinstruments
+oxfordinstrumentsips
 paar
 pac
 packagename
@@ -1780,6 +1782,7 @@ psu
 pubweb
 pugixml
 pushd
+putty
 pv
 pvaccess
 pvaccesscpp
