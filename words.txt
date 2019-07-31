@@ -624,6 +624,7 @@ extweb
 fa
 fae
 failover
+fallback
 fanout
 fastshutter
 fc
@@ -872,6 +873,7 @@ hprof
 href
 hsv
 htccu
+hterm
 htm
 htmlreport
 htmltidy
@@ -1852,6 +1854,8 @@ receivepack
 recgbl
 recgblinitconstantlink
 recgblrecorderror
+recondense
+recondensed
 recordref
 recsim
 recurse
@@ -2168,13 +2172,15 @@ subfolder
 submodule
 submodules
 subsys
+subvi
 sudo
 sumitomo
+superceded
 superclasses
+superconduct
 superlogics
 supermirror
 supermirrors
-superseeded
 surefire
 svcs
 svn
@@ -2304,6 +2310,7 @@ trapwrite
 triton
 tritons
 ts
+tset
 tst
 tti
 ttiex
