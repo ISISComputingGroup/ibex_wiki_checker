@@ -460,6 +460,7 @@ dcomcnfg
 dd
 deadband
 deadbands
+deenergise
 def
 defaultdatasource
 defaulthandler
