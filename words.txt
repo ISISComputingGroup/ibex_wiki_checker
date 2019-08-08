@@ -157,6 +157,7 @@ autosaved
 autosavefields
 autosavereq
 autosaves
+autosaving
 autoselected
 autostart
 autotune
@@ -459,6 +460,7 @@ dcomcnfg
 dd
 deadband
 deadbands
+deenergise
 def
 defaultdatasource
 defaulthandler
@@ -624,6 +626,7 @@ extweb
 fa
 fae
 failover
+fallback
 fanout
 fastshutter
 fc
@@ -844,6 +847,7 @@ hasn
 hdfgroup
 hdfview
 heliox
+heliox's
 helloworld
 hfmagpsu
 hfmagpsusup
@@ -872,6 +876,7 @@ hprof
 href
 hsv
 htccu
+hterm
 htm
 htmlreport
 htmltidy
@@ -933,10 +938,12 @@ init
 inithookstate
 initialisable
 initialisableobserver
+intialisation
 initialiseonsubscribeobservable
 initializedefaultpreferences
 initializer
 initobservable
+inits
 inkscape
 innodb
 inorder
@@ -1657,6 +1664,7 @@ overriden
 overspeed
 oxford
 oxfordinstruments
+oxfordinstrumentsips
 paar
 pac
 packagename
@@ -1778,6 +1786,7 @@ psu
 pubweb
 pugixml
 pushd
+putty
 pv
 pvaccess
 pvaccesscpp
@@ -1852,6 +1861,8 @@ receivepack
 recgbl
 recgblinitconstantlink
 recgblrecorderror
+recondense
+recondensed
 recordref
 recsim
 recurse
@@ -2168,13 +2179,15 @@ subfolder
 submodule
 submodules
 subsys
+subvi
 sudo
 sumitomo
+superceded
 superclasses
+superconduct
 superlogics
 supermirror
 supermirrors
-superseeded
 surefire
 svcs
 svn
@@ -2304,6 +2317,7 @@ trapwrite
 triton
 tritons
 ts
+tset
 tst
 tti
 ttiex
