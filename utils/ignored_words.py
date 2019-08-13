@@ -6,7 +6,7 @@ def get_ignored_words():
 
 
 def get_ignored_urls():
-    with open("urls.txt", "r", encoding="utf-8") as f:
+    with open("ignored_urls.txt", "r", encoding="utf-8") as f:
         urls = f.read().split()
     return urls
 

@@ -3,16 +3,16 @@ import sys
 import unittest
 from xmlrunner import XMLTestRunner
 import argparse
-from wiki import Wiki, MARKDOWN, RST
+from wiki import Wiki
 
 from tests.page_tests import PageTests
 from tests.shadow_mirroring_tests import ShadowReplicationTests
 from utils.ignored_words import IGNORED_ITEMS
 
-DEV_MANUAL = Wiki("ibex_developers_manual", MARKDOWN)
-IBEX_MANUAL = Wiki("IBEX", MARKDOWN)
-USER_MANUAL = Wiki("ibex_user_manual", RST)
-TEST_WIKI = Wiki("ibex_wiki_checker", "MARKDOWN")
+DEV_MANUAL = Wiki("ibex_developers_manual")
+IBEX_MANUAL = Wiki("IBEX")
+USER_MANUAL = Wiki("ibex_user_manual")
+TEST_WIKI = Wiki("ibex_wiki_checker")
 
 
 def run_tests_on_pages(reports_path, pages, wiki_dir, test_class):

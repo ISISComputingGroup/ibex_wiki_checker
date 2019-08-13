@@ -21,6 +21,13 @@ def get_response_from_shadow(url):
 
 
 class ShadowReplicationTests(unittest.TestCase):
+    """
+
+    :param methodName: Name of the test you want to run
+    :param ignored_words: For spellchecker and link checker, not needed here
+    :param wiki_info: A tuple containing the page to be tested, a list of all pages on the wiki and the wiki's
+    directory. Only the first item is needed here.
+    """
 
     def __init__(self, methodName, ignored_words=None, wiki_info=None):
         # Boilerplate so that unittest knows how to run these tests.

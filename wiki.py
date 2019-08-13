@@ -2,22 +2,14 @@ import os
 import git
 from utils.file_system_utils import delete_dir, find_files_with_extension
 
-RST = "RST"
-MARKDOWN = "MARKDOWN"
-WIKI_TYPES = [RST, MARKDOWN]
-
 
 class Wiki(object):
-    def __init__(self, name, doc_format):
+    def __init__(self, name):
         """
         Args:
             name: The name of the wiki
-            doc_format: The format of the wiki, Markdown or RST
         """
-        if doc_format not in WIKI_TYPES:
-            raise(TypeError("Wiki {} initialised with invalid type {}".format(name, doc_format)))
         self.name = name
-        self.format = doc_format
 
     def __enter__(self):
         self.clean_source()
@@ -39,4 +31,6 @@ class Wiki(object):
         git.Git(repo_path).clone("https://github.com/ISISComputingGroup/{}.wiki.git".format(self.name), repo_path)
 
     def get_pages(self):
-        return find_files_with_extension(self.get_path(), "md" if self.format is MARKDOWN else "rest")
+        files = find_files_with_extension(self.get_path(), "md")
+        files.extend(find_files_with_extension(self.get_path(), "rest"))
+        return files
