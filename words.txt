@@ -489,6 +489,7 @@ devsequencer
 devsim
 devsoftmotor
 devsup
+dexample
 df
 dfanout
 dialog
