@@ -1603,6 +1603,7 @@ num
 numpy
 numseqfiles
 nutter
+nxs
 observablefactory
 observabletitlemodel
 obsfactory
@@ -1823,6 +1824,7 @@ pyguide
 pyode
 pyopengl
 pypi
+pyplot
 pytest
 pytests
 pythonw

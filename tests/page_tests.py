@@ -1,15 +1,12 @@
 import unittest
 import os
 import re
+import codecs
+import requests
+import concurrent.futures
+
 from enchant.checker import SpellChecker
-from enchant.tokenize import URLFilter, EmailFilter, WikiWordFilter, MentionFilter, Filter
-
-
-def get_ignored_words():
-    # We're finding it easier to work with ignored words ourselves rather than using Enchant's in-built
-    with open("words.txt", "r", encoding="utf-8") as f:
-        words = f.read().split()
-    return words
+from enchant.tokenize import URLFilter, EmailFilter, WikiWordFilter, MentionFilter
 
 
 def strip_between_tags(expression, text):
@@ -30,11 +27,20 @@ def strip_between_tags(expression, text):
 
 
 class PageTests(unittest.TestCase):
-    def __init__(self, methodName, ignored_words, page=None):
+    def __init__(self, methodName, ignored_items, wiki_info=None):
+        """
+
+        :param methodName: Name of the test you want to run
+        :param ignored_items: For spellchecker, ignored words. For Link checker, ignored URLs.
+        :param wiki_info: A tuple containing the page to be tested, a list of all pages on the wiki and the wiki's
+        directory
+        """
         # Boilerplate so that unittest knows how to run these tests.
         super(PageTests, self).__init__(methodName)
-        self.page = page
-        self.ignored_words = ignored_words
+        self.page, self.all_pages, self.wiki_dir = wiki_info
+        self.ignored_words = ignored_items["WORDS"]
+        self.ignored_urls = ignored_items["URLS"]
+        self.isSinglePageTest = ([os.path.join(self.wiki_dir, self.page)] == self.all_pages)
 
     def setUp(self):
         # Class has to have an __init__ that accepts one argument for unittest's test loader to work properly.
@@ -63,6 +69,11 @@ class PageTests(unittest.TestCase):
         def strip_triple_dash_code_blocks(text):
             return strip_between_tags(r"```", text)
 
+        def strip_urls_from_links(text):
+            # replace "[text](link)" with "text"
+            expression = r"\[(.+?)\]\([\S]+\)"
+            return re.sub(expression, r"\1", text)
+
         def strip_inline_code_blocks(text):
             expression = r"(?:(?<!\\)((?:\\{2})+)(?=`+)|(?<!\\)(`+)(.+?)(?<!`)\2(?!`))"
             return re.sub(expression, "", text)
@@ -74,10 +85,12 @@ class PageTests(unittest.TestCase):
             text = remove_bold_and_italics(
                 replace_selected_specials_with_whitespace(
                     strip_inline_code_blocks(
-                        strip_triple_dash_code_blocks(
-                            strip_pre_tag_blocks(
-                                strip_code_tag_blocks(
-                                    wiki_file.read()
+                        strip_urls_from_links(
+                            strip_triple_dash_code_blocks(
+                                strip_pre_tag_blocks(
+                                    strip_code_tag_blocks(
+                                        wiki_file.read()
+                                    )
                                 )
                             )
                         )
@@ -95,3 +108,116 @@ class PageTests(unittest.TestCase):
             self.fail("The following words were spelled incorrectly in file {}: \n    {}".format(
                 self.page, "\n    ".join(failed_words)
             ))
+
+    def test_GIVEN_a_page_IF_it_contains_urls_WHEN_url_loaded_THEN_response_is_http_ok(self):
+
+        def get_urls_from_text(text):
+            if os.path.splitext(self.page)[1] == ".md":
+                # Find markdown URLS of the form [Link text](link location) with no whitespace in the curved brackets.
+                # Return all characters within brackets.
+                urls = re.findall(r'\[.+?\]\(([\S^#]+)\)', text)
+                # As above, except this time check whether the whole block is within brackets or not. The text must
+                # start with "(", not have a ")" before the link, then end with a ")" immediately after the trailing
+                # ")" of the link. This stops text like "(for more detail, see [link](url))" from returning "url)"
+                # while allowing "look at this link [wikipedia is full of](urls_(like_these))" to return "urls_(
+                # like_these)"
+                bracketed_urls = re.findall(r'\([^)]*?\[.+?\]\(([\S^#]+)\)\)', text)
+                # The second set of urls takes precedence over the first, if the url appears WITHOUT a trailing ")" in
+                # the bracket url list, use the entry from the bracketed list instead
+                urls = [url for url in urls if url[:-1] not in bracketed_urls] + bracketed_urls
+                return urls
+            elif os.path.splitext(self.page)[1] == ".rest":
+                # Links to pages are of the form "[[page name]]", but pages are stored as "page-name"
+                # Some links are "[[text|link]]", so need to omit everything before a "|"
+                page_links = re.findall(r'\[\[.*?([^]|]+)\]\]', text)
+                urls = [link.strip().replace(' ', '-') for link in page_links]
+                # Image links point to the file given by ":target: filename.png"
+                image_links = re.findall(r':target: (\S+)', text)
+                urls.extend(image_links)
+                # website urls are of the form "`text text text <url>`_" with a required space before the "<"
+                web_links = re.findall(r'`[^`<]+ <(\S+)>`_', text)
+                urls.extend(web_links)
+                return urls
+
+        def short_check_skip_conditions(url, filenames):
+            skip_conditions = [
+                # Don't try to check empty strings
+                lambda url: url == "",
+                # Don't try to open ftp links
+                lambda url: url.startswith("ftp"),
+                # Some urls just won't work with this link checker, ignore them
+                lambda url: any(allowed_url in url for allowed_url in self.ignored_urls),
+                # Links to another page on the wiki
+                lambda url: url.lower() in filenames
+            ]
+            return any(condition(url) for condition in skip_conditions)
+
+        def check_skip_conditions(url, filenames, folders):
+            # Extra condition checks if it links to a file location on the wiki
+            return short_check_skip_conditions(url, filenames) or url.split("/")[0] in folders
+
+        def try_to_connect(url, session):
+            try:
+                response = session.head(url)
+                if not response:
+                    return "Could not open URL, got response code {} for {}".format(response.status_code, url)
+            except (requests.exceptions.MissingSchema, requests.exceptions.InvalidURL):
+                return "Invalid link : {}".format(url)
+            except requests.exceptions.SSLError:
+                return "Invalid SSL certificate for: {}".format(url)
+            except requests.exceptions.ConnectionError:
+                return "Disconnected without response by {}".format(url)
+
+        def check_if_link_to_wiki_page(url, filenames, folders):
+            # If link is to a file in the wiki and shouldn't be otherwise skipped, check that the file actually exists
+            if url.split("/")[0] in folders and not short_check_skip_conditions(url, filenames):
+                if not os.path.isfile(os.path.join(self.wiki_dir, url)):
+                    return True
+            return False
+
+        def create_failure_message(failed_urls):
+            if failed_urls and not self.isSinglePageTest:
+                self.fail("The page {} had the following errors in its links: \n    {}".format(
+                    self.page, "\n    ".join(failed_urls)))
+            elif failed_urls:
+                self.fail(("The page {} had the following errors in its links: \n    {} \n\n    "
+                           "Some of these may be due to this file being checked independent of its wiki").format(
+                    self.page, "\n    ".join(failed_urls)))
+
+        def fix_formatting(url):
+            url = url.split("#")[0].strip()
+            if url.lower().startswith("www."):
+                url = "http://{}".format(url)
+            return url
+
+        def check_link(lnk, sess, filenames, folders):
+            if not check_skip_conditions(lnk, filenames, folders):
+                failure = try_to_connect(lnk, sess)
+                if failure:
+                    return failure
+            elif check_if_link_to_wiki_page(lnk, filenames, folders):
+                return "Could not follow page link {}".format(lnk)
+
+        # Have to open as UTF-8. Opening as ascii causes some encoding errors.
+        try:
+            with codecs.open(self.page, encoding="utf-8") as wiki_file:
+                text = wiki_file.read()
+        except Exception as e:
+            self.fail("FAILED TO OPEN {} because {} : {}".format(self.page, e.__class__.__name__, e))
+
+        links = get_urls_from_text(text)
+        folders = os.listdir(self.wiki_dir)
+        filenames = [os.path.splitext(os.path.basename(f))[0].lower() for f in self.all_pages]
+        with requests.Session() as sess:
+            # Some websites don't respond correctly with the default requests user agent, so the firefox user agent
+            # is being used instead
+            sess.headers = {"User-Agent":
+                            "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:53.0) Gecko/20100101 Firefox/53.0"}
+            failed_urls = []
+            with concurrent.futures.ThreadPoolExecutor(max_workers=None) as con_fut:
+                futures = [con_fut.submit(check_link, fix_formatting(link), sess, filenames, folders) for link in links]
+                for future in concurrent.futures.as_completed(futures):
+                    fail = future.result()
+                    if fail:
+                        failed_urls.append(fail)
+            create_failure_message(failed_urls)
