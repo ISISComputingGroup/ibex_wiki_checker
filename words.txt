@@ -158,6 +158,7 @@ autosavefields
 autosavereq
 autosaves
 autosaving
+autoscale
 autoselected
 autostart
 autotune
