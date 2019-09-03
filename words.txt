@@ -419,6 +419,7 @@ danfysikmps
 danfysiks
 daq
 daqmxbase
+daresbury
 dat
 databaseserver
 databasewrapper
@@ -1220,6 +1221,7 @@ makeautosavefilefromdbinfo
 makeautosavefiles
 makebaseapp
 makefile
+makefiles
 makesupport
 malloc
 managermode
