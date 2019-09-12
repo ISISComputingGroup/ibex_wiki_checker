@@ -2140,6 +2140,7 @@ stackoverflow
 standardstartupoutputondemo
 standout
 standup
+standups
 stanford
 startcard
 startdate
@@ -2186,6 +2187,7 @@ subdomain
 subfolder
 submodule
 submodules
+subprojects
 subsys
 subvi
 sudo
