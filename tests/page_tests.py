@@ -5,9 +5,13 @@ import codecs
 import requests
 import concurrent.futures
 
+from spellchecker import SpellChecker as PySpellChecker
 from enchant.checker import SpellChecker
 from enchant.tokenize import URLFilter, EmailFilter, WikiWordFilter, MentionFilter
 
+# Creating this object here to avoid creating duplicates which leads to memory corruption
+# not sure why its happening, Garbage collector not quick enough?
+checker_py = PySpellChecker()
 
 def strip_between_tags(expression, text):
     if text is None:
@@ -24,7 +28,6 @@ def strip_between_tags(expression, text):
             new_text += text[matches[i].end(): matches[i + 1].start()]
         new_text += text[matches[-1].end(): len(text)]
     return new_text
-
 
 class PageTests(unittest.TestCase):
     def __init__(self, methodName, ignored_items, wiki_info=None):
@@ -81,6 +84,7 @@ class PageTests(unittest.TestCase):
         def remove_bold_and_italics(text):
             return text.replace("*", "")
 
+        
         with open(self.page, "r", encoding="utf-8") as wiki_file:
             text = remove_bold_and_italics(
                 replace_selected_specials_with_whitespace(
@@ -97,17 +101,20 @@ class PageTests(unittest.TestCase):
                     )
                 )
             )
+        ## translate string to lsit of words
+        list_of_words = re.findall(r"\w+", text)
+        # check if list of words exist in the dictionary
+        errors = checker_py.unknown(list_of_words)
 
-        filters = [URLFilter, EmailFilter, MentionFilter, WikiWordFilter]
-        checker = SpellChecker("en_UK", filters=filters, text=text)
-
-        failed_words = filter_upper_case(
-            {err.word for err in checker if err.word.lower() not in self.ignored_words})
+        failed_words = filter_upper_case({
+            err for err in errors if err.lower() not in self.ignored_words
+            })
 
         if len(failed_words) > 0:
             self.fail("The following words were spelled incorrectly in file {}: \n    {}".format(
                 self.page, "\n    ".join(failed_words)
             ))
+        
 
     def test_GIVEN_a_page_IF_it_contains_urls_WHEN_url_loaded_THEN_response_is_http_ok(self):
 
