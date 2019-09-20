@@ -2368,6 +2368,8 @@ unhandled
 unicast
 unilever
 uninstall
+uninstalling
+uninstallation
 unittest
 unix
 uno
