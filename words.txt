@@ -55,6 +55,8 @@ allpopups
 alt
 amd
 amint
+ammeter
+amperometry
 analog
 analyze
 analyzer
@@ -293,6 +295,7 @@ checkrelease
 checkstyle
 chell
 chopr
+chrono
 chronus
 ci
 cip
@@ -549,6 +552,7 @@ easysqlite
 eb
 eba
 ec
+eccor
 eclab
 eclexecutiondelay
 eclipsecommands
@@ -573,6 +577,7 @@ egu
 eguf
 eilidh
 ek
+electrochemical
 electrometer
 electrometers
 elektronika
@@ -715,6 +720,8 @@ galils
 galil's
 galilsup
 galilxx
+galvano
+galvanostatic
 gamekeeper
 gamry
 gateresources
@@ -1745,7 +1752,11 @@ positioner
 postgres
 postiocinit
 postsetinstrument
+potentio
+potentiodynamic
+potentiometry
 potentiostat
+potentiostatic
 pow
 powercycling
 powerpoint
@@ -2437,6 +2448,7 @@ vm
 vmon
 vms
 vogella
+voltammetry
 voneshen
 vs
 vsdx
