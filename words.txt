@@ -552,7 +552,7 @@ easysqlite
 eb
 eba
 ec
-eccor
+ecorr
 eclab
 eclexecutiondelay
 eclipsecommands
