@@ -30,3 +30,4 @@ http://www.mysql.com/products/workbench/
 http://www.skf.com/group/products/magnetic-systems/magnetic-systems-applications/neutron-chopper-instrumentation/index.html
 images/using_the_wiki/test.png
 http://www.bio-logic.info/
+https://www.bio-logic.net/softwares/oem-package/
