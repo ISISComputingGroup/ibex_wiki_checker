@@ -894,6 +894,7 @@ https
 huber
 hvcaen
 hvcaenx
+hyperterm
 hyperterminal
 hypervisor
 i
