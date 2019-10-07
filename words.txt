@@ -1107,6 +1107,7 @@ jusched
 jvisualvm
 kafka
 kammrath
+kanban
 kathryn
 kbytes
 keithley
