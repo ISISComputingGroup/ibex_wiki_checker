@@ -1208,6 +1208,7 @@ lsrch
 lsv
 ltc
 lua
+luacheck
 lv
 lvcom
 lvdcom
