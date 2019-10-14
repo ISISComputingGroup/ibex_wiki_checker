@@ -32,3 +32,4 @@ images/using_the_wiki/test.png
 http://www.bio-logic.info/
 https://www.bio-logic.net/softwares/oem-package/
 https://www.rohde-schwarz.com/general_information/hameg/rohde-schwarz-company_230166.html
+https://notepad-plus-plus.org/
