@@ -858,6 +858,7 @@ hdfview
 heliox
 heliox's
 helloworld
+hererocks
 hfmagpsu
 hfmagpsusup
 hgv
