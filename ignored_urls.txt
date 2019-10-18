@@ -38,3 +38,4 @@ https://nanoscience.oxinst.com/products/helium3-refrigerators/
 https://www.rohde-schwarz.com/product/hm8123-productstartpage_63493-44102.html
 https://www.baslerweb.com/en/products/cameras/area-scan-cameras/pilot/
 https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/images/Muon_Zero-Field_Auto-Feedback_Procedure_Flowchart.png
+http://www.delta-elektronika.nl/en/products/dc-power-supplies-1500w-sm1500-series.html
