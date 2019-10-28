@@ -275,6 +275,7 @@ ce
 cea
 cecee
 center
+cernot
 cf
 cfc
 cget
@@ -1170,6 +1171,7 @@ linkam
 linkedlist
 linmot
 linmots
+linting
 linux
 listname
 liveview
@@ -1846,6 +1848,7 @@ pydev
 pyepics
 pygame
 pyguide
+pylint
 pyode
 pyopengl
 pypi
