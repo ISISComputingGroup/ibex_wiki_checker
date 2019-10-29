@@ -275,7 +275,7 @@ ce
 cea
 cecee
 center
-cernot
+cernox
 cf
 cfc
 cget
@@ -1983,6 +1983,7 @@ runscript
 runstate
 runtimes
 runtransmissions
+ruo
 rup
 rupper
 rval
