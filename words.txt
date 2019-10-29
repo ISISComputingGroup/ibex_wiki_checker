@@ -320,6 +320,7 @@ closeable
 clrc
 cmake
 cmd
+cmode
 cnr
 codebase
 codehaus
@@ -465,6 +466,7 @@ dcomcnfg
 dd
 deadband
 deadbands
+deadman's
 deenergise
 def
 defaultdatasource
@@ -847,6 +849,7 @@ gwext
 haake
 hackathon
 hameg
+handheld
 handlerlistener
 handovers
 hardcoded
