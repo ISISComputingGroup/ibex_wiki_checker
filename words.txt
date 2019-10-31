@@ -197,6 +197,7 @@ beckhoff
 beckhoffs
 beckhoff's
 behavior
+benchtop
 bessy
 bfb
 bindable
@@ -384,8 +385,10 @@ cron
 crtl
 crtscts
 cryo
+cryocon
 cryogen
 cryogenic
+cryogenically
 cryogens
 cryomag
 cryomagnet
