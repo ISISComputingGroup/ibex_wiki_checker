@@ -219,6 +219,7 @@ bourne
 br
 btnset
 btnupdate
+bugfix
 bumpstrip
 bundleactivator
 bundleclass
