@@ -1441,6 +1441,7 @@ nim
 nima
 nimages
 nimrod
+nivo
 nl
 nmake
 nneji
