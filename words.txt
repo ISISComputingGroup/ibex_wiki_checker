@@ -534,6 +534,7 @@ docutils
 docx
 dosans
 dostrings
+dotfiles
 dotrans
 doxygen
 dp
