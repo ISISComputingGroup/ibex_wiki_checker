@@ -1793,6 +1793,7 @@ prefs
 preiocinit
 prepend
 prepends
+preplanning
 presentability
 preset
 presetinstrument
@@ -2101,6 +2102,7 @@ shotwell
 showbanner
 showtitle
 shutdown
+shutdowns
 shutil
 signon
 silverwood
