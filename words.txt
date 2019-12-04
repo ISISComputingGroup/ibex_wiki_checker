@@ -1867,6 +1867,7 @@ pyplot
 pytest
 pytests
 pythonw
+pywin
 raman
 randapp
 randdev
