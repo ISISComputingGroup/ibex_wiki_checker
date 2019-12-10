@@ -350,6 +350,7 @@ computername
 concatenatenames
 conf
 config
+config's
 configruations
 configs
 configserver
