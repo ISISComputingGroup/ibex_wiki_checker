@@ -290,6 +290,7 @@ changesupport
 changetrue
 channum
 charwaveformchannel
+cheatsheet
 checkbox
 checkboxes
 checklist
