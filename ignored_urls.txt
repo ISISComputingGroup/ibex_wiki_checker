@@ -42,3 +42,5 @@ http://www.delta-elektronika.nl/en/products/dc-power-supplies-1500w-sm1500-serie
 https://www.chell.co.uk/product_details/flow-products/chell-ccd100
 epics.anl.gov
 https://icatproject.org/
+www-csr.bessy.de
+cdn.frm2.tum.de
