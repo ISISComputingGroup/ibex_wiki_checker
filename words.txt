@@ -479,6 +479,7 @@ def
 defaultdatasource
 defaulthandler
 definitionsteward
+dehex
 dehexed
 del
 demos
