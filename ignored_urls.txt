@@ -44,3 +44,4 @@ epics.anl.gov
 https://icatproject.org/
 www-csr.bessy.de
 cdn.frm2.tum.de
+https://www.aimtti.com/product-category/dc-power-supplies/aim-tsxseries
