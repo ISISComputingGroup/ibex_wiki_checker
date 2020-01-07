@@ -200,6 +200,7 @@ behavior
 benchtop
 bessy
 bfb
+bishal
 bindable
 bindingcontext
 bindvalue
@@ -428,6 +429,7 @@ danfysik
 danfysikmps
 danfysiks
 daq
+daqmx
 daqmxbase
 daresbury
 dat
