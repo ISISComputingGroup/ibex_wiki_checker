@@ -1753,6 +1753,7 @@ piezo
 pingable
 pinholeselector
 pini
+pinout
 pis
 pixelman
 pl
