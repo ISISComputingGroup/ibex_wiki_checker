@@ -258,6 +258,7 @@ cartoonified
 caruana 
 cas
 casnooper
+casted
 catalog
 cb
 ccb
@@ -538,6 +539,7 @@ docstrings
 docu
 docutils
 docx
+doesn
 dosans
 dostrings
 dotfiles
@@ -2033,6 +2035,7 @@ scipy
 scm
 screenshot
 screenshots
+scriptgenerator
 scriptserver
 scriptutil
 scv
