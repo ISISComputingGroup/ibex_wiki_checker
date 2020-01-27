@@ -47,3 +47,5 @@ www.wpi-europe.com
 thorlabs.com
 www.rhode-schwarz.com
 apache.org
+http://en.wikipedia.org/wiki/CamelCase
+http://en.wikipedia.org/wiki/Java_Message_Service
