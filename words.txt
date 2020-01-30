@@ -352,8 +352,9 @@ computername
 concatenatenames
 conf
 config
+configname
 config's
-configruations
+configurations
 configs
 configserver
 configtool
@@ -670,6 +671,7 @@ filename
 filepath
 fileserver
 filesystem
+filesystemlocation
 filewatcher
 filllayout
 finalizers
@@ -839,6 +841,7 @@ googletest
 goran
 gossen
 gotchas
+gotcha
 goudsmit
 gov
 gowrishankarnath
