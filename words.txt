@@ -253,6 +253,7 @@ caput
 caputlog
 caputloginit
 caputrecorder
+caputs
 careconnect
 carepeater
 cartoonified
@@ -1844,6 +1845,7 @@ pubweb
 pugixml
 pushd
 putty
+putlog
 pv
 pvaccess
 pvaccesscpp
