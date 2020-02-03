@@ -377,6 +377,7 @@ copt
 correlationid
 correlator
 correlator's
+cosimo
 couette
 cp
 cport
