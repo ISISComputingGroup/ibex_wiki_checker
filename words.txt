@@ -678,6 +678,7 @@ filesystem
 filesystemlocation
 filewatcher
 filllayout
+finalizer
 finalizers
 findbugs
 findclass
@@ -1693,6 +1694,7 @@ openthescriptingperspective
 openwire
 operator
 opi
+opi's
 opibuilder
 opis
 oram
@@ -1905,6 +1907,7 @@ rdb
 rdbl
 rdp
 rdparty
+reachability
 readactualcurrent
 readascii
 readback
@@ -1932,6 +1935,7 @@ recurse
 recursesubmodules
 recv
 redistributable
+reestablished
 reenable
 reexport
 refactor
