@@ -1199,6 +1199,8 @@ linkam
 linkedlist
 linmot
 linmots
+linted
+linter
 linting
 linux
 listname
@@ -2443,6 +2445,7 @@ unix
 uno
 unpark
 unpolarised
+unprefixed
 unrepresentable
 unretrieved
 unstage
