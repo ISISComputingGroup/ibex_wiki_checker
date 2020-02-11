@@ -713,6 +713,7 @@ fooview
 foreach
 forschungszentrum
 forwardingobservable
+forwardmost
 forwardslash
 forwlimit
 fp
@@ -1240,6 +1241,7 @@ lsi
 lsrch
 lsv
 ltc
+ltd
 lua
 lua's
 luacheck
@@ -1378,6 +1380,7 @@ msconfig
 msg
 msglog
 mslits
+msm
 mso
 msxml
 mtr
