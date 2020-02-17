@@ -2555,6 +2555,7 @@ wiki
 wikipedia
 wikis
 wildcard
+wildcards
 willemsen
 wincred
 windowbuilder
