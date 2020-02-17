@@ -11,7 +11,7 @@ accesssecurity
 acf
 ack
 acqiris
-﻿acquisition
+acquisition
 acro
 actionlist
 activeline
@@ -356,6 +356,7 @@ computername
 concatenatenames
 conf
 config
+configchecker
 configname
 config's
 configurations
@@ -638,6 +639,7 @@ etc
 ethernet
 eulerian
 eurotherm
+eurotherm's
 eurotherms
 ev
 eventtime
@@ -1975,6 +1977,7 @@ reno
 repeatcount
 repo
 repos
+reproposed
 req
 requestfile
 reraise
@@ -2438,6 +2441,7 @@ uml
 un
 uncalibrated
 uncommenting
+unfeasible
 unhandled
 unicast
 unilever
@@ -2542,6 +2546,7 @@ websocket
 websockets
 weeder
 wf
+whitespace
 widgetcontroller
 widgetproperties
 widgetselected
