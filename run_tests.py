@@ -1,8 +1,6 @@
 import os
 import sys
 import unittest
-import contextlib
-
 from xmlrunner import XMLTestRunner
 import argparse
 import git
