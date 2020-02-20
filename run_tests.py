@@ -61,7 +61,7 @@ def run_all_tests(single_file, remote):
             except git.GitCommandError as ex:
                 print("FAILED to clone {}: {}".format(wiki.name, str(ex)))
                 print("Skipping tests\n")
-                return_values.append(1)
+                return_values.append(False)
                 continue
 
         for wiki in [DEV_MANUAL, USER_MANUAL]:
@@ -77,7 +77,7 @@ def run_all_tests(single_file, remote):
             except git.GitCommandError as ex:
                 print("FAILED to clone {}: {}".format(wiki.name, str(ex)))
                 print("Skipping tests\n")
-                return_values.append(1)
+                return_values.append(False)
                 continue
     else:
         return_values.append(run_tests_on_pages(
