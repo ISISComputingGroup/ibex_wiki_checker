@@ -3,6 +3,7 @@ import sys
 import unittest
 from xmlrunner import XMLTestRunner
 import argparse
+import git
 from wiki import Wiki
 
 from tests.page_tests import PageTests
@@ -49,21 +50,35 @@ def run_all_tests(single_file, remote):
 
     if remote:
         for wiki in [DEV_MANUAL, IBEX_MANUAL, USER_MANUAL]:
-            with wiki:
-                pages = wiki.get_pages()
-                wiki_dir = wiki.get_path()
-                print("Running spelling tests")
-                return_values.append(run_tests_on_pages(
-                    os.path.join(reports_path, wiki.name), pages, wiki_dir, test_class=PageTests))
+            try:
+                with wiki:
+                    pages = wiki.get_pages()
+                    wiki_dir = wiki.get_path()
+                    print("Running spelling tests on {}".format(wiki.name))
+                    return_values.append(run_tests_on_pages(
+                        os.path.join(reports_path, wiki.name), pages, wiki_dir, test_class=PageTests))
+                    print()
+            except git.GitCommandError as ex:
+                print("FAILED to clone {}: {}".format(wiki.name, str(ex)))
+                print("Skipping tests\n")
+                return_values.append(0)
+                continue
 
         for wiki in [DEV_MANUAL, USER_MANUAL]:
-            with wiki:
-                pages = wiki.get_pages()
-                wiki_dir = wiki.get_path()
-                # Only do shadow replication tests in "remote" mode.
-                print("Running shadow replication tests")
-                return_values.append(run_tests_on_pages(
-                    os.path.join(reports_path, wiki.name), pages, wiki_dir, test_class=ShadowReplicationTests))
+            try:
+                with wiki:
+                    pages = wiki.get_pages()
+                    wiki_dir = wiki.get_path()
+                    # Only do shadow replication tests in "remote" mode.
+                    print("Running shadow replication tests on {}".format(wiki.name))
+                    return_values.append(run_tests_on_pages(
+                        os.path.join(reports_path, wiki.name), pages, wiki_dir, test_class=ShadowReplicationTests))
+                    print()
+            except git.GitCommandError as ex:
+                print("FAILED to clone {}: {}".format(wiki.name, str(ex)))
+                print("Skipping tests\n")
+                return_values.append(0)
+                continue
     else:
         return_values.append(run_tests_on_pages(
                 os.path.join(reports_path, os.path.basename(single_file)), [single_file], os.path.dirname(single_file),
