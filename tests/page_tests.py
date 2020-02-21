@@ -4,6 +4,7 @@ import re
 import codecs
 import requests
 import concurrent.futures
+import time
 
 from enchant.checker import SpellChecker
 from enchant.tokenize import URLFilter, EmailFilter, WikiWordFilter, MentionFilter
@@ -191,10 +192,16 @@ class PageTests(unittest.TestCase):
             return url
 
         def check_link(lnk, sess, filenames, folders):
+            global file_lock
             if not check_skip_conditions(lnk, filenames, folders):
                 failure = try_to_connect(lnk, sess)
                 if failure:
-                    return failure
+                    while file_lock:
+                        time.sleep(1)
+                    file_lock = True
+                    with open("failed_urls.txt", "a") as failed_file:
+                        failed_file.write(failure)
+                    file_lock = False
             elif check_if_link_to_wiki_page(lnk, filenames, folders):
                 return "Could not follow page link {}".format(lnk)
 
@@ -205,6 +212,7 @@ class PageTests(unittest.TestCase):
         except Exception as e:
             self.fail("FAILED TO OPEN {} because {} : {}".format(self.page, e.__class__.__name__, e))
 
+        file_lock = False
         links = get_urls_from_text(text)
         folders = os.listdir(self.wiki_dir)
         filenames = [os.path.splitext(os.path.basename(f))[0].lower() for f in self.all_pages]

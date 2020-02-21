@@ -48,6 +48,9 @@ def run_all_tests(single_file, remote):
 
     return_values = []
 
+    # delete previously recorded failed urls:
+    open("failing_urls.txt", "w").close()
+
     if remote:
         for wiki in [DEV_MANUAL, IBEX_MANUAL, USER_MANUAL]:
             try:
