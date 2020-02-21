@@ -9,6 +9,7 @@ from wiki import Wiki
 from tests.page_tests import PageTests
 from tests.shadow_mirroring_tests import ShadowReplicationTests
 from utils.ignored_words import IGNORED_ITEMS
+import utils.global_vars
 
 DEV_MANUAL = Wiki("ibex_developers_manual")
 IBEX_MANUAL = Wiki("IBEX")
@@ -48,8 +49,8 @@ def run_all_tests(single_file, remote):
 
     return_values = []
 
-    # delete previously recorded failed urls:
-    open("failing_urls.txt", "w").close()
+    #  initialise globals, currently just string of warnings
+    utils.global_vars.init()
 
     if remote:
         for wiki in [DEV_MANUAL, IBEX_MANUAL, USER_MANUAL]:
@@ -66,7 +67,7 @@ def run_all_tests(single_file, remote):
                 print("Skipping tests\n")
                 return_values.append(0)
                 continue
-
+        print(utils.global_vars.failed_url_string)
         for wiki in [DEV_MANUAL, USER_MANUAL]:
             try:
                 with wiki:
