@@ -4,6 +4,8 @@ import re
 import codecs
 import requests
 import concurrent.futures
+import time
+import utils.global_vars
 
 from enchant.checker import SpellChecker
 from enchant.tokenize import URLFilter, EmailFilter, WikiWordFilter, MentionFilter
@@ -157,16 +159,18 @@ class PageTests(unittest.TestCase):
             return short_check_skip_conditions(url, filenames) or url.split("/")[0] in folders
 
         def try_to_connect(url, session):
+            nonlocal wiki_name, page_name
             try:
                 response = session.head(url)
                 if not response:
-                    return "Could not open URL, got response code {} for {}".format(response.status_code, url)
+                    return "Could not open URL, got response code {} for {}\n".format(
+                        response.status_code, get_url_basename(url)), url
             except (requests.exceptions.MissingSchema, requests.exceptions.InvalidURL):
-                return "Invalid link : {}".format(url)
+                return "Invalid link: {}\n".format(get_url_basename(url)), url
             except requests.exceptions.SSLError:
-                return "Invalid SSL certificate for: {}".format(url)
+                return "Invalid SSL certificate for: {}\n".format(get_url_basename(url)), url
             except requests.exceptions.ConnectionError:
-                return "Disconnected without response by {}".format(url)
+                return "Disconnected without response by {}\n".format(get_url_basename(url)), url
 
         def check_if_link_to_wiki_page(url, filenames, folders):
             # If link is to a file in the wiki and shouldn't be otherwise skipped, check that the file actually exists
@@ -176,9 +180,10 @@ class PageTests(unittest.TestCase):
             return False
 
         def create_failure_message(failed_urls):
+            nonlocal wiki_name, page_name
             if failed_urls and not self.isSinglePageTest:
-                self.fail("The page {} had the following errors in its links: \n    {}".format(
-                    self.page, "\n    ".join(failed_urls)))
+                self.fail("The page {} in the wiki {} had the following errors in its links: \n    {}".format(
+                    page_name, wiki_name, "\n    ".join(failed_urls)))
             elif failed_urls:
                 self.fail(("The page {} had the following errors in its links: \n    {} \n\n    "
                            "Some of these may be due to this file being checked independent of its wiki").format(
@@ -190,11 +195,45 @@ class PageTests(unittest.TestCase):
                 url = "http://{}".format(url)
             return url
 
+        def write_to_file(fail_text):
+            """
+
+            :param fail_text: error message received when trying to connect
+            :return:
+            """
+            nonlocal message_lock
+            error, url = fail_text
+            while message_lock:
+                time.sleep(1)
+            message_lock = True
+            message_contents = utils.global_vars.failed_url_string.splitlines(True)
+
+            msg_index = [i for i in range(len(message_contents)) if message_contents[i] == error]  # index of error
+
+            if msg_index:
+                # Write page location at the top of the list if error is already present in the file
+                message_contents.insert(msg_index[0]+2, "  {}/{}: {}\n".format(wiki_name, page_name, url))
+            else:
+                # Make a new entry at the end of the file if error has not been seen before
+                message_contents.append("{}On the following pages:\n  {}/{}: {}\n".format(
+                    error, wiki_name, page_name, url))
+
+            utils.global_vars.failed_url_string = "".join(message_contents)
+            message_lock = False
+
+        def get_url_basename(url):
+            """
+
+            :param url: URL to find basename of
+            :return: content between e.g. "http://" and first "/"
+            """
+            return url.split("/")[2]
+
         def check_link(lnk, sess, filenames, folders):
             if not check_skip_conditions(lnk, filenames, folders):
                 failure = try_to_connect(lnk, sess)
                 if failure:
-                    return failure
+                    write_to_file(failure)
             elif check_if_link_to_wiki_page(lnk, filenames, folders):
                 return "Could not follow page link {}".format(lnk)
 
@@ -205,6 +244,9 @@ class PageTests(unittest.TestCase):
         except Exception as e:
             self.fail("FAILED TO OPEN {} because {} : {}".format(self.page, e.__class__.__name__, e))
 
+        message_lock = False
+        wiki_name = self.wiki_dir.split("\\")[-1]
+        page_name = self.page.split("\\")[-1]
         links = get_urls_from_text(text)
         folders = os.listdir(self.wiki_dir)
         filenames = [os.path.splitext(os.path.basename(f))[0].lower() for f in self.all_pages]
