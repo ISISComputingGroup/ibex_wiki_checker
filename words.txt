@@ -44,6 +44,7 @@ aka
 akeroyd
 alarmconfigtool
 alarmview
+alexandru
 alf's
 aliasiocname
 aliaspvname
@@ -605,6 +606,7 @@ electrometers
 elektronika
 emma's
 emptylist
+emu's
 enablement
 endian
 endif
