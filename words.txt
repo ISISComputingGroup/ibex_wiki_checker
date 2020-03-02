@@ -202,6 +202,7 @@ behavior
 benchtop
 bessy
 bfb
+bish
 bishal
 bindable
 bindingcontext
@@ -1887,6 +1888,8 @@ px
 pxi
 py
 pyc
+pycas
+pycaspy
 pycharm
 pyctl
 pydev
