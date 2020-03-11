@@ -200,6 +200,7 @@ beckhoffs
 beckhoff's
 behavior
 benchtop
+berkley
 bessy
 bfb
 bish
@@ -494,6 +495,7 @@ definitionsteward
 dehex
 dehexed
 del
+demoing
 demos
 deprioritise
 dereferenced
@@ -1961,6 +1963,7 @@ refactoring
 reflectometer
 reflectometers
 reflectometry
+refl
 refs
 regedit
 regex
@@ -2018,6 +2021,7 @@ riverbankcomputing
 rl
 rlower
 rmtree
+robocopy
 rohde
 rollingfileappender
 rootfolder
