@@ -565,6 +565,7 @@ drvasynipport
 drvasynipportconfigure
 drvasynserialport
 drvasynserialportconfigure
+ds
 d's
 dset
 dstport
@@ -1679,6 +1680,7 @@ offspec
 og
 ok
 okay
+oldp
 oldvalue
 olympic
 omsl
