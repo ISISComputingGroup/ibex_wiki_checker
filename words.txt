@@ -1209,6 +1209,7 @@ linkam
 linkedlist
 linmot
 linmots
+lintable
 linted
 linter
 linting
