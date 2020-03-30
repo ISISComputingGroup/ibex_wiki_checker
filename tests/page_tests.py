@@ -227,7 +227,10 @@ class PageTests(unittest.TestCase):
             :param url: URL to find basename of
             :return: content between e.g. "http://" and first "/"
             """
-            return url.split("/")[2]
+            if url.count("/") >= 2:
+                return url.split("/")[2]
+            else:
+                return url
 
         def check_link(lnk, sess, filenames, folders):
             if not check_skip_conditions(lnk, filenames, folders):
