@@ -156,7 +156,8 @@ class PageTests(unittest.TestCase):
 
         def check_skip_conditions(url, filenames, folders):
             # Extra condition checks if it links to a file location on the wiki
-            return short_check_skip_conditions(url, filenames) or url.split("/")[0] in folders
+            is_github_link = get_url_basename(url) == "github.com"
+            return short_check_skip_conditions(url, filenames) or url.split("/")[0] in folders or is_github_link
 
         def try_to_connect(url, session):
             nonlocal wiki_name, page_name
@@ -230,6 +231,7 @@ class PageTests(unittest.TestCase):
             return url.split("/")[2]
 
         def check_link(lnk, sess, filenames, folders):
+
             if not check_skip_conditions(lnk, filenames, folders):
                 failure = try_to_connect(lnk, sess)
                 if failure:
