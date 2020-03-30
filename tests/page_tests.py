@@ -156,6 +156,9 @@ class PageTests(unittest.TestCase):
 
         def check_skip_conditions(url, filenames, folders):
             # Extra condition checks if it links to a file location on the wiki
+            # Also White list github links from checking for the moment if they are valid as GitHub limits 
+            # calls to 300 an hour which is not enough, and it throws an HTTP 429 error code. Future ticket will 
+            # uses the Github API to circumvent this issue.
             is_github_link = get_url_basename(url) == "github.com"
             return short_check_skip_conditions(url, filenames) or url.split("/")[0] in folders or is_github_link
 
