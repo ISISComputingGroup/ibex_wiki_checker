@@ -227,7 +227,7 @@ class PageTests(unittest.TestCase):
             :param url: URL to find basename of
             :return: content between e.g. "http://" and first "/"
             """
-            if url.count("/) >=2:
+            if url.count("/") >=2:
                 return url.split("/")[2]
             else:
                 return url
