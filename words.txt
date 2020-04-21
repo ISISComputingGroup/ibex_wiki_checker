@@ -153,6 +153,8 @@ autocrop
 autofocus
 autofocussing
 autologon
+automeasure
+automeasure
 autorestart
 autorun
 autosave
@@ -1786,6 +1788,7 @@ pingable
 pinholeselector
 pini
 pinout
+pipework
 pis
 pixelman
 pl
@@ -1864,6 +1867,7 @@ proto
 proxydesign
 prs
 ps
+pseudocode
 psu
 pubweb
 pugixml
