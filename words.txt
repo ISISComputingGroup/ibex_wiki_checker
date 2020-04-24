@@ -178,6 +178,7 @@ baratron
 baritron
 barndoor
 barndoors
+bartlington
 basedir
 basename
 baseobserver
@@ -708,6 +709,7 @@ flexiral
 flnk
 flowrate
 fluxgate
+fluxgates
 fmw
 folderctid
 fomr
