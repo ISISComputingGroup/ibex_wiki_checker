@@ -1999,6 +1999,7 @@ removepropertychangelistener
 reno
 repeatcount
 repo
+repoint
 repos
 reproposed
 repurposed
@@ -2184,6 +2185,7 @@ skoda's
 sku
 slideshows
 sm
+smb
 smc
 smpl
 sms
@@ -2213,6 +2215,7 @@ sourcemeter
 sourcesafe
 southren
 sp
+sparrowhawk
 spec
 specmap
 speedupbuilding
