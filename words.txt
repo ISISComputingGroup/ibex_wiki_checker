@@ -913,6 +913,7 @@ hightfurnace
 hihi
 hirst
 histogrammed
+histogramming
 hitachi
 hm
 homeval
@@ -1843,6 +1844,7 @@ preiocinit
 prepend
 prepends
 preplanning
+prescale
 presentability
 preset
 presetinstrument
