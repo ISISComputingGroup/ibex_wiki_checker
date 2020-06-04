@@ -65,7 +65,6 @@ angstrom
 aniszczyk
 anl
 ans
-Ansible
 antares
 anton
 anyboolean
