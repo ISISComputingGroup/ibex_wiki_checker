@@ -65,6 +65,7 @@ angstrom
 aniszczyk
 anl
 ans
+ansible
 antares
 anton
 anyboolean
@@ -1801,6 +1802,7 @@ pixelman
 pl
 placeholder
 platinums
+playbook
 plc
 plcip
 plt
