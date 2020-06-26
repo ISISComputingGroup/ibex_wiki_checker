@@ -1758,8 +1758,9 @@ pao
 parallelisation
 param
 params
-paris   
+paris
 parma
+passcode
 passphrase
 pasynuser
 patrik
@@ -2369,6 +2370,7 @@ throwable
 thurlby
 tightvnc
 tighvnc
+timebox
 timeout
 timeouts
 timescale
