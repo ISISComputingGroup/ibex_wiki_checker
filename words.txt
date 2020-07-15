@@ -2057,6 +2057,7 @@ rs
 rst
 rtry
 rtype
+ruggedized
 ruleset
 runcontrol
 runioc
