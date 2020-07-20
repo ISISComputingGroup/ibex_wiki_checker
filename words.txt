@@ -416,6 +416,7 @@ cryomagnetics
 cryomagnets
 cryomech
 cryoprotectant
+cryosms
 cryostats
 cryovalve
 cryvalve
@@ -2506,6 +2507,7 @@ unticked
 uoa
 updateextendingplugins
 updatemodels
+updaterepoflowdiagram
 updatepvs
 upgrader
 uppercase
