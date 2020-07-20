@@ -1316,7 +1316,7 @@ maxoccurs
 maxwaitsecs
 mb
 mbar
-mbbiDirect
+mbbidirect
 mbbi
 mbbo
 mc
