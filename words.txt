@@ -2111,6 +2111,7 @@ securitygroupname
 sed
 seesaw
 selectionevent
+selogcom
 sendall
 sendslackmessage
 sendtitlesp
