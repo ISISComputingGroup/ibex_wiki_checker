@@ -1804,6 +1804,7 @@ pis
 pixelman
 pl
 placeholder
+placeholders
 platinums
 playbook
 playbooks
@@ -2546,6 +2547,7 @@ versioned
 verticalspacing
 vesuvio
 vetos
+vhd
 vhds
 vhdx
 vi
