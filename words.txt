@@ -16,6 +16,7 @@ acro
 actionlist
 activeline
 activemq
+ad-hoc
 addhandlerlistener
 addobserver
 addpropertychangelistener
