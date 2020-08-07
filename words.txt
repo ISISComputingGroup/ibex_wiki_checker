@@ -481,6 +481,7 @@ dbl
 dbload
 dbloaddatabase
 dbloadrecords
+dbputfields
 dbs
 dbtpf
 dbunitchecker
