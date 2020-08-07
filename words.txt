@@ -168,6 +168,7 @@ autosaves
 autosaving
 autoscale
 autoselected
+autoset
 autostart
 autotune
 autwsprefix
@@ -1964,6 +1965,7 @@ readonly
 readsetpointcurrent
 readthedocs
 reallybig
+reanalysed
 rebase
 rebin
 rebinning
