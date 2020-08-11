@@ -968,6 +968,7 @@ icpconfigroot
 icpdiscussions
 icpisis
 icpvardir
+idaas
 ide
 idnumber
 ids
@@ -1696,6 +1697,7 @@ oercone
 oerlikon
 officepc
 offline
+offsite
 offspec
 og
 ok
@@ -2182,6 +2184,7 @@ sharepoint
 shm
 shotwell
 showbanner
+showstopper
 showtitle
 shutdown
 shutdowns
@@ -2521,6 +2524,7 @@ uppercase
 urip
 url
 urlclassloader
+userdef
 userdefinelang
 usermanual
 username
