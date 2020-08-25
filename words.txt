@@ -560,6 +560,7 @@ docu
 docutils
 docx
 doesn
+dolica
 dosans
 dostrings
 dotfiles
@@ -987,6 +988,7 @@ imagej
 imat
 imon
 inam
+inbox
 inc
 incl
 incompletesetsok
@@ -1801,6 +1803,7 @@ physikinstrumente
 pid
 piezo
 pingable
+pings
 pinholeselector
 pini
 pinout
@@ -2571,6 +2574,7 @@ visio
 vm
 vmon
 vms
+vnc
 vogella
 voltammetry
 voneshen
