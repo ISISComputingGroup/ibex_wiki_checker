@@ -6,15 +6,11 @@ import argparse
 import git
 from wiki import Wiki
 
-from tests.page_tests import PageTests
+from tests.page_tests import PageTests, DEV_MANUAL, IBEX_MANUAL, USER_MANUAL, TEST_WIKI
 from tests.shadow_mirroring_tests import ShadowReplicationTests
 from utils.ignored_words import IGNORED_ITEMS
 import utils.global_vars
 
-DEV_MANUAL = Wiki("ibex_developers_manual")
-IBEX_MANUAL = Wiki("IBEX")
-USER_MANUAL = Wiki("ibex_user_manual")
-TEST_WIKI = Wiki("ibex_wiki_checker")
 
 
 def run_tests_on_pages(reports_path, pages, wiki_dir, test_class):
