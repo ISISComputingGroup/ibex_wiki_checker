@@ -4,7 +4,6 @@ import unittest
 from xmlrunner import XMLTestRunner
 import argparse
 import git
-from wiki import Wiki
 
 from tests.page_tests import PageTests, DEV_MANUAL, IBEX_MANUAL, USER_MANUAL, TEST_WIKI
 from tests.shadow_mirroring_tests import ShadowReplicationTests

@@ -16,7 +16,7 @@ DEV_MANUAL = Wiki("ibex_developers_manual")
 IBEX_MANUAL = Wiki("IBEX")
 USER_MANUAL = Wiki("ibex_user_manual")
 TEST_WIKI = Wiki("ibex_wiki_checker")
-WIKI_WHITELIST = [USER_MANUAL, IBEX_MANUAL, DEV_MANUAL]
+WIKI_INCLUDELIST = [USER_MANUAL, IBEX_MANUAL, DEV_MANUAL, TEST_WIKI]
 
 
 def strip_between_tags(expression, text):
@@ -245,7 +245,8 @@ class PageTests(unittest.TestCase):
 
         def check_link(link, sess, filenames, folders):
             if not check_skip_conditions(link, filenames, folders):
-                if get_url_basename(link) == "github.com" and any([wiki in link for wiki in [f"{wiki.name}/wiki" for wiki in WIKI_WHITELIST]]):
+                if get_url_basename(link) == "github.com" and any([f"{wiki.name}/wiki" in link for wiki in WIKI_INCLUDELIST]):
+                    #todo call check_if_link_to_wiki_page()
                     print(link)
                     return
                 failure = try_to_connect(link, sess)
