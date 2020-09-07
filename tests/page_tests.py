@@ -243,13 +243,13 @@ class PageTests(unittest.TestCase):
             else:
                 return url
 
-        def check_link(link, sess, filenames, folders):
+        def check_link(link, session, filenames, folders):
             if not check_skip_conditions(link, filenames, folders):
                 if get_url_basename(link) == "github.com" and any([f"{wiki.name}/wiki" in link for wiki in WIKI_INCLUDELIST]):
-                    #todo call check_if_link_to_wiki_page()
-                    print(link)
-                    return
-                failure = try_to_connect(link, sess)
+                    # Get the wiki page name and append .md to it to check if the file exists in the local wiki repo
+                    _page_file_name = f"{link.split('/')[-1]}.md"
+                    return check_if_link_to_wiki_page(_page_file_name, filenames, folders)
+                failure = try_to_connect(link, session)
                 if failure:
                     write_to_file(failure)
             elif check_if_link_to_wiki_page(link, filenames, folders):
