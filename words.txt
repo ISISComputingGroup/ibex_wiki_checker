@@ -2622,6 +2622,7 @@ windowbuilder
 winmerge
 winpcap
 wireshark
+wirelessly
 wix
 wontfix
 wordpress
