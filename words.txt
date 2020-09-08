@@ -1860,6 +1860,7 @@ preferencepages
 prefs
 preiocinit
 prepend
+prepended
 prepends
 preplanning
 prescale
@@ -2622,6 +2623,7 @@ windowbuilder
 winmerge
 winpcap
 wireshark
+wirelessly
 wix
 wontfix
 wordpress
