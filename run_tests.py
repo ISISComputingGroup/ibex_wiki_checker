@@ -11,7 +11,6 @@ from utils.ignored_words import IGNORED_ITEMS
 import utils.global_vars
 
 
-
 def run_tests_on_pages(reports_path, pages, wiki_dir, test_class):
     suite = unittest.TestSuite()
     loader = unittest.TestLoader()
