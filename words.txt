@@ -1161,6 +1161,7 @@ jun
 junit
 junitreport
 jusched
+jsbeam
 jvisualvm
 kafka
 kammrath
