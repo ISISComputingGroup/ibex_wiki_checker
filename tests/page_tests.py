@@ -10,6 +10,14 @@ import utils.global_vars
 from enchant.checker import SpellChecker
 from enchant.tokenize import URLFilter, EmailFilter, WikiWordFilter, MentionFilter
 
+from wiki import Wiki
+
+DEV_MANUAL = Wiki("ibex_developers_manual")
+IBEX_MANUAL = Wiki("IBEX")
+USER_MANUAL = Wiki("ibex_user_manual")
+TEST_WIKI = Wiki("ibex_wiki_checker")
+WIKI_INCLUDELIST = [USER_MANUAL, IBEX_MANUAL, DEV_MANUAL, TEST_WIKI]
+
 
 def strip_between_tags(expression, text):
     if text is None:
@@ -156,11 +164,7 @@ class PageTests(unittest.TestCase):
 
         def check_skip_conditions(url, filenames, folders):
             # Extra condition checks if it links to a file location on the wiki
-            # Also White list github links from checking for the moment if they are valid as GitHub limits 
-            # calls to 300 an hour which is not enough, and it throws an HTTP 429 error code. Future ticket will 
-            # uses the Github API to circumvent this issue.
-            is_github_link = get_url_basename(url) == "github.com"
-            return short_check_skip_conditions(url, filenames) or url.split("/")[0] in folders or is_github_link
+            return short_check_skip_conditions(url, filenames) or url.split("/")[0] in folders
 
         def try_to_connect(url, session):
             nonlocal wiki_name, page_name
@@ -236,14 +240,17 @@ class PageTests(unittest.TestCase):
             else:
                 return url
 
-        def check_link(lnk, sess, filenames, folders):
-
-            if not check_skip_conditions(lnk, filenames, folders):
-                failure = try_to_connect(lnk, sess)
+        def check_link(link, session, filenames, folders):
+            if not check_skip_conditions(link, filenames, folders):
+                if get_url_basename(link) == "github.com" and any([f"{wiki.name}/wiki" in link for wiki in WIKI_INCLUDELIST]):
+                    # Get the wiki page name and append .md to it to check if the file exists in the local wiki repo
+                    _page_file_name = f"{link.split('/')[-1]}.md"
+                    return check_if_link_to_wiki_page(_page_file_name, filenames, folders)
+                failure = try_to_connect(link, session)
                 if failure:
                     write_to_file(failure)
-            elif check_if_link_to_wiki_page(lnk, filenames, folders):
-                return "Could not follow page link {}".format(lnk)
+            elif check_if_link_to_wiki_page(link, filenames, folders):
+                return "Could not follow page link {}".format(link)
 
         # Have to open as UTF-8. Opening as ascii causes some encoding errors.
         try:
