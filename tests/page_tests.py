@@ -248,7 +248,7 @@ class PageTests(unittest.TestCase):
                     if IBEX_ISSUES in link:
                         # The link is to an IBEX issue, so check if its number is less than the total number of issues
                         issue_num = link.split(IBEX_ISSUES, 1)[-1]
-                        if not issue_num < self.top_issue_num:
+                        if not issue_num <= self.top_issue_num:
                             return "Invalid IBEX issue number: {}".format(issue_num)
                         return
                     if any([f"{wiki.name}/wiki" in link for wiki in WIKI_INCLUDELIST]):
