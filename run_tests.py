@@ -1,6 +1,9 @@
+import json
 import os
 import sys
 import unittest
+
+import requests
 from xmlrunner import XMLTestRunner
 import argparse
 import git
@@ -11,7 +14,7 @@ from utils.ignored_words import IGNORED_ITEMS
 import utils.global_vars
 
 
-def run_tests_on_pages(reports_path, pages, wiki_dir, test_class):
+def run_tests_on_pages(reports_path, pages, wiki_dir, highest_issue_num, test_class):
     suite = unittest.TestSuite()
     loader = unittest.TestLoader()
 
@@ -19,7 +22,7 @@ def run_tests_on_pages(reports_path, pages, wiki_dir, test_class):
     # unittest's test loader is unable to take arguments to test classes by default so have
     # to use the getTestCaseNames() syntax and explicitly add the argument ourselves.
     for page in pages:
-        suite.addTests([test_class(test, IGNORED_ITEMS, (page, pages, wiki_dir))
+        suite.addTests([test_class(test, IGNORED_ITEMS, (page, pages, wiki_dir, highest_issue_num))
                         for test in loader.getTestCaseNames(test_class)])
 
     runner = XMLTestRunner(output=str(reports_path), stream=sys.stdout)
@@ -47,6 +50,7 @@ def run_all_tests(single_file, remote):
     utils.global_vars.init()
 
     if remote:
+        top_issue_num = json.loads(requests.get("https://api.github.com/repos/ISISComputingGroup/IBEX/issues?per_page=1").content)[0]["number"]
         for wiki in [DEV_MANUAL, IBEX_MANUAL, USER_MANUAL]:
             try:
                 with wiki:
@@ -54,7 +58,7 @@ def run_all_tests(single_file, remote):
                     wiki_dir = wiki.get_path()
                     print("Running spelling tests on {}".format(wiki.name))
                     return_values.append(run_tests_on_pages(
-                        os.path.join(reports_path, wiki.name), pages, wiki_dir, test_class=PageTests))
+                        os.path.join(reports_path, wiki.name), pages, wiki_dir, top_issue_num, test_class=PageTests))
                     print()
             except git.GitCommandError as ex:
                 print("FAILED to clone {}: {}".format(wiki.name, str(ex)))
@@ -70,7 +74,7 @@ def run_all_tests(single_file, remote):
                     # Only do shadow replication tests in "remote" mode.
                     print("Running shadow replication tests on {}".format(wiki.name))
                     return_values.append(run_tests_on_pages(
-                        os.path.join(reports_path, wiki.name), pages, wiki_dir, test_class=ShadowReplicationTests))
+                        os.path.join(reports_path, wiki.name), pages, wiki_dir, top_issue_num, test_class=ShadowReplicationTests))
                     print()
             except git.GitCommandError as ex:
                 print("FAILED to clone {}: {}".format(wiki.name, str(ex)))

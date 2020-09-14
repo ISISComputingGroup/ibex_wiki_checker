@@ -12,6 +12,8 @@ from enchant.tokenize import URLFilter, EmailFilter, WikiWordFilter, MentionFilt
 
 from wiki import Wiki
 
+IBEX_ISSUES = "IBEX/issues/"
+
 DEV_MANUAL = Wiki("ibex_developers_manual")
 IBEX_MANUAL = Wiki("IBEX")
 USER_MANUAL = Wiki("ibex_user_manual")
@@ -47,7 +49,7 @@ class PageTests(unittest.TestCase):
         """
         # Boilerplate so that unittest knows how to run these tests.
         super(PageTests, self).__init__(methodName)
-        self.page, self.all_pages, self.wiki_dir = wiki_info
+        self.page, self.all_pages, self.wiki_dir, self.top_issue_num = wiki_info
         self.ignored_words = ignored_items["WORDS"]
         self.ignored_urls = ignored_items["URLS"]
         self.isSinglePageTest = ([os.path.join(self.wiki_dir, self.page)] == self.all_pages)
@@ -242,10 +244,17 @@ class PageTests(unittest.TestCase):
 
         def check_link(link, session, filenames, folders):
             if not check_skip_conditions(link, filenames, folders):
-                if get_url_basename(link) == "github.com" and any([f"{wiki.name}/wiki" in link for wiki in WIKI_INCLUDELIST]):
-                    # Get the wiki page name and append .md to it to check if the file exists in the local wiki repo
-                    _page_file_name = f"{link.split('/')[-1]}.md"
-                    return check_if_link_to_wiki_page(_page_file_name, filenames, folders)
+                if get_url_basename(link) == "github.com":
+                    if IBEX_ISSUES in link:
+                        # The link is to an IBEX issue, so check if its number is less than the total number of issues
+                        issue_num = link.split(IBEX_ISSUES, 1)[-1]
+                        if not issue_num < self.top_issue_num:
+                            return "Invalid IBEX issue number: {}".format(issue_num)
+                        return
+                    if any([f"{wiki.name}/wiki" in link for wiki in WIKI_INCLUDELIST]):
+                        # Get the wiki page name and append .md to it to check if the file exists in the local wiki repo
+                        _page_file_name = f"{link.split('/')[-1]}.md"
+                        return check_if_link_to_wiki_page(_page_file_name, filenames, folders)
                 failure = try_to_connect(link, session)
                 if failure:
                     write_to_file(failure)
