@@ -51,8 +51,8 @@ def run_all_tests(single_file, remote):
     #  initialise globals, currently just string of warnings
     utils.global_vars.init()
 
+    top_issue_num = int(json.loads(requests.get(GITHUB_API_ISSUE_CALL).content)[0]["number"])
     if remote:
-        top_issue_num = int(json.loads(requests.get(GITHUB_API_ISSUE_CALL).content)[0]["number"])
         for wiki in [DEV_MANUAL, IBEX_MANUAL, USER_MANUAL]:
             try:
                 with wiki:
@@ -85,8 +85,8 @@ def run_all_tests(single_file, remote):
                 continue
     else:
         return_values.append(run_tests_on_pages(
-                os.path.join(reports_path, os.path.basename(single_file)), [single_file], os.path.dirname(single_file),
-                test_class=PageTests))
+            os.path.join(reports_path, os.path.basename(single_file)), [single_file], os.path.dirname(single_file),
+            top_issue_num, test_class=PageTests))
 
     return all(value for value in return_values)
 
