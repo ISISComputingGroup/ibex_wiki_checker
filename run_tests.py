@@ -13,6 +13,8 @@ from tests.shadow_mirroring_tests import ShadowReplicationTests
 from utils.ignored_words import IGNORED_ITEMS
 import utils.global_vars
 
+GITHUB_API_ISSUE_CALL = f"https://api.github.com/repos/ISISComputingGroup/IBEX/issues?per_page=1"
+
 
 def run_tests_on_pages(reports_path, pages, wiki_dir, highest_issue_num, test_class):
     suite = unittest.TestSuite()
@@ -50,7 +52,7 @@ def run_all_tests(single_file, remote):
     utils.global_vars.init()
 
     if remote:
-        top_issue_num = json.loads(requests.get("https://api.github.com/repos/ISISComputingGroup/IBEX/issues?per_page=1").content)[0]["number"]
+        top_issue_num = int(json.loads(requests.get(GITHUB_API_ISSUE_CALL).content)[0]["number"])
         for wiki in [DEV_MANUAL, IBEX_MANUAL, USER_MANUAL]:
             try:
                 with wiki:
