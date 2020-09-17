@@ -272,7 +272,7 @@ class PageTests(unittest.TestCase):
         wiki_name = self.wiki_dir.split("\\")[-1]
         page_name = self.page.split("\\")[-1]
         links = get_urls_from_text(text)
-        folders = os.listdir(self.wiki_dir)
+        folders = os.listdir(self.wiki_dir) if self.wiki_dir else []
         filenames = [os.path.splitext(os.path.basename(f))[0].lower() for f in self.all_pages]
         with requests.Session() as sess:
             # Some websites don't respond correctly with the default requests user agent, so the firefox user agent
