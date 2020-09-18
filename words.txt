@@ -2569,6 +2569,7 @@ viewmodel
 viewpart
 vimovein
 virtualisation
+virtualbox
 vis
 visadrv
 viscotherm
@@ -2609,6 +2610,7 @@ websockets
 weeder
 wf
 whitespace
+whitelist
 widgetcontroller
 widgetproperties
 widgetselected
