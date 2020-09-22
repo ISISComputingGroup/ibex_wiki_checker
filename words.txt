@@ -2503,6 +2503,7 @@ uncommenting
 unfeasible
 unhandled
 unicast
+unicodeescape
 unilever
 uninstall
 uninstallation
