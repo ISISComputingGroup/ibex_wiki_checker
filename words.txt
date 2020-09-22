@@ -1303,6 +1303,7 @@ makesupport
 malloc
 managermode
 managermodehandler
+manc
 mantain
 mantid
 mantidproject
