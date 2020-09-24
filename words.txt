@@ -1088,6 +1088,7 @@ isenabled
 ish
 ishandled
 isis
+isisbeam
 isiscomputinggroup
 isisdae
 isisdatasvr
