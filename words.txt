@@ -2679,6 +2679,7 @@ yyyy
 zenity
 zeromq
 zeroth
+zfmagfld
 zhex
 zhi
 zlib
