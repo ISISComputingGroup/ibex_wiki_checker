@@ -350,6 +350,7 @@ color
 colors
 colspan
 columnindex
+conan
 com
 commandid
 commitid
@@ -655,6 +656,7 @@ errlog
 erroring
 errorx
 esc
+ess
 etc
 ethernet
 eulerian
@@ -908,6 +910,7 @@ hashcode
 hasn
 hdfgroup
 hdfview
+hdf
 heliox
 heliox's
 helloworld
