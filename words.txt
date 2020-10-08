@@ -881,6 +881,7 @@ gov
 gowrishankarnath
 gphi
 gpib
+gradle
 grafana
 grainger
 grep
@@ -1189,6 +1190,7 @@ kirkham
 kn
 knauer
 kohms
+kotlin
 kq
 kwargs
 labview
@@ -2081,6 +2083,8 @@ rtype
 ruggedized
 ruleset
 runcontrol
+runinfo
+runinfo's
 runioc
 runnable
 runnima
