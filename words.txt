@@ -967,6 +967,7 @@ icecube
 iceoxford
 iconsole
 icp
+icp's
 icpbinarydir
 icpconfig
 icpconfigdir
