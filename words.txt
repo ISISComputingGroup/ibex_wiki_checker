@@ -128,6 +128,7 @@ asubroutine
 asubtest
 asubtestapp
 asyn
+asynuser
 async
 asyncexec
 asyncio
@@ -351,6 +352,7 @@ colors
 colspan
 columnindex
 conan
+configmenu
 com
 commandid
 commitid
@@ -2587,6 +2589,7 @@ visadrv
 viscotherm
 visio
 vm
+vmeconfigmenu
 vmon
 vms
 vnc
