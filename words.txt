@@ -238,7 +238,8 @@ bumpstrip
 bundleactivator
 bundleclass
 bundlecontext
-burca
+burc
+burndown
 bytecode
 ca
 cacbe
@@ -1365,6 +1366,7 @@ mg
 mhz
 michal
 microamps
+micromanagementy
 microsoft
 middleware
 mihai
@@ -1403,7 +1405,7 @@ monochromator
 moorby
 motionsetpoints
 motionsetpointsconfigure
-motionssetpoint
+motionsetpoint
 motorapp
 motorextension
 motorextensions
@@ -1985,7 +1987,7 @@ readmes
 readonly
 readsetpointcurrent
 readthedocs
-reallybig
+reals
 reanalysed
 rebase
 rebin
@@ -2026,6 +2028,7 @@ rehoming
 reimplemented
 relativepath
 releasenotes
+reminds
 remoteip
 remoteport
 remoting
@@ -2391,6 +2394,7 @@ testobservable
 th
 thandar
 thar
+themself
 thenanswer
 thenreturn
 thenthrow
@@ -2473,6 +2477,7 @@ traceio
 trainingcoursedata
 trans
 trapwrite
+trialing
 triton
 tritons
 ts
@@ -2591,6 +2596,7 @@ visadrv
 viscotherm
 visio
 vm
+vme
 vmeconfigmenu
 vmon
 vms
