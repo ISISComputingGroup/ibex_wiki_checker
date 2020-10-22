@@ -239,6 +239,7 @@ bundleactivator
 bundleclass
 bundlecontext
 burc
+burca
 burndown
 bytecode
 ca
@@ -1039,6 +1040,7 @@ instron's
 instronsup
 instrumente
 instrumentinforeceiver
+instrumentscripts
 instrumentutils
 int
 internalerror
@@ -1104,6 +1106,7 @@ isisdae
 isisdatasvr
 isisicp
 isislog
+isisneutronmuon
 isisstat
 isissupport
 iso
