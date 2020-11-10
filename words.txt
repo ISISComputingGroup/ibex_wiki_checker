@@ -1448,6 +1448,7 @@ muonfe
 muongui
 muonscript
 musr
+mutex
 mvn
 mw
 mx
@@ -1465,6 +1466,7 @@ mysql
 mysqladmin
 mysqld
 mysqldump
+mysqlite
 mytestalarm
 myview
 myviewer
