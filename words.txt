@@ -184,6 +184,7 @@ baratron
 baritron
 barndoor
 barndoors
+barotrons
 bartlington
 basedir
 basename
@@ -1006,6 +1007,7 @@ imagej
 imat
 imon
 inam
+inbetween
 inbox
 inc
 incl
@@ -1971,6 +1973,7 @@ pytest
 pytests
 pythonw
 pywin
+ral
 raman
 randapp
 randdev
@@ -2502,6 +2505,7 @@ ttiex
 tunable
 tuple
 tuples
+turbotronic
 twincat
 twotiersamplechanger
 twv
