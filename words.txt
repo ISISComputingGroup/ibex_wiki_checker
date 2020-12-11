@@ -591,6 +591,7 @@ drvasynipportconfigure
 drvasynserialport
 drvasynserialportconfigure
 ds
+dsc
 d's
 dset
 dstport
@@ -2398,6 +2399,7 @@ tekmso
 tektronix
 tempalooza
 temperatue
+tempfile
 templated
 temptitle
 terminolgy
@@ -2506,6 +2508,7 @@ tunable
 tuple
 tuples
 turbotronic
+Turbotronik
 twincat
 twotiersamplechanger
 twv
