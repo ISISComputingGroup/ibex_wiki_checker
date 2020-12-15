@@ -689,6 +689,7 @@ extensionsmanuals
 extint
 extweb
 fa
+facade
 fae
 failover
 fallback
