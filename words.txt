@@ -251,6 +251,7 @@ cacbe
 cachefatal
 cachingobservable
 caen
+caenhvasyn
 caget
 cainfo
 caj
