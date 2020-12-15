@@ -2508,7 +2508,7 @@ tunable
 tuple
 tuples
 turbotronic
-Turbotronik
+turbotronik
 twincat
 twotiersamplechanger
 twv
@@ -2551,6 +2551,7 @@ unittest
 unix
 uno
 unpark
+unparking
 unpolarised
 unprefixed
 unrepresentable
