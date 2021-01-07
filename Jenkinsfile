@@ -27,11 +27,12 @@ pipeline {
       }
     }
     
-    stage("Unit Test Results") {
-      steps {
+  }
+  
+  post {
+    always {
         junit "test-reports/**/*.xml"
-      }
-   }
+    }
   }
   
   // The options directive is for configuration that applies to the whole job.
