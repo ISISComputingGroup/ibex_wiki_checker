@@ -585,6 +585,7 @@ dpkg
 dpo
 dpvt
 dqa
+drivercorrections
 dropdown
 druck
 drvasyn
@@ -776,6 +777,7 @@ fsmregistrar
 fta
 ftraining
 ftvl
+fullscreen
 fullscreenschematic
 func
 futurize
