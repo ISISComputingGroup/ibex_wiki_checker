@@ -768,6 +768,7 @@ frm
 fromobject
 frontend
 frontpanel
+frontpanelschematic
 f's
 fslash
 fsm
@@ -775,6 +776,7 @@ fsmregistrar
 fta
 ftraining
 ftvl
+fullscreenschematic
 func
 futurize
 fzj
@@ -1803,6 +1805,13 @@ pao
 parallelisation
 param
 params
+parameterchanged
+parameterinout
+parameterinvalid
+parametermajor
+parameterminor
+parametermoving    
+parameternotinposition
 paris
 parma
 passcode
