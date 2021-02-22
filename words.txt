@@ -185,7 +185,7 @@ baritron
 barndoor
 barndoors
 barotrons
-bartlington
+bartington
 basedir
 basename
 baseobserver
@@ -226,6 +226,7 @@ blahblah
 blockhouse
 blocknames
 blockserver
+bluescreening
 bluetooth
 bmp
 bnl
