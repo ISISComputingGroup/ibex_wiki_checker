@@ -951,6 +951,7 @@ histogrammed
 histogramming
 hitachi
 hm
+hoc
 homeval
 hopr
 horizontalspacing
@@ -2213,6 +2214,7 @@ setiocname
 setlabeltext
 setlayout
 setlayoutdata
+setmag
 setname
 setparam
 setpoint
