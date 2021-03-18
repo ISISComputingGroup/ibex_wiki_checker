@@ -2694,7 +2694,7 @@ winmerge
 winpcap
 wirelessly
 wireshark
-Withers
+withers
 wix
 wontfix
 wordpress
