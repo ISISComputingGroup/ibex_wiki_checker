@@ -157,9 +157,13 @@ autocrlf
 autocrop
 autofocus
 autofocussing
+autoheat
 autologon
 automeasure
 automeasure
+autopid
+autorecondense
+autorecondensing
 autorestart
 autorun
 autosave
@@ -1852,6 +1856,7 @@ physica
 physik
 physikinstrumente
 pid
+pids
 piezo
 pingable
 pings
@@ -2035,6 +2040,7 @@ recgblinitconstantlink
 recgblrecorderror
 recondense
 recondensed
+recondensing
 recordref
 recsim
 recurse
