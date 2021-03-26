@@ -2513,6 +2513,7 @@ toseloc
 tostring
 totalcounts
 touppercase
+tpar
 tpg
 tr
 trac
