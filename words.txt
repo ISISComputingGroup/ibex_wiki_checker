@@ -964,6 +964,7 @@ hostnames
 hotfix
 hotfixed
 hotfixes
+hotfixing
 howells
 hp
 hplc
