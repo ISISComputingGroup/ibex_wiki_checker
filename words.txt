@@ -916,6 +916,7 @@ gridlayout
 groupid
 groupspanel
 gs
+gs's
 gsl
 gson
 gtk
@@ -1198,6 +1199,7 @@ julich
 jülich
 jumpcell
 jun
+june
 junit
 junitreport
 jusched
@@ -2170,8 +2172,6 @@ scientificmagnetics
 scintillator
 scipy
 scm
-SCooper
-SCox
 screenshot
 screenshots
 scriptgenerator
