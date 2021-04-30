@@ -561,6 +561,7 @@ dinp
 dir
 dirhtml
 displayname
+django
 dk
 dlink
 dll
