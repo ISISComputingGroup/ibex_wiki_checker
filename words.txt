@@ -1843,6 +1843,7 @@ pdf
 pdr
 pdwn
 pended
+peopleware
 performlongtask
 perl
 pernickety
