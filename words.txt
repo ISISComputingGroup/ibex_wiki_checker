@@ -1214,6 +1214,7 @@ kathryn's
 kbytes
 keithley
 keithleys
+Keithley's
 keithleysourcemodes
 kelvinox
 kepco
