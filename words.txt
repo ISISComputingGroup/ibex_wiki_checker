@@ -1468,6 +1468,7 @@ mtrxxyy
 mulitmeters
 multibyte
 multichannel
+multidetector
 multiline
 multimeters
 multip
