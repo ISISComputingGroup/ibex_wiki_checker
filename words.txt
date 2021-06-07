@@ -1058,6 +1058,8 @@ inpc
 inpd
 inpe
 inputted
+inputeos
+outputeos
 in's
 instlist
 instmachine
