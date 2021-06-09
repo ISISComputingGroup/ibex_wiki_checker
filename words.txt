@@ -1209,6 +1209,8 @@ junitreport
 jusched
 jvisualvm
 kafka
+kafkacat
+kafkacow
 kammrath
 kanban
 kathryn
