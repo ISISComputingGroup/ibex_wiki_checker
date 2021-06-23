@@ -5,4 +5,12 @@ def get_ignored_words():
     return words
 
 
+def get_ignored_urls():
+    with open("ignored_urls.txt", "r", encoding="utf-8") as f:
+        urls = f.read().split()
+    return urls
+
+
 IGNORED_WORDS = get_ignored_words()
+IGNORED_URLS = get_ignored_urls()
+IGNORED_ITEMS = {"WORDS": IGNORED_WORDS, "URLS": IGNORED_URLS}

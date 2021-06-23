@@ -4,6 +4,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+#Python compiled code
+*.pyc
+chardetect.exe
+
 # C extensions
 *.so
 
@@ -101,6 +105,7 @@ ENV/
 # mypy
 .mypy_cache/
 
+/source/
 configs/
 gui/
 test-reports/
