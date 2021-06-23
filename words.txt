@@ -502,6 +502,7 @@ dir
 dirhtml
 displayname
 dk
+dkg
 dlink
 dll
 dllhost
@@ -1112,6 +1113,7 @@ kq
 kwargs
 labview
 lakeshore
+landline
 lang
 larmor
 larmor's
@@ -2342,6 +2344,7 @@ udp
 udunits
 ueip
 ui
+uiscriptgengenerated
 uis
 uk
 ul
