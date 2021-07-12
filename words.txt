@@ -2063,6 +2063,7 @@ recurse
 recursesubmodules
 recv
 redistributable
+redistributables
 reenable
 reestablished
 reexport
@@ -2640,6 +2641,7 @@ varanus
 varibles
 variox
 vc
+vcruntime
 vcs
 vcpython
 vcvarsall
