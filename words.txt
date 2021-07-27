@@ -138,6 +138,7 @@ asynoctetread
 asynoctetwrite
 asynprint
 asynprintio
+asynPortDriver
 asynsetoption
 asynsettracefile
 asynsettraceinfomask
