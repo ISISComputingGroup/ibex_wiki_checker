@@ -1,6 +1,6 @@
 # ibex_wiki_checker
 
-> Note that there is a shell script `sort.sh` which takes `words.txt`, forces all lines to lower case, and sorts alphabetically. This allows one to add new words anywhere, in any case without causing any issues. Ideally should be made a githook as this is not run automatically at present.
+The `words.txt` file is lowercased and sorted within the python check script, so a new word can be added anywhere in the file.
 
 If you are trying to run the tests on a machine with Python 2 and get an error along the lines of:
 
