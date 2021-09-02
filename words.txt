@@ -2368,6 +2368,7 @@ stdlib
 stepsi
 stfc
 stil
+stober
 stoed
 stoo
 stp
@@ -2558,6 +2559,7 @@ tuples
 turbotronic
 turbotronik
 twincat
+twinCATAutomationTools
 twotiersamplechanger
 twv
 txt
@@ -2740,6 +2742,7 @@ writables
 writeconnected
 writecurrent
 writefactory
+wsgi
 wtek
 www
 wwwroot
