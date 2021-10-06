@@ -224,6 +224,7 @@ bindingcontext
 bindvalue
 bio
 biolin
+bios
 birmingham
 bish
 bishal
@@ -602,11 +603,13 @@ drvasynipportconfigure
 drvasynserialport
 drvasynserialportconfigure
 ds
+dt
 dsc
 d's
 dset
 dstport
 dtyp
+dvd
 dx
 earlystartup
 easter
@@ -796,6 +799,7 @@ galil
 galiladdr
 galilcontroller
 galilmc
+galilmul
 galilnn
 galils
 galil's
@@ -2065,6 +2069,7 @@ recsim
 recurse
 recursesubmodules
 recv
+reclone
 redistributable
 redistributables
 reenable
@@ -2193,6 +2198,7 @@ screenshots
 scriptgenerator
 scriptserver
 scriptutil
+scsi
 scv
 sdis
 sdtest
@@ -2673,6 +2679,7 @@ viscotherm
 visio
 vm
 vme
+vmname
 vmeconfigmenu
 vmon
 vms
