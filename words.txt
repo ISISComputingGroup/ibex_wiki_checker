@@ -277,6 +277,7 @@ camonitor
 capelli
 capitialised
 caproto
+captcha
 caput
 caputlog
 caputloginit
