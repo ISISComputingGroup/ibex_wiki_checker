@@ -526,6 +526,7 @@ definitionsteward
 dehex
 dehexed
 del
+delaygen
 demoing
 demos
 deprioritise
