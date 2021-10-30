@@ -2119,6 +2119,7 @@ res
 resetcounts
 resman
 resourcemanager
+restartable
 restorable
 restorefile
 restorefilelist
