@@ -1281,6 +1281,7 @@ libxslt
 libyelp
 lifecycle
 lightsource
+lilith
 limtis
 linconv
 linex
