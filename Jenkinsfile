@@ -38,6 +38,6 @@ pipeline {
   // The options directive is for configuration that applies to the whole job.
   options {
     buildDiscarder(logRotator(numToKeepStr:'20', daysToKeepStr: '28'))
-    timeout(time: 60, unit: 'MINUTES')
+    timeout(time: 120, unit: 'MINUTES')
   }
 }
