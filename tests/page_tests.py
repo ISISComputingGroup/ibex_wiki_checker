@@ -171,7 +171,7 @@ class PageTests(unittest.TestCase):
         def try_to_connect(url, session):
             nonlocal wiki_name, page_name
             try:
-                response = session.head(url)
+                response = session.head(url, timeout=5)
                 if not response:
                     return "Could not open URL, got response code {} for {}\n".format(
                         response.status_code, get_url_basename(url)), url

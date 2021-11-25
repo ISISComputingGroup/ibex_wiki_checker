@@ -110,6 +110,8 @@ configs/
 gui/
 test-reports/
 NULL
+/ibex_utils/
+toberemoved.txt
 
 # Pycharm
 .idea/
