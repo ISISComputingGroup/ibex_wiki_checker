@@ -1,0 +1,4 @@
+requests
+unittest-xml-reporting
+GitPython
+pyenchant

@@ -2,7 +2,7 @@ import unittest
 import functools
 from tests import shadow_mirroring_tests
 from tests.page_tests import strip_between_tags
-from mock import patch
+from unittest.mock import patch
 
 
 class FakeResponse(object):
