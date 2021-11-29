@@ -988,6 +988,7 @@ hterm
 htm
 htmlreport
 htmltidy
+http
 https
 huber
 hvcaen
