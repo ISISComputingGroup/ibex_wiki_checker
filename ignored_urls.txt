@@ -51,3 +51,5 @@ http://en.wikipedia.org/wiki/CamelCase
 http://en.wikipedia.org/wiki/Java_Message_Service
 https://staff.stfc.ac.uk/core/catering/Pages/default.aspx
 https://github.com/ISISComputingGroup/BeckhoffPLCCode
+https://control.com/forums/threads/twincat-3-error-when-switched-to-run-mode.43467/
+https://www.7-zip.org/
