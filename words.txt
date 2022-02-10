@@ -1367,6 +1367,7 @@ managermodehandler
 manc
 mantain
 mantid
+mantid's
 mantidproject
 mantracourt
 marginheight
