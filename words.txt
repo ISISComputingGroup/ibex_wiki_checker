@@ -2283,6 +2283,7 @@ sh
 sha
 sharepoint
 shm
+shortcutting
 shotwell
 showbanner
 showstopper
