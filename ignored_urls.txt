@@ -56,3 +56,5 @@ https://www.7-zip.org/
 https://help.realvnc.com
 www.java.com
 www.us.tdklambda.com
+www.emea.lambda.tdk.com
+www.lakeshore.com
