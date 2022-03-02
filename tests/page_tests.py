@@ -278,7 +278,7 @@ class PageTests(unittest.TestCase):
             # Some websites don't respond correctly with the default requests user agent, so the firefox user agent
             # is being used instead
             sess.headers = {"User-Agent":
-                            "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:53.0) Gecko/20100101 Firefox/53.0"}
+                            "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:97.0) Gecko/20100101 Firefox/97.0"}
             failed_urls = []
             with concurrent.futures.ThreadPoolExecutor(max_workers=None) as con_fut:
                 futures = [con_fut.submit(check_link, fix_formatting(link), sess, filenames, folders) for link in links]
