@@ -98,6 +98,7 @@ def run_all_tests(single_file, remote, folder):
         return_values.append(run_tests_on_pages(
             os.path.join(reports_path, os.path.basename(folder)), files_to_test, "",
             top_issue_num, test_class=PageTests))
+        print(utils.global_vars.failed_url_string)
 
     return all(value for value in return_values)
 

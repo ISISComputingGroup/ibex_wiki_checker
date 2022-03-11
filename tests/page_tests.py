@@ -181,6 +181,8 @@ class PageTests(unittest.TestCase):
                 return "Invalid SSL certificate for: {}\n".format(get_url_basename(url)), url
             except requests.exceptions.ConnectionError:
                 return "Disconnected without response by {}\n".format(get_url_basename(url)), url
+            except requests.exceptions.Timeout:
+                return "Connection Timeout by {}\n".format(get_url_basename(url)), url
 
         def check_if_link_to_wiki_page(url, filenames, folders):
             # If link is to a file in the wiki and shouldn't be otherwise skipped, check that the file actually exists
