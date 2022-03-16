@@ -31,7 +31,7 @@ def run_tests_on_pages(reports_path, pages, wiki_dir, highest_issue_num, test_cl
     return runner.run(suite).wasSuccessful()
 
 
-def run_all_tests(single_file, remote):
+def run_all_tests(single_file, remote, folder):
     """
     Runs all of the tests
 
@@ -83,10 +83,22 @@ def run_all_tests(single_file, remote):
                 print("Skipping tests\n")
                 return_values.append(0)
                 continue
-    else:
+    elif single_file:
         return_values.append(run_tests_on_pages(
             os.path.join(reports_path, os.path.basename(single_file)), [single_file], os.path.dirname(single_file),
             top_issue_num, test_class=PageTests))
+    elif folder:
+        print("Running spelling tests on folder {}".format(folder))
+        files = os.listdir(folder)
+        files_to_test = []
+        for f in files:
+            if f.endswith(".md"):
+                files_to_test.append(os.path.join(folder, f))
+        # The path is listed as an empty string as this hybrid set up ignores it
+        return_values.append(run_tests_on_pages(
+            os.path.join(reports_path, os.path.basename(folder)), files_to_test, "",
+            top_issue_num, test_class=PageTests))
+        print(utils.global_vars.failed_url_string)
 
     return all(value for value in return_values)
 
@@ -99,13 +111,15 @@ def main():
                         help="The file to scan")
     parser.add_argument("--remote", required=False, action='store_true', default=False,
                         help="Scan all remote wikis (dev manual, user manual, IBEX")
+    parser.add_argument("--folder", required=False, type=str, default=None,
+                        help="Scan just a local folder")
     args = parser.parse_args()
-    if not args.file and not args.remote:
+    if not args.file and not args.remote and not args.folder:
         raise(RuntimeError("No arguments specified"))
-    elif args.file and args.remote:
-        raise(RuntimeError("Cannot specify both a single file and remote run"))
+    elif (args.file and args.remote) or (args.file and args.folder) or (args.remote and args.folder):
+        raise(RuntimeError("Cannot specify more than one target for the tests"))
 
-    sys.exit(0 if run_all_tests(args.file, args.remote) else 1)
+    sys.exit(0 if run_all_tests(args.file, args.remote, args.folder) else 1)
 
 
 if __name__ == "__main__":
