@@ -69,9 +69,9 @@ anl
 ans
 ansible
 antares
+anthony
 anton
 anyboolean
-anymore
 anystring
 ao
 ap
@@ -582,6 +582,7 @@ docker
 docstring
 docstrings
 docu
+docusaurus
 docutils
 docx
 doesn
