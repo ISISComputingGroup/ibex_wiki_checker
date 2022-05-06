@@ -28,6 +28,7 @@ adel
 ad-hoc
 admin
 admins
+adoptium
 adoptopenjdk
 adroja
 advfirewall
@@ -993,6 +994,7 @@ htmltidy
 http
 https
 huber
+hv
 hvcaen
 hvcaenx
 hyperterm
@@ -1473,6 +1475,7 @@ mozilla
 mpa
 mq
 mres
+ms
 msc
 msconfig
 msg
@@ -1902,6 +1905,7 @@ playbooks
 plc
 plcip
 plcs
+plc's
 plottable
 plt
 plugin
@@ -2457,6 +2461,7 @@ tdklambdagenesys
 teardown
 tech
 technetwork
+technix
 tek
 tekafg
 tekdmm
@@ -2706,6 +2711,7 @@ vsdx
 vt
 vti
 vx
+vxd
 w
 waitfor
 waitformove
@@ -2877,4 +2883,3 @@ url's
 venv
 vogel
 xfe
-plc's
