@@ -2215,6 +2215,7 @@ scriptutil
 scsi
 scv
 sdis
+sdk
 sdtest
 seabreeze
 seci
