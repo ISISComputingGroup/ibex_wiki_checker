@@ -1287,6 +1287,7 @@ libyelp
 lifecycle
 lightsource
 lilith
+lilithcole
 limtis
 linconv
 linex
@@ -2125,6 +2126,7 @@ repurposed
 req
 requestfile
 reraise
+rerpha
 res
 resetcounts
 resman
