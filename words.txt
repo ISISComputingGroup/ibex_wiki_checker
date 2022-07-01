@@ -1555,6 +1555,7 @@ ndxxx
 ndxxxx
 ndxxxxxx
 nelm1
+nemioc
 neocera
 netsh
 netshrvar
@@ -1566,6 +1567,7 @@ newportsrc
 newvalue
 nframes
 ngem
+ngemioc
 ni
 nicos
 nicoslivewidget
