@@ -656,6 +656,7 @@ emojis
 emptylist
 emu's
 enablement
+endfragment
 endian
 endif
 eng
@@ -1756,6 +1757,7 @@ notexyztable
 noteyztable
 nov
 np
+npp
 npcap
 nport
 nr
@@ -1772,6 +1774,7 @@ observablefactory
 observabletitlemodel
 obsfactory
 oct
+octicon
 oem
 oercone
 oerlikon
@@ -2382,6 +2385,7 @@ standups
 stanford
 startcard
 startdate
+startsragment
 startinstdir
 startsup
 startup
@@ -2439,6 +2443,7 @@ supermirror
 supermirrors
 surefire
 svcs
+svg
 svn
 switchperspective
 switchtocombo
@@ -2692,6 +2697,7 @@ vhd
 vhds
 vhdx
 vi
+viewbox
 viewmodel
 viewpart
 vimovein
