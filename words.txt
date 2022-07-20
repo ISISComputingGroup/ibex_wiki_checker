@@ -2385,7 +2385,7 @@ standups
 stanford
 startcard
 startdate
-startsragment
+startfragment
 startinstdir
 startsup
 startup
