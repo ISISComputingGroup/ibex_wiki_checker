@@ -1879,6 +1879,7 @@ pdwn
 pended
 peopleware
 performlongtask
+performant
 perl
 pernickety
 perspectiveextension
