@@ -1385,6 +1385,7 @@ martinfowler
 masse
 matlab
 matplotlib
+matplotlib's
 maven
 max
 maxis
@@ -1477,6 +1478,7 @@ moxa
 moxas
 mozilla
 mpa
+mpl
 mq
 mres
 ms
@@ -2114,6 +2116,8 @@ regserver
 rehome
 rehoming
 reimplemented
+reimplementation
+reimplementing
 relativepath
 releasenotes
 reminds
