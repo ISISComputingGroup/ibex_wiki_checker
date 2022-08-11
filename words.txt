@@ -1333,6 +1333,7 @@ loq
 loq's
 lowercase
 lowlimit
+lowri
 lowt
 ls
 lsi
@@ -2363,6 +2364,7 @@ sp
 sparrowhawk
 spec
 specmap
+speeduino
 speedupbuilding
 spellman
 sprlg
@@ -2533,6 +2535,7 @@ tk
 tkgenie
 tkinter
 tlccr
+tls
 tmagnet
 tmp
 tns
