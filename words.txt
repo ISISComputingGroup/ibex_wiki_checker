@@ -229,6 +229,7 @@ bios
 birmingham
 bish
 bishal
+bisynch
 blahblah
 blockhouse
 blocknames
