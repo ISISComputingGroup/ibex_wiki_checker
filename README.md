@@ -14,3 +14,6 @@ SyntaxError: invalid syntax
 ```
 
 Try unsetting the python environment variable by running `set PYTHONHOME=` and `set PYTHONPATH=`.
+
+## Local Usage
+For more information on usage, please see the [wiki page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Wiki-Checks).
