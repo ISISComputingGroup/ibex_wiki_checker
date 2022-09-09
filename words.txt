@@ -1914,6 +1914,7 @@ pixelman
 pl
 placeholder
 placeholders
+planitpoker
 platinums
 playbook
 playbooks
@@ -2516,6 +2517,7 @@ thermostating
 thisthingisreallybig
 thn
 throwable
+thumbsup
 thurlby
 tightvnc
 tighvnc
