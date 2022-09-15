@@ -1768,6 +1768,7 @@ npp
 npcap
 nport
 nr
+ns
 nset
 nsteps
 nt
