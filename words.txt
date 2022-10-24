@@ -565,6 +565,7 @@ diffs
 digi
 diirt
 dinp
+dio
 dir
 dirhtml
 displayname
@@ -649,6 +650,7 @@ eguf
 eilidh
 ek
 electrochemical
+electromatdriver
 electrometer
 electrometers
 elektronika
@@ -960,6 +962,7 @@ heliox
 heliox's
 helloworld
 hererocks
+hfcontroldriver
 hfmagpsu
 hfmagpsusup
 hgv
@@ -1000,6 +1003,7 @@ huber
 hv
 hvcaen
 hvcaenx
+hydrocell
 hyperterm
 hyperterminal
 hypervisor
@@ -2575,6 +2579,7 @@ todo
 todos
 tof
 tol
+tom
 tolowercase
 toolbar
 toolbars
