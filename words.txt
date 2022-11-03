@@ -1230,6 +1230,7 @@ junit
 junitreport
 jusched
 jvisualvm
+jython
 kafka
 kafkacat
 kafkacow
