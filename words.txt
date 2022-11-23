@@ -16,11 +16,8 @@ acro
 actionlist
 activeline
 activemq
-addhandlerlistener
 addobserver
-addpropertychangelistener
 addr
-addselectionlistener
 addstrings
 addtopping
 ade
