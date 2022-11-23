@@ -334,6 +334,7 @@ checkrelease
 checkstyle
 chell
 chopr
+christmas
 chrono
 chronus
 ci
@@ -2772,6 +2773,7 @@ webpages
 webserver
 websocket
 websockets
+wednesdays
 weeder
 wf
 whitelist
