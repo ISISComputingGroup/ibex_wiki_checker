@@ -1587,6 +1587,7 @@ ni
 nicos
 nicoslivewidget
 nid
+nikola
 nim
 nima
 nimages
