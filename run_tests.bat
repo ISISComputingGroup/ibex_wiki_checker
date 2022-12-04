@@ -1,9 +1,10 @@
 setlocal
 set PYTHONIOENCODING=utf-8
 set PYTHONUNBUFFERED=TRUE
-del /s /q test-reports\*.xml
+if exist "test-reports" del /s /q test-reports\*.xml
 
 REM Create local python environment from genie python on share
+if exist "ibex_utils" rd /q /s ibex_utils 
 git clone https://github.com/ISISComputingGroup/ibex_utils.git
 CALL ibex_utils\installation_and_upgrade\define_latest_genie_python.bat
 %LATEST_PYTHON% -m venv venv
