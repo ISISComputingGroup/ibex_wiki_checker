@@ -1252,6 +1252,7 @@ keymer
 keysight
 khly
 kirkham
+klixon
 kn
 knauer
 kohms
@@ -2065,6 +2066,7 @@ rangefinder
 razorbill
 rb
 rbnumber
+rbox
 rbv
 rbvs
 rc
