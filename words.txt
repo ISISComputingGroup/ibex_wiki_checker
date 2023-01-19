@@ -1726,6 +1726,7 @@ notepfeiffer
 notepgc
 notepi
 notepinhole
+noteplc
 notepneumaticshutter
 notepresampletable
 notepresstrans
