@@ -571,6 +571,7 @@ dinp
 dio
 dir
 dirhtml
+displaybuilder
 displayname
 django
 dk
@@ -646,6 +647,7 @@ eemcu
 ef
 efa
 efsw
+efxclipse
 eg
 egrep
 egu
@@ -1186,6 +1188,7 @@ java
 javacpl
 javadoc
 javadocs
+javafx
 javascript
 javase
 javaw
