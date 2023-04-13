@@ -1476,6 +1476,8 @@ modelversion
 modicon
 modulline
 mojo
+monday
+mondays
 monochromator
 moorby
 motionsetpoint
