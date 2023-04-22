@@ -15,5 +15,8 @@ python -m pip freeze --local > toberemoved.txt
 python -m pip uninstall -r toberemoved.txt -y
 python -m pip install -r requirements.txt
 
+REM make a python3.exe to avoid being terminated
+REM by stop_ibex_server
+copy venv\Scripts\python.exe venv\Scripts\python3.exe 
 REM run tests
-python -u run_tests.py --remote
+python3 -u run_tests.py --remote
