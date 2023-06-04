@@ -9,16 +9,16 @@ git clone https://github.com/ISISComputingGroup/ibex_utils.git
 CALL ibex_utils\installation_and_upgrade\define_latest_genie_python.bat
 @echo on
 if exist "my_venv" rd /q /s my_venv 
-"%LATEST_PYTHON%" -m venv %~dp0my_venv
-CALL my_venv\Scripts\activate.bat
-
-REM Clean local python environment and install requirements
-python -m pip freeze --local > toberemoved.txt 
-python -m pip uninstall -r toberemoved.txt -y
-python -m pip install -r requirements.txt
-
+"%LATEST_PYTHON3%" -m venv %~dp0my_venv
 REM make a python3.exe to avoid being terminated
 REM by stop_ibex_server
 copy my_venv\Scripts\python.exe my_venv\Scripts\python3.exe 
+CALL my_venv\Scripts\activate.bat
+
+REM Clean local python environment and install requirements
+python3.exe -m pip freeze --local > toberemoved.txt 
+python3.exe -m pip uninstall -r toberemoved.txt -y
+python3.exe -m pip install -r requirements.txt
+
 REM run tests
-python3 -u run_tests.py --remote
+python3.exe -u run_tests.py --remote
