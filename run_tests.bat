@@ -9,7 +9,8 @@ git clone https://github.com/ISISComputingGroup/ibex_utils.git
 CALL ibex_utils\installation_and_upgrade\define_latest_genie_python.bat
 @echo on
 if exist "my_venv" rd /q /s my_venv 
-"%LATEST_PYTHON3%" -m venv %~dp0my_venv
+REM this needs to be LATEST_PYTHON not LATEST_PYTHON3
+"%LATEST_PYTHON%" -m venv %~dp0my_venv
 REM make a python3.exe to avoid being terminated
 REM by stop_ibex_server
 copy my_venv\Scripts\python.exe my_venv\Scripts\python3.exe 
