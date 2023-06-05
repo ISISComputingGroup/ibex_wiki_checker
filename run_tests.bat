@@ -23,3 +23,7 @@ python3.exe -m pip install -r requirements.txt
 
 REM run tests
 python3.exe -u run_tests.py --remote
+if %errorlevel% neq 0 (
+    @echo ERROR: Python exited with code %errorlevel%
+    exit /b %errorlevel%
+)
