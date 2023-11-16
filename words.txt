@@ -1506,6 +1506,7 @@ msc
 msconfig
 msg
 msglog
+msi
 mslits
 msm
 mso
