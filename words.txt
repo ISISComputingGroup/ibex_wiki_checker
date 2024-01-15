@@ -1,4 +1,6 @@
-﻿
+
+pydev's
+autocompletion
 ﻿µsr
 ﻿aa
 aarhus
@@ -2187,6 +2189,7 @@ resultset
 resultsvar
 resultvar
 resync
+retrospective
 resynced
 retrospectiveanalysis
 retryblock
