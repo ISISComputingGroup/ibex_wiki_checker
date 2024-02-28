@@ -2561,6 +2561,7 @@ tighvnc
 timebox
 timeout
 timeouts
+timeperiod
 timescale
 timescales
 timesheets
@@ -2941,6 +2942,7 @@ subnet
 subnets
 subscripted
 subtasks
+Sudeepta
 superset
 supersets
 suppressions
