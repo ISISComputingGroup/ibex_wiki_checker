@@ -568,6 +568,7 @@ devsup
 dexample
 df
 dfanout
+dhcp
 dialog
 dialogs
 dict
