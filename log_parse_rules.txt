@@ -1,0 +1,7 @@
+# need to allow for [timestamp]
+error /(?i)^(\[[^]]*\] )?error:/
+error /(?i)^(\[[^]]*\] )?fatal:/
+error /ERROR: tests exited with status/
+error /FAILED \(failures=/
+error /FAILED \(errors=/
+error /FAILED to clone/
