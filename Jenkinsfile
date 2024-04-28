@@ -39,6 +39,7 @@ pipeline {
             useProjectRule: true,
         ])
         junit "test-reports/**/*.xml"
+	}
   }
   
   // The options directive is for configuration that applies to the whole job.
