@@ -31,8 +31,14 @@ pipeline {
   
   post {
     always {
+        logParser ([
+            projectRulePath: 'log_parse_rules.txt',
+            parsingRulesPath: '',
+            showGraphs: true, 
+            unstableOnWarning: false,
+            useProjectRule: true,
+        ])
         junit "test-reports/**/*.xml"
-    }
   }
   
   // The options directive is for configuration that applies to the whole job.
