@@ -597,6 +597,7 @@ dobinding
 docbook
 dockable
 docker
+dockerized
 docstring
 docstrings
 docu
@@ -2886,6 +2887,7 @@ zeroth
 zfmagfld
 zhex
 zhi
+zsolt
 zlib
 zlo
 znam
