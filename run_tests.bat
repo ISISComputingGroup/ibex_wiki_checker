@@ -16,6 +16,8 @@ REM by stop_ibex_server
 copy my_venv\Scripts\python.exe my_venv\Scripts\python3.exe 
 CALL my_venv\Scripts\activate.bat
 
+where python3.exe
+
 REM Clean local python environment and install requirements
 python3.exe -m pip freeze --local > toberemoved.txt 
 python3.exe -m pip uninstall -r toberemoved.txt -y
