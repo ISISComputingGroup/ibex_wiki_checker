@@ -17,6 +17,7 @@ copy my_venv\Scripts\python.exe my_venv\Scripts\python3.exe
 CALL my_venv\Scripts\activate.bat
 
 where python3.exe
+where python311.dll
 
 REM Clean local python environment and install requirements
 python3.exe -m pip freeze --local > toberemoved.txt 
