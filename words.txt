@@ -2081,6 +2081,8 @@ pyode
 pyopengl
 pypi
 pyplot
+pyright
+pyright's
 pytest
 pytests
 pythonw
