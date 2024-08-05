@@ -1,15 +1,15 @@
-import unittest
+import codecs
+import concurrent.futures
 import os
 import re
-import codecs
-import requests
-import concurrent.futures
 import time
-import utils.global_vars
+import unittest
 
+import requests
 from enchant.checker import SpellChecker
-from enchant.tokenize import URLFilter, EmailFilter, WikiWordFilter, MentionFilter
+from enchant.tokenize import EmailFilter, MentionFilter, URLFilter, WikiWordFilter
 
+import utils.global_vars
 from wiki import Wiki
 
 IBEX_ISSUES = "IBEX/issues/"
@@ -31,10 +31,10 @@ def strip_between_tags(expression, text):
         print("Uneven number of {} detected. Doing nothing to be safe".format(expression))
         new_text = text
     else:
-        new_text = text[0:matches[0].start()]
+        new_text = text[0 : matches[0].start()]
         for i in range(1, len(matches) - 1, 2):
-            new_text += text[matches[i].end(): matches[i + 1].start()]
-        new_text += text[matches[-1].end(): len(text)]
+            new_text += text[matches[i].end() : matches[i + 1].start()]
+        new_text += text[matches[-1].end() : len(text)]
     return new_text
 
 
@@ -52,7 +52,7 @@ class PageTests(unittest.TestCase):
         self.page, self.all_pages, self.wiki_dir, self.top_issue_num = wiki_info
         self.ignored_words = ignored_items["WORDS"]
         self.ignored_urls = ignored_items["URLS"]
-        self.isSinglePageTest = ([os.path.join(self.wiki_dir, self.page)] == self.all_pages)
+        self.isSinglePageTest = [os.path.join(self.wiki_dir, self.page)] == self.all_pages
 
     def setUp(self):
         # Class has to have an __init__ that accepts one argument for unittest's test loader to work properly.
@@ -61,7 +61,6 @@ class PageTests(unittest.TestCase):
         self.assertTrue(os.path.exists(self.page))
 
     def test_GIVEN_a_page_THEN_its_spelling_conforms_to_UK_English(self):
-
         def filter_upper_case(words):
             return set(w for w in words if w.upper() != w)
 
@@ -99,11 +98,7 @@ class PageTests(unittest.TestCase):
                     strip_inline_code_blocks(
                         strip_urls_from_links(
                             strip_triple_dash_code_blocks(
-                                strip_pre_tag_blocks(
-                                    strip_code_tag_blocks(
-                                        wiki_file.read()
-                                    )
-                                )
+                                strip_pre_tag_blocks(strip_code_tag_blocks(wiki_file.read()))
                             )
                         )
                     )
@@ -114,26 +109,28 @@ class PageTests(unittest.TestCase):
         checker = SpellChecker("en_UK", filters=filters, text=text)
 
         failed_words = filter_upper_case(
-            {err.word for err in checker if err.word.lower() not in self.ignored_words})
+            {err.word for err in checker if err.word.lower() not in self.ignored_words}
+        )
 
         if len(failed_words) > 0:
-            self.fail("The following words were spelled incorrectly in file {}: \n    {}".format(
-                self.page, "\n    ".join(failed_words)
-            ))
+            self.fail(
+                "The following words were spelled incorrectly in file {}: \n    {}".format(
+                    self.page, "\n    ".join(failed_words)
+                )
+            )
 
     def test_GIVEN_a_page_IF_it_contains_urls_WHEN_url_loaded_THEN_response_is_http_ok(self):
-
         def get_urls_from_text(text):
             if os.path.splitext(self.page)[1] == ".md":
                 # Find markdown URLS of the form [Link text](link location) with no whitespace in the curved brackets.
                 # Return all characters within brackets.
-                urls = re.findall(r'\[.+?\]\(([\S^#]+)\)', text)
+                urls = re.findall(r"\[.+?\]\(([\S^#]+)\)", text)
                 # As above, except this time check whether the whole block is within brackets or not. The text must
                 # start with "(", not have a ")" before the link, then end with a ")" immediately after the trailing
                 # ")" of the link. This stops text like "(for more detail, see [link](url))" from returning "url)"
                 # while allowing "look at this link [wikipedia is full of](urls_(like_these))" to return "urls_(
                 # like_these)"
-                bracketed_urls = re.findall(r'\([^)]*?\[.+?\]\(([\S^#]+)\)\)', text)
+                bracketed_urls = re.findall(r"\([^)]*?\[.+?\]\(([\S^#]+)\)\)", text)
                 # The second set of urls takes precedence over the first, if the url appears WITHOUT a trailing ")" in
                 # the bracket url list, use the entry from the bracketed list instead
                 urls = [url for url in urls if url[:-1] not in bracketed_urls] + bracketed_urls
@@ -141,13 +138,13 @@ class PageTests(unittest.TestCase):
             elif os.path.splitext(self.page)[1] == ".rest":
                 # Links to pages are of the form "[[page name]]", but pages are stored as "page-name"
                 # Some links are "[[text|link]]", so need to omit everything before a "|"
-                page_links = re.findall(r'\[\[.*?([^]|]+)\]\]', text)
-                urls = [link.strip().replace(' ', '-') for link in page_links]
+                page_links = re.findall(r"\[\[.*?([^]|]+)\]\]", text)
+                urls = [link.strip().replace(" ", "-") for link in page_links]
                 # Image links point to the file given by ":target: filename.png"
-                image_links = re.findall(r':target: (\S+)', text)
+                image_links = re.findall(r":target: (\S+)", text)
                 urls.extend(image_links)
                 # website urls are of the form "`text text text <url>`_" with a required space before the "<"
-                web_links = re.findall(r'`[^`<]+ <(\S+)>`_', text)
+                web_links = re.findall(r"`[^`<]+ <(\S+)>`_", text)
                 urls.extend(web_links)
                 return urls
 
@@ -160,7 +157,7 @@ class PageTests(unittest.TestCase):
                 # Some urls just won't work with this link checker, ignore them
                 lambda url: any(allowed_url in url for allowed_url in self.ignored_urls),
                 # Links to another page on the wiki
-                lambda url: url.lower() in filenames
+                lambda url: url.lower() in filenames,
             ]
             return any(condition(url) for condition in skip_conditions)
 
@@ -174,7 +171,8 @@ class PageTests(unittest.TestCase):
                 response = session.head(url, timeout=5)
                 if not response:
                     return "Could not open URL, got response code {} for {}\n".format(
-                        response.status_code, get_url_basename(url)), url
+                        response.status_code, get_url_basename(url)
+                    ), url
             except (requests.exceptions.MissingSchema, requests.exceptions.InvalidURL):
                 return "Invalid link: {}\n".format(get_url_basename(url)), url
             except requests.exceptions.SSLError:
@@ -194,12 +192,18 @@ class PageTests(unittest.TestCase):
         def create_failure_message(failed_urls):
             nonlocal wiki_name, page_name
             if failed_urls and not self.isSinglePageTest:
-                self.fail("The page {} in the wiki {} had the following errors in its links: \n    {}".format(
-                    page_name, wiki_name, "\n    ".join(failed_urls)))
+                self.fail(
+                    "The page {} in the wiki {} had the following errors in its links: \n    {}".format(
+                        page_name, wiki_name, "\n    ".join(failed_urls)
+                    )
+                )
             elif failed_urls:
-                self.fail(("The page {} had the following errors in its links: \n    {} \n\n    "
-                           "Some of these may be due to this file being checked independent of its wiki").format(
-                    self.page, "\n    ".join(failed_urls)))
+                self.fail(
+                    (
+                        "The page {} had the following errors in its links: \n    {} \n\n    "
+                        "Some of these may be due to this file being checked independent of its wiki"
+                    ).format(self.page, "\n    ".join(failed_urls))
+                )
 
         def fix_formatting(url):
             url = url.split("#")[0].strip()
@@ -220,15 +224,22 @@ class PageTests(unittest.TestCase):
             message_lock = True
             message_contents = utils.global_vars.failed_url_string.splitlines(True)
 
-            msg_index = [i for i in range(len(message_contents)) if message_contents[i] == error]  # index of error
+            msg_index = [
+                i for i in range(len(message_contents)) if message_contents[i] == error
+            ]  # index of error
 
             if msg_index:
                 # Write page location at the top of the list if error is already present in the file
-                message_contents.insert(msg_index[0]+2, "  {}/{}: {}\n".format(wiki_name, page_name, url))
+                message_contents.insert(
+                    msg_index[0] + 2, "  {}/{}: {}\n".format(wiki_name, page_name, url)
+                )
             else:
                 # Make a new entry at the end of the file if error has not been seen before
-                message_contents.append("{}On the following pages:\n  {}/{}: {}\n".format(
-                    error, wiki_name, page_name, url))
+                message_contents.append(
+                    "{}On the following pages:\n  {}/{}: {}\n".format(
+                        error, wiki_name, page_name, url
+                    )
+                )
 
             utils.global_vars.failed_url_string = "".join(message_contents)
             message_lock = False
@@ -249,7 +260,9 @@ class PageTests(unittest.TestCase):
                 if get_url_basename(link) == "github.com":
                     if IBEX_ISSUES in link:
                         # The link is to an IBEX issue, so check if its number is less than the total number of issues
-                        issue_num = int(re.search(r'\d+', link)[0])  # Get the issue number in the URL
+                        issue_num = int(
+                            re.search(r"\d+", link)[0]
+                        )  # Get the issue number in the URL
                         if not issue_num <= self.top_issue_num:
                             return "Invalid IBEX issue number: {}".format(issue_num)
                         return
@@ -268,7 +281,9 @@ class PageTests(unittest.TestCase):
             with codecs.open(self.page, encoding="utf-8") as wiki_file:
                 text = wiki_file.read()
         except Exception as e:
-            self.fail("FAILED TO OPEN {} because {} : {}".format(self.page, e.__class__.__name__, e))
+            self.fail(
+                "FAILED TO OPEN {} because {} : {}".format(self.page, e.__class__.__name__, e)
+            )
 
         message_lock = False
         wiki_name = self.wiki_dir.split("\\")[-1]
@@ -279,11 +294,15 @@ class PageTests(unittest.TestCase):
         with requests.Session() as sess:
             # Some websites don't respond correctly with the default requests user agent, so the firefox user agent
             # is being used instead
-            sess.headers = {"User-Agent":
-                            "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:97.0) Gecko/20100101 Firefox/97.0"}
+            sess.headers = {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:97.0) Gecko/20100101 Firefox/97.0"
+            }
             failed_urls = []
             with concurrent.futures.ThreadPoolExecutor(max_workers=None) as con_fut:
-                futures = [con_fut.submit(check_link, fix_formatting(link), sess, filenames, folders) for link in links]
+                futures = [
+                    con_fut.submit(check_link, fix_formatting(link), sess, filenames, folders)
+                    for link in links
+                ]
                 for future in concurrent.futures.as_completed(futures):
                     fail = future.result()
                     if fail:
