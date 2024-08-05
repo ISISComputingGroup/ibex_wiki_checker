@@ -10,6 +10,7 @@ class FakeResponse(object):
     """
     A fake response object with some of the same properties as the one from requests.
     """
+
     def __init__(self, status, content=""):
         self.status_code = status
         self.content = content
@@ -29,20 +30,25 @@ class SelfTests(unittest.TestCase):
 
     def test_GIVEN_dead_url_THEN_shadow_replication_test_fails(self):
         tests = shadow_mirroring_tests.ShadowReplicationTests(
-            methodName="test_GIVEN_page_then_its_content_is_accessible_on_shadow",
-            page="abc.md")
+            methodName="test_GIVEN_page_then_its_content_is_accessible_on_shadow", page="abc.md"
+        )
 
-        with patch("tests.shadow_mirroring_tests.get_response_from_shadow",
-                   side_effect=functools.partial(fake_get_response_from_shadow, status=404)):
+        with patch(
+            "tests.shadow_mirroring_tests.get_response_from_shadow",
+            side_effect=functools.partial(fake_get_response_from_shadow, status=404),
+        ):
             with self.assertRaises(AssertionError):
                 tests.test_GIVEN_page_then_its_content_is_accessible_on_shadow()
 
     def test_GIVEN_live_url_THEN_shadow_replication_test_passes(self):
         tests = shadow_mirroring_tests.ShadowReplicationTests(
-            methodName="test_GIVEN_page_then_its_content_is_accessible_on_shadow", page="abc.md")
+            methodName="test_GIVEN_page_then_its_content_is_accessible_on_shadow", page="abc.md"
+        )
 
-        with patch("tests.shadow_mirroring_tests.get_response_from_shadow",
-                   side_effect=functools.partial(fake_get_response_from_shadow, status=200)):
+        with patch(
+            "tests.shadow_mirroring_tests.get_response_from_shadow",
+            side_effect=functools.partial(fake_get_response_from_shadow, status=200),
+        ):
             tests.test_GIVEN_page_then_its_content_is_accessible_on_shadow()
 
     def test_GIVEN_three_chars_repeated_expression_THEN_words_between_them_stripped(self):

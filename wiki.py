@@ -30,7 +30,9 @@ class Wiki(object):
         repo_path = self.get_path()
         if not os.path.exists(repo_path):
             os.makedirs(repo_path)
-        git.Git(repo_path).clone("https://github.com/ISISComputingGroup/{}.wiki.git".format(self.name), repo_path)
+        git.Git(repo_path).clone(
+            "https://github.com/ISISComputingGroup/{}.wiki.git".format(self.name), repo_path
+        )
 
     def get_pages(self):
         files = find_files_with_extension(self.get_path(), "md")

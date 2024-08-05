@@ -17,7 +17,9 @@ def url_from_file_location(file_location):
 
 
 def get_response_from_shadow(url):
-    return requests.get(url, timeout=20)  # 20s timeout as shadow can be quite slow to respond, 10s is not enough.
+    return requests.get(
+        url, timeout=20
+    )  # 20s timeout as shadow can be quite slow to respond, 10s is not enough.
 
 
 class ShadowReplicationTests(unittest.TestCase):
@@ -43,7 +45,13 @@ class ShadowReplicationTests(unittest.TestCase):
         url = url_from_file_location(self.page)
         response = get_response_from_shadow(url)
 
-        self.assertEqual(response.status_code, HTTP_OK,
-                         "Page {} returned status code {}".format(url, response.status_code))
-        self.assertNotIn(ERROR_TEXT, str(response.content),
-                         "Page {} appears to be failing to render.".format(url))
+        self.assertEqual(
+            response.status_code,
+            HTTP_OK,
+            "Page {} returned status code {}".format(url, response.status_code),
+        )
+        self.assertNotIn(
+            ERROR_TEXT,
+            str(response.content),
+            "Page {} appears to be failing to render.".format(url),
+        )
