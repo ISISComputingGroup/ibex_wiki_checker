@@ -1,6 +1,6 @@
 import os
-import stat
 import shutil
+import stat
 
 
 def rmtree_error(func, path, exc_info):

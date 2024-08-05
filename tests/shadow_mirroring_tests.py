@@ -1,7 +1,7 @@
-import unittest
 import os
-import requests
+import unittest
 
+import requests
 
 HTTP_OK = 200
 

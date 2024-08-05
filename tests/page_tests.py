@@ -1,15 +1,15 @@
-import unittest
+import codecs
+import concurrent.futures
 import os
 import re
-import codecs
-import requests
-import concurrent.futures
 import time
-import utils.global_vars
+import unittest
 
+import requests
 from enchant.checker import SpellChecker
-from enchant.tokenize import URLFilter, EmailFilter, WikiWordFilter, MentionFilter
+from enchant.tokenize import EmailFilter, MentionFilter, URLFilter, WikiWordFilter
 
+import utils.global_vars
 from wiki import Wiki
 
 IBEX_ISSUES = "IBEX/issues/"

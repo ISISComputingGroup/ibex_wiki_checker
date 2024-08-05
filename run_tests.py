@@ -1,19 +1,19 @@
+import argparse
 import json
 import os
 import sys
 import unittest
 
+import git
 import requests
 from xmlrunner import XMLTestRunner
-import argparse
-import git
 
-from tests.page_tests import PageTests, DEV_MANUAL, IBEX_MANUAL, USER_MANUAL, TEST_WIKI
+import utils.global_vars
+from tests.page_tests import DEV_MANUAL, IBEX_MANUAL, USER_MANUAL, PageTests
 from tests.shadow_mirroring_tests import ShadowReplicationTests
 from utils.ignored_words import IGNORED_ITEMS
-import utils.global_vars
 
-GITHUB_API_ISSUE_CALL = f"https://api.github.com/repos/ISISComputingGroup/IBEX/issues?per_page=1"
+GITHUB_API_ISSUE_CALL = "https://api.github.com/repos/ISISComputingGroup/IBEX/issues?per_page=1"
 
 
 def run_tests_on_pages(reports_path, pages, wiki_dir, highest_issue_num, test_class):
