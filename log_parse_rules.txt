@@ -1,4 +1,5 @@
 # need to allow for [timestamp]
+ok /You must give at least one requirement to uninstall/
 error /(?i)^(\[[^]]*\] )?error:/
 error /(?i)^(\[[^]]*\] )?fatal:/
 error /ERROR: tests exited with status/
