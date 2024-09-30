@@ -10,7 +10,8 @@ CALL ibex_utils\installation_and_upgrade\define_latest_genie_python.bat
 @echo on
 if exist "my_venv" rd /q /s my_venv 
 REM this needs to be LATEST_PYTHON not LATEST_PYTHON3
-"%LATEST_PYTHON%" -m venv %~dp0my_venv
+echo %LATEST_PYTHON_DIR%
+%LATEST_PYTHON% -m venv %~dp0my_venv
 REM make a python3.exe to avoid being terminated
 REM by stop_ibex_server
 copy my_venv\Scripts\python.exe my_venv\Scripts\python3.exe 
@@ -26,7 +27,11 @@ python3.exe -m pip install -r requirements.txt
 
 REM run tests
 python3.exe -u run_tests.py --remote
+
 if %errorlevel% neq 0 (
     @echo ERROR: Python exited with code %errorlevel%
-    exit /b %errorlevel%
+    CALL ibex_utils\installation_and_upgrade\remove_genie_python.bat %LATEST_PYTHON_DIR%
+    EXIT /b %errorlevel%
 )
+
+CALL ibex_utils\installation_and_upgrade\remove_genie_python.bat %LATEST_PYTHON_DIR%
