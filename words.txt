@@ -917,6 +917,7 @@ github
 github's
 githubusercontent
 gitignore
+gitlab
 gitmodules
 glassman
 globals
