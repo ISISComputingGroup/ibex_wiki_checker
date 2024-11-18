@@ -544,6 +544,7 @@ dehex
 dehexed
 del
 delaygen
+delevitate
 demoing
 demos
 deprioritise
