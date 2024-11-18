@@ -2688,6 +2688,7 @@ ui
 uiscriptgengenerated
 uis
 uk
+uktena
 ul
 ulong
 uml
