@@ -2404,6 +2404,7 @@ softlimit
 softlimts
 softmotor
 sonatype
+sophos
 sorb
 sorption
 sortnr
