@@ -1336,6 +1336,7 @@ linter
 linting
 linux
 listname
+Litron
 liveview
 lksh
 lkup
