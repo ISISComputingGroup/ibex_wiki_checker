@@ -94,17 +94,13 @@ class PageTests(unittest.TestCase):
             return text.replace("*", "")
 
         with open(self.page, "r", encoding="utf-8") as wiki_file:
-            text = remove_bold_and_italics(
-                replace_selected_specials_with_whitespace(
-                    strip_inline_code_blocks(
-                        strip_urls_from_links(
-                            strip_triple_dash_code_blocks(
-                                strip_pre_tag_blocks(strip_code_tag_blocks(wiki_file.read()))
-                            )
-                        )
-                    )
-                )
-            )
+            text = strip_code_tag_blocks(wiki_file.read())
+            text = strip_pre_tag_blocks(text)
+            text = strip_triple_dash_code_blocks(text)
+            text = strip_urls_from_links(text)
+            text = strip_inline_code_blocks(text)
+            text = replace_selected_specials_with_whitespace(text)
+            text = remove_bold_and_italics(text)
 
         filters = [URLFilter, EmailFilter, MentionFilter, WikiWordFilter]
         checker = SpellChecker("en_UK", filters=filters, text=text)
