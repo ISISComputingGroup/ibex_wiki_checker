@@ -21,15 +21,16 @@ TEST_WIKI = Wiki("ibex_wiki_checker")
 WIKI_INCLUDELIST = [USER_MANUAL, IBEX_MANUAL, DEV_MANUAL, TEST_WIKI]
 
 
-def strip_between_tags(expression, text):
+def strip_between_tags(self, expression, text):
     if text is None:
         return text
     matches = list(re.finditer(expression, text))
     if len(matches) == 0:
         new_text = text
     elif len(matches) % 2 != 0:
-        print("Uneven number of {} detected. Doing nothing to be safe".format(expression))
-        new_text = text
+        self.fail(
+            "Uneven number of {} detected in file {}.".format(expression,self.page)
+            )
     else:
         new_text = text[0 : matches[0].start()]
         for i in range(1, len(matches) - 1, 2):
@@ -72,13 +73,13 @@ class PageTests(unittest.TestCase):
             return altered_text
 
         def strip_pre_tag_blocks(text):
-            return strip_between_tags(r"<pre>|</pre>", text)
+            return strip_between_tags(self, r"<pre>|</pre>", text)
 
         def strip_code_tag_blocks(text):
-            return strip_between_tags(r"<code>|</code>", text)
+            return strip_between_tags(self, r"<code>|</code>", text)
 
         def strip_triple_dash_code_blocks(text):
-            return strip_between_tags(r"```", text)
+            return strip_between_tags(self, r"```", text)
 
         def strip_urls_from_links(text):
             # replace "[text](link)" with "text"
