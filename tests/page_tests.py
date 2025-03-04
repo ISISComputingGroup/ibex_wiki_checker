@@ -90,6 +90,10 @@ class PageTests(unittest.TestCase):
             expression = r"(?:(?<!\\)((?:\\{2})+)(?=`+)|(?<!\\)(`+)(.+?)(?<!`)\2(?!`))"
             return re.sub(expression, "", text)
 
+        def strip_img_html_tags(text):
+            expression = r"(<img )([a-zA-Z=\"0-9\/\-\s\.:]+)(>)"
+            return re.sub(expression, "", text)
+
         def remove_bold_and_italics(text):
             return text.replace("*", "")
 
@@ -101,6 +105,7 @@ class PageTests(unittest.TestCase):
             text = strip_inline_code_blocks(text)
             text = replace_selected_specials_with_whitespace(text)
             text = remove_bold_and_italics(text)
+            text = strip_img_html_tags(text)
 
         filters = [URLFilter, EmailFilter, MentionFilter, WikiWordFilter]
         checker = SpellChecker("en_UK", filters=filters, text=text)
