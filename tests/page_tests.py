@@ -38,16 +38,16 @@ def strip_between_tags(self, expression, text):
 
 
 class PageTests(unittest.TestCase):
-    def __init__(self, methodName, ignored_items, wiki_info=None):
+    def __init__(self, method_name, ignored_items, wiki_info=None):
         """
 
-        :param methodName: Name of the test you want to run
+        :param method_name: Name of the test you want to run
         :param ignored_items: For spellchecker, ignored words. For Link checker, ignored URLs.
         :param wiki_info: A tuple containing the page to be tested, a list of all pages on the wiki and the wiki's
         directory
         """
         # Boilerplate so that unittest knows how to run these tests.
-        super(PageTests, self).__init__(methodName)
+        super(PageTests, self).__init__(method_name)
         self.page, self.all_pages, self.wiki_dir, self.top_issue_num = wiki_info
         self.ignored_words = ignored_items["WORDS"]
         self.ignored_urls = ignored_items["URLS"]
