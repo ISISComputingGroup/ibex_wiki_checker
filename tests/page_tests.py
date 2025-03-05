@@ -38,7 +38,7 @@ def strip_between_tags(self, expression, text):
 
 
 class PageTests(unittest.TestCase):
-    def __init__(self, method_name, ignored_items, wiki_info=None):
+    def __init__(self, method_name, ignored_items, wiki_info:tuple[str,list[str],str, int]):
         """
 
         :param method_name: Name of the test you want to run
