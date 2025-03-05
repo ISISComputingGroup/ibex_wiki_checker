@@ -28,9 +28,7 @@ def strip_between_tags(self, expression, text):
     if len(matches) == 0:
         new_text = text
     elif len(matches) % 2 != 0:
-        self.fail(
-            "Uneven number of {} detected in file {}.".format(expression,self.page)
-            )
+        self.fail("Uneven number of {} detected in file {}.".format(expression, self.page))
     else:
         new_text = text[0 : matches[0].start()]
         for i in range(1, len(matches) - 1, 2):
