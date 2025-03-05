@@ -17,7 +17,7 @@ Try unsetting the python environment variable by running `set PYTHONHOME=` and `
 
 ## Running the Wiki Checker locally
 
-In order to run them locally, you need to change directory to `C:\Instrument\Dev\ibex_wiki_checker` and then execute `run_tests.bat`.
+In order to run them locally, you can change directory to `C:\Instrument\Dev\ibex_wiki_checker` and then execute `run_tests.bat`. Alternatively `run_tests.py --remote` within a suitable python enviroment will also work.
 
 ### Running the Wiki Checker locally for a single file
 

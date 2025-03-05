@@ -144,7 +144,7 @@ def main():
         required=False,
         action="store_true",
         default=False,
-        help="Scan all remote wikis (dev manual, user manual, IBEX",
+        help="Scan all remote wikis (dev manual, user manual, IBEX)",
     )
     parser.add_argument(
         "--folder", required=False, type=str, default=None, help="Scan just a local folder"
