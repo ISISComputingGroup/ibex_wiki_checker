@@ -89,7 +89,6 @@ beamstops
 beckhoff
 beckhoffs
 beckhoff's
-behavior
 benchtop
 berkley
 bindable
@@ -122,7 +121,6 @@ calcs
 calcsupport
 camonitor
 capelli
-capitialised
 caputrecorder
 caputs
 carepeater
@@ -130,7 +128,6 @@ cartoonified
 caruana
 casnooper
 casted
-catalog
 cawley
 cclrc
 ccr
@@ -138,7 +135,6 @@ ccr's
 cdaq
 cdaqs
 ce
-center
 cget
 chakraborty
 cheatsheet
@@ -159,8 +155,6 @@ cmd
 cmode
 codebase
 codechat
-color
-colors
 colspan
 columnindex
 comms
@@ -181,9 +175,6 @@ cottee
 couette
 covid
 cpp
-createconsole
-createmacrosinput
-createpartcontrol
 cron
 crossfield
 crtl
@@ -203,11 +194,7 @@ csv
 ctrl
 culham
 customisable
-customizable
-cwdss
-cx
 cxx
-cy
 cybaman
 cygwin
 da
@@ -264,7 +251,6 @@ django
 dkg
 dlink
 dll
-dllhost
 dlls
 dockerized
 docstring
@@ -516,7 +502,6 @@ isis
 isisbeam
 isiscomputinggroup
 isisdae
-isisdatasvr
 isisicp
 isisneutronmuon
 isisstat
@@ -543,7 +528,6 @@ jdk
 jenkins
 jenkinsfile
 jface
-jit
 jittering
 jms
 journalparser
@@ -1029,7 +1013,6 @@ pyright
 pyright's
 pytest
 pythonic
-pythonw
 pywin
 quickstream
 ral
@@ -1092,12 +1075,10 @@ rheometers
 rhs
 riken
 rl
-rlower
 roadmap
 robocopy
 roev
 rohde
-rrot
 rst
 ruggedized
 ruleset
@@ -1108,11 +1089,9 @@ runioc
 runstate
 runtime
 rup
-rupper
 samplechanger
 samplesw
 santa
-savefiledialog
 schedulable
 schemas
 schwarz
@@ -1250,7 +1229,6 @@ timesheets
 titlesetter
 titlesp
 tizrcell
-tkgenie
 tkinter
 tls
 tmagnet
