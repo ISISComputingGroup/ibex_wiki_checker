@@ -13,6 +13,7 @@ chardetect.exe
 
 # Distribution / packaging
 .Python
+my_venv/
 env/
 build/
 develop-eggs/

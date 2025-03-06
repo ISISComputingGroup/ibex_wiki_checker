@@ -54,20 +54,20 @@ class SelfTests(unittest.TestCase):
     def test_GIVEN_three_chars_repeated_expression_THEN_words_between_them_stripped(self):
         test_string = "NOT!!!STRIPPED!!!_STRIPPED"
 
-        new_string = strip_between_tags("!!!", test_string)
+        new_string = strip_between_tags("!!!", test_string, "test")
 
         self.assertEqual(new_string, "NOT_STRIPPED")
 
     def test_GIVEN_one_char_repeated_expression_THEN_words_between_them_stripped(self):
         test_string = "NOT!STRIPPED!_STRIPPED"
 
-        new_string = strip_between_tags("!", test_string)
+        new_string = strip_between_tags("!", test_string, "test")
 
         self.assertEqual(new_string, "NOT_STRIPPED")
 
     def test_GIVEN_different_token_expression_THEN_words_between_them_stripped(self):
         test_string = "NOT<code>STRIPPED</code>_STRIPPED"
 
-        new_string = strip_between_tags("<code>|</code>", test_string)
+        new_string = strip_between_tags("<code>|</code>", test_string, "test")
 
         self.assertEqual(new_string, "NOT_STRIPPED")

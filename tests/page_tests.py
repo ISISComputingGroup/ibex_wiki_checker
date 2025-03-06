@@ -21,15 +21,16 @@ TEST_WIKI = Wiki("ibex_wiki_checker")
 WIKI_INCLUDELIST = [USER_MANUAL, IBEX_MANUAL, DEV_MANUAL, TEST_WIKI]
 
 
-def strip_between_tags(expression, text):
+def strip_between_tags(expression, text, current_page):
     if text is None:
         return text
     matches = list(re.finditer(expression, text))
     if len(matches) == 0:
         new_text = text
     elif len(matches) % 2 != 0:
-        print("Uneven number of {} detected. Doing nothing to be safe".format(expression))
-        new_text = text
+        raise ValueError(
+            "Uneven number of {} detected in file {}.".format(expression, current_page)
+        )
     else:
         new_text = text[0 : matches[0].start()]
         for i in range(1, len(matches) - 1, 2):
@@ -39,7 +40,7 @@ def strip_between_tags(expression, text):
 
 
 class PageTests(unittest.TestCase):
-    def __init__(self, methodName, ignored_items, wiki_info=None):
+    def __init__(self, methodName, ignored_items, wiki_info: tuple[str, list[str], str, int]):  # noqa: N803
         """
 
         :param methodName: Name of the test you want to run
@@ -72,13 +73,13 @@ class PageTests(unittest.TestCase):
             return altered_text
 
         def strip_pre_tag_blocks(text):
-            return strip_between_tags(r"<pre>|</pre>", text)
+            return strip_between_tags(r"<pre>|</pre>", text, self.page)
 
         def strip_code_tag_blocks(text):
-            return strip_between_tags(r"<code>|</code>", text)
+            return strip_between_tags(r"<code>|</code>", text, self.page)
 
         def strip_triple_dash_code_blocks(text):
-            return strip_between_tags(r"```", text)
+            return strip_between_tags(r"```", text, self.page)
 
         def strip_urls_from_links(text):
             # replace "[text](link)" with "text"
@@ -89,21 +90,22 @@ class PageTests(unittest.TestCase):
             expression = r"(?:(?<!\\)((?:\\{2})+)(?=`+)|(?<!\\)(`+)(.+?)(?<!`)\2(?!`))"
             return re.sub(expression, "", text)
 
+        def strip_img_html_tags(text):
+            expression = r"(<img )([a-zA-Z=\"0-9\/\-\s\.:]+)(>)"
+            return re.sub(expression, "", text)
+
         def remove_bold_and_italics(text):
             return text.replace("*", "")
 
         with open(self.page, "r", encoding="utf-8") as wiki_file:
-            text = remove_bold_and_italics(
-                replace_selected_specials_with_whitespace(
-                    strip_inline_code_blocks(
-                        strip_urls_from_links(
-                            strip_triple_dash_code_blocks(
-                                strip_pre_tag_blocks(strip_code_tag_blocks(wiki_file.read()))
-                            )
-                        )
-                    )
-                )
-            )
+            text = strip_code_tag_blocks(wiki_file.read())
+            text = strip_pre_tag_blocks(text)
+            text = strip_triple_dash_code_blocks(text)
+            text = strip_urls_from_links(text)
+            text = strip_inline_code_blocks(text)
+            text = replace_selected_specials_with_whitespace(text)
+            text = remove_bold_and_italics(text)
+            text = strip_img_html_tags(text)
 
         filters = [URLFilter, EmailFilter, MentionFilter, WikiWordFilter]
         checker = SpellChecker("en_UK", filters=filters, text=text)
