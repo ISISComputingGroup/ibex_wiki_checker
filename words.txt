@@ -229,7 +229,6 @@ dataweb
 davide
 daxten
 dbd
-dbfindrecord
 dbior
 dbload
 dbloadrecords
@@ -243,7 +242,6 @@ deadband
 deadbands
 deadman's
 deenergise
-definitionsteward
 dehex
 dehexed
 delaygen
@@ -281,13 +279,11 @@ dp
 drivercorrections
 dropdown
 druck
-drvasynserialportconfigure
 ds
 d's
 dt
 dvd
 dx
-dynamicscripting
 easter
 ecorr
 efxclipse
@@ -303,11 +299,6 @@ enum
 enums
 env
 epac
-epicsenvset
-epicsstrprintescaped
-epicsthreadgetidself
-epicsthreadgetnameself
-epicsthreadgetpriorityself
 erroring
 ess
 ethernet
