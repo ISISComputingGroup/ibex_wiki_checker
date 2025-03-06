@@ -21,14 +21,14 @@ TEST_WIKI = Wiki("ibex_wiki_checker")
 WIKI_INCLUDELIST = [USER_MANUAL, IBEX_MANUAL, DEV_MANUAL, TEST_WIKI]
 
 
-def strip_between_tags(self, expression, text):
+def strip_between_tags(expression, text, current_page):
     if text is None:
         return text
     matches = list(re.finditer(expression, text))
     if len(matches) == 0:
         new_text = text
     elif len(matches) % 2 != 0:
-        self.fail("Uneven number of {} detected in file {}.".format(expression, self.page))
+        raise ValueError("Uneven number of {} detected in file {}.".format(expression, current_page))
     else:
         new_text = text[0 : matches[0].start()]
         for i in range(1, len(matches) - 1, 2):
@@ -38,16 +38,16 @@ def strip_between_tags(self, expression, text):
 
 
 class PageTests(unittest.TestCase):
-    def __init__(self, method_name, ignored_items, wiki_info: tuple[str, list[str], str, int]):
+    def __init__(self, methodName, ignored_items, wiki_info: tuple[str, list[str], str, int]):  # noqa: N803
         """
 
-        :param method_name: Name of the test you want to run
+        :param methodName: Name of the test you want to run
         :param ignored_items: For spellchecker, ignored words. For Link checker, ignored URLs.
         :param wiki_info: A tuple containing the page to be tested, a list of all pages on the wiki and the wiki's
         directory
         """
         # Boilerplate so that unittest knows how to run these tests.
-        super(PageTests, self).__init__(method_name)
+        super(PageTests, self).__init__(methodName)
         self.page, self.all_pages, self.wiki_dir, self.top_issue_num = wiki_info
         self.ignored_words = ignored_items["WORDS"]
         self.ignored_urls = ignored_items["URLS"]
@@ -71,13 +71,13 @@ class PageTests(unittest.TestCase):
             return altered_text
 
         def strip_pre_tag_blocks(text):
-            return strip_between_tags(self, r"<pre>|</pre>", text)
+            return strip_between_tags(r"<pre>|</pre>", text, self.page)
 
         def strip_code_tag_blocks(text):
-            return strip_between_tags(self, r"<code>|</code>", text)
+            return strip_between_tags(r"<code>|</code>", text, self.page)
 
         def strip_triple_dash_code_blocks(text):
-            return strip_between_tags(self, r"```", text)
+            return strip_between_tags(r"```", text, self.page)
 
         def strip_urls_from_links(text):
             # replace "[text](link)" with "text"
