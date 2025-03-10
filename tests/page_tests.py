@@ -91,7 +91,7 @@ class PageTests(unittest.TestCase):
             return re.sub(expression, "", text)
 
         def strip_img_html_tags(text):
-            expression = r"(<img )([a-zA-Z=\"0-9\/\-\s\.:]+)(>)"
+            expression = r"(<img )([a-zA-Z=\"0-9\/\-\s\.:_]+)(>)"
             return re.sub(expression, "", text)
 
         def remove_bold_and_italics(text):
