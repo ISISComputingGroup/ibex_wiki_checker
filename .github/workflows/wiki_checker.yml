@@ -1,8 +1,8 @@
 name: wiki_checker
 env:
-  LANG: "en_UK.UTF-8"
-  LANGUAGE: "en_UK:en"
-  LC_ALL: "en_UK.UTF-8"
+  LANG: "en_GB.UTF-8"
+  LANGUAGE: "en_GB:en"
+  LC_ALL: "en_GB.UTF-8"
 on:
   workflow_dispatch:
   schedule:
