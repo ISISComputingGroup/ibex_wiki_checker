@@ -1,7 +1,7 @@
 name: wiki_checker
 on:
   schedule:
-    - cron: "* * * * *"
+    - cron: "0 */3 * * *"
 
 jobs:
   check-wiki:
