@@ -20,5 +20,8 @@ jobs:
       - run: |
           sudo apt-get install -y tzdata locales language-pack-en
           sudo locale-gen ${{ env.LANG }}
+          export LANG="en_GB.UTF-8"
+          sudo localectl set-locale LANG="en_GB.UTF-8"
           sudo update-locale LANG=${{ env.LANG }}
+          locale -a
           python run_tests.py --remote
