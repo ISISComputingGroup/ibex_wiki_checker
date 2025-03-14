@@ -23,10 +23,9 @@ where python311.dll
 REM Clean local python environment and install requirements
 python3.exe -m pip freeze --local > toberemoved.txt 
 python3.exe -m pip uninstall -r toberemoved.txt -y
-python3.exe -m pip install -r requirements.txt
+python3.exe -m pip install .
 
-REM run tests
-python3.exe -u run_tests.py --remote
+python3.exe -m pytest
 
 if %errorlevel% neq 0 (
     @echo ERROR: Python exited with code %errorlevel%

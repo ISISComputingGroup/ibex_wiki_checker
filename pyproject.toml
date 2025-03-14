@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools", "setuptools_scm>=8"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "ibex-wiki-checker"  # REQUIRED, is the only field that cannot be marked as dynamic.
+dynamic = ["version"]
+description = "IBEX Wiki Checker"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+
+authors = [
+  {name = "ISIS Experiment Controls", email = "ISISExperimentControls@stfc.ac.uk" }
+]
+maintainers = [
+  {name = "ISIS Experiment Controls", email = "ISISExperimentControls@stfc.ac.uk" }
+]
+
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: BSD License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+]
+
+dependencies = [
+  "aiohttp",
+  "requests",
+  "unittest-xml-reporting",
+  "GitPython",
+  "pyenchant",
+  "pytest",
+  "pytest-asyncio",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/isiscomputinggroup/ibex_wiki_checker"
+"Bug Reports" = "https://github.com/isiscomputinggroup/ibex_wiki_checker/issues"
+"Source" = "https://github.com/isiscomputinggroup/ibex_wiki_checker"
+
+[tool.pytest.ini_options]
+testpaths = "tests"
+asyncio_mode = "auto"
+addopts = "-vv"
+
+[tool.setuptools_scm]
