@@ -108,7 +108,7 @@ class PageTests(unittest.TestCase):
             text = strip_img_html_tags(text)
 
         filters = [URLFilter, EmailFilter, MentionFilter, WikiWordFilter]
-        checker = SpellChecker("en_UK", filters=filters, text=text)
+        checker = SpellChecker("en_GB", filters=filters, text=text)
 
         failed_words = filter_upper_case(
             {err.word for err in checker if err.word.lower() not in self.ignored_words}
