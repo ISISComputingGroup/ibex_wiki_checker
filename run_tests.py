@@ -137,9 +137,10 @@ def run_all_tests(single_file, remote, folder):
 def main():
 
     import enchant
+    print("TESTTTTTTTT")
     broker = enchant.Broker()
     broker.describe()
-    broker.list_languages()
+    print(broker.list_languages())
     return 0
 
 
