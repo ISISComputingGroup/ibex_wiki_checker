@@ -135,15 +135,6 @@ def run_all_tests(single_file, remote, folder):
 
 
 def main():
-
-    import enchant
-    print("TESTTTTTTTT")
-    broker = enchant.Broker()
-    broker.describe()
-    print(broker.list_languages())
-    return 0
-
-
     locale.setlocale(locale.LC_ALL, 'en_GB.UTF-8')
     parser = argparse.ArgumentParser(
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
