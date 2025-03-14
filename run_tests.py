@@ -3,6 +3,7 @@ import json
 import os
 import sys
 import unittest
+import locale
 
 import git
 import requests
@@ -134,6 +135,7 @@ def run_all_tests(single_file, remote, folder):
 
 
 def main():
+    locale.setlocale(locale.LC_ALL, 'en_GB.UTF-8')
     parser = argparse.ArgumentParser(
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
         description="""Runs tests against the IBEX wikis""",
