@@ -1141,8 +1141,6 @@ scrollbars
 scsi
 sdk
 searchable
-seci
-seciuserinterface
 self.fail(
 sendslackmessage
 sensirion
