@@ -118,6 +118,7 @@ booleans
 bootable
 bottlenecking
 breakpoint
+bruteforce
 bumpstrip
 bundleclass
 bugfixes
@@ -510,6 +511,7 @@ instrumentscripts
 interlayer
 internalerror
 intialisation
+io
 ioc
 iocboot
 iocbootiocsimpledirectory
@@ -1072,6 +1074,7 @@ receivepack
 reclone
 recondensed
 recondensing
+reconnections
 recourses
 recsim
 recurse
@@ -1353,6 +1356,7 @@ unstage
 unstaged
 untick
 untracked
+unupdated
 updatepvs
 updaterepoflowdiagram
 upgrader
