@@ -14,11 +14,10 @@ from wiki import Wiki
 
 IBEX_ISSUES = "IBEX/issues/"
 
-DEV_MANUAL = Wiki("ibex_developers_manual")
 IBEX_MANUAL = Wiki("IBEX")
 USER_MANUAL = Wiki("ibex_user_manual")
 TEST_WIKI = Wiki("ibex_wiki_checker")
-WIKI_INCLUDELIST = [USER_MANUAL, IBEX_MANUAL, DEV_MANUAL, TEST_WIKI]
+WIKI_INCLUDELIST = [USER_MANUAL, IBEX_MANUAL, TEST_WIKI]
 
 
 def strip_between_tags(expression, text, current_page):

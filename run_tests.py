@@ -10,7 +10,7 @@ import requests
 from xmlrunner import XMLTestRunner
 
 import utils.global_vars
-from tests.page_tests import DEV_MANUAL, IBEX_MANUAL, USER_MANUAL, PageTests
+from tests.page_tests import IBEX_MANUAL, USER_MANUAL, PageTests
 from tests.shadow_mirroring_tests import ShadowReplicationTests
 from utils.ignored_words import IGNORED_ITEMS
 
@@ -58,7 +58,7 @@ def run_all_tests(single_file, remote, folder):
 
     top_issue_num = int(json.loads(requests.get(GITHUB_API_ISSUE_CALL).content)[0]["number"])
     if remote:
-        for wiki in [DEV_MANUAL, IBEX_MANUAL, USER_MANUAL]:
+        for wiki in [IBEX_MANUAL, USER_MANUAL]:
             try:
                 with wiki:
                     pages = wiki.get_pages()
@@ -80,7 +80,7 @@ def run_all_tests(single_file, remote, folder):
                 return_values.append(0)
                 continue
         print(utils.global_vars.failed_url_string)
-        for wiki in [DEV_MANUAL, USER_MANUAL]:
+        for wiki in [USER_MANUAL]:
             try:
                 with wiki:
                     pages = wiki.get_pages()
